@@ -19,8 +19,6 @@ Este proyecto consiste en el desarrollo de una **aplicación móvil con intelige
 El sistema permitirá a los usuarios aprender de manera interactiva mediante:
 - Vocabulario
 - Frases
-- Estructuras gramaticales
-- Ejercicios dinámicos
 
 Además, integrará herramientas de inteligencia artificial como:
 - Chatbot educativo para simular conversaciones  
@@ -40,13 +38,9 @@ Desarrollar un sistema móvil con inteligencia artificial que optimice el aprend
 ## 🚀 Funcionalidades Principales
 
 - Registro e inicio de sesión de usuarios
-- Módulos de aprendizaje estructurados
-- Ejercicios interactivos y evaluaciones automáticas
 - Chatbot con inteligencia artificial
-- Reconocimiento de voz
-- Seguimiento del progreso del usuario
-- Generación de reportes de aprendizaje
-
+- Wordle de aprendizaje
+- Temas de quechua y aimara 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
@@ -59,9 +53,6 @@ Desarrollar un sistema móvil con inteligencia artificial que optimice el aprend
 
 ### ☁️ Backend y Servicios
 - Firebase (Authentication, Firestore)
-- Firebase Cloud Messaging (notificaciones)
-- API de Inteligencia Artificial OpenAI
-- API de Google (traducción)
 
 ### 🗄️ Base de Datos
 - Firebase Firestore (base de datos en la nube)
@@ -83,7 +74,7 @@ Permitirá el aprendizaje autónomo desde cualquier dispositivo Android con acce
 
 - Requiere conexión a internet
 - Disponible solo para dispositivos Android (8.0 o superior)
-- Dependencia de APIs externas (IA y traducción)
+- Dependencia de APIs externas 
 
 ---
 
