@@ -9,7 +9,7 @@ Mag. Ing. Patrick Cuadros Quiroga
 ## 👥 Integrantes
 - Mamani Estaña, Junior  
 - Serrano Ibañez, Nestor Juice Yomar  
-
+- Concha Llaca, Gerardo Alejandro
 ---
 
 ## 📌 Descripción del Proyecto
