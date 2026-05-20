@@ -1,0 +1,42 @@
+{
+  "language": "Aimara",
+  "level": "Intermedio",
+  "examTitle": "Aimara Intermedio",
+  "questions": [
+    {
+      "question": "¿Cómo se dice 'Yo trabajo' en Aimara?",
+      "options": ["Nayax irnaqt'wa", "Jumax irnaqt'wa", "Jupax irnaqt'wa", "Nayax manq'wa"],
+      "correctAnswer": "Nayax irnaqt'wa",
+      "explanation": "Irnaqaña es trabajar. El sufijo -wa indica afirmación en primera persona."
+    },
+    {
+      "question": "¿Qué significa 'Kawkinkaskis'?",
+      "options": ["¿Quién es?", "¿Cómo estás?", "¿Dónde está?", "¿A dónde va?"],
+      "correctAnswer": "¿Dónde está?",
+      "explanation": "Kawki (dónde) - n (en) - kaski (está) - s (pregunta)."
+    },
+    {
+      "question": "Traduce: 'Mi hermano es alto'",
+      "options": ["Jilaqi jach'awa", "Jilax jach'awa", "Kullakax jach'awa", "Jilax jisk'awa"],
+      "correctAnswer": "Jilax jach'awa",
+      "explanation": "Jila es hermano, -x es posesivo/tópico, jach'a es grande/alto."
+    },
+    {
+      "question": "¿Cómo se dice 'Mañana vendré'?",
+      "options": ["Qharür jutäwa", "Qharür jutani", "Wasür jutäwa", "Qharür jutwa"],
+      "correctAnswer": "Qharür jutäwa",
+      "explanation": "Qharüru es mañana y jutäwa es vendré (futuro)."
+    },
+    {
+      "question": "Relaciona: 'Yatiqaña uta'",
+      "options": ["Casa de comida", "Casa de estudio (Escuela)", "Casa grande", "Casa de baile"],
+      "correctAnswer": "Casa de estudio (Escuela)",
+      "explanation": "Yatiqaña (aprender/estudiar) uta (casa)."
+    }
+  ],
+  "achievement": {
+    "name": "Explorador Aimara",
+    "description": "Dominas frases básicas en Aimara.",
+    "shareMessage": "¡Ya soy Explorador Aimara en la app Aprende! 🇧🇴"
+  }
+}

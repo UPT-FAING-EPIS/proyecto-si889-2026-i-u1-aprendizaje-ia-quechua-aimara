@@ -1,0 +1,42 @@
+{
+  "language": "Aimara",
+  "level": "Difícil",
+  "examTitle": "Aimara Avanzado",
+  "questions": [
+    {
+      "question": "¿Qué función cumple el sufijo '-pach'?",
+      "options": ["Incertidumbre o probabilidad", "Certeza absoluta", "Dirección", "Pasado lejano"],
+      "correctAnswer": "Incertidumbre o probabilidad",
+      "explanation": "El sufijo -pacha expresa una suposición o probabilidad en el discurso."
+    },
+    {
+      "question": "Traduce: 'Aunque llueva, iré'",
+      "options": ["Jallkipas saräwa", "Jalluyas saräwa", "Jallu sasina saräwa", "Jallu saraña"],
+      "correctAnswer": "Jallkipas saräwa",
+      "explanation": "Usa la estructura concesiva con el sufijo -pas."
+    },
+    {
+      "question": "¿Qué significa 'Arunakasax markasawa'?",
+      "options": ["Nuestras lenguas son nuestro pueblo", "Mi lengua es mi casa", "Hablar es vivir", "Pueblo que habla"],
+      "correctAnswer": "Nuestras lenguas son nuestro pueblo",
+      "explanation": "Aru (lengua/voz) -naka (plural) -sa (nuestro) -x (tópico) marka (pueblo) -sa (nuestro) -wa (afirmación)."
+    },
+    {
+      "question": "Identifica el marcador de cortesía en Aimara:",
+      "options": ["Mirä", "Aruskipt'asipxañani", "Jakisiñkama", "Waliki"],
+      "correctAnswer": "Mirä",
+      "explanation": "Mirä se usa como un atenuador de cortesía, similar a 'por favor' en peticiones."
+    },
+    {
+      "question": "¿Qué significa el concepto de 'Suma Qamaña'?",
+      "options": ["Vivir Bien / Buen Vivir", "Pueblo grande", "Trabajo duro", "Fiesta del sol"],
+      "correctAnswer": "Vivir Bien / Buen Vivir",
+      "explanation": "Es un paradigma de vida basado en la armonía con la comunidad y la naturaleza."
+    }
+  ],
+  "achievement": {
+    "name": "Maestro Aimara",
+    "description": "Nivel avanzado completado. ¡Jallalla!",
+    "shareMessage": "¡Alcancé el rango de Maestro Aimara en la app Aprende! 🇧🇴👑"
+  }
+}

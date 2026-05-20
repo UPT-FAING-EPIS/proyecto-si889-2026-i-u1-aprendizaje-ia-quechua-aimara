@@ -1,0 +1,42 @@
+{
+  "language": "Aimara",
+  "level": "Fácil",
+  "examTitle": "Aimara Básico",
+  "questions": [
+    {
+      "question": "¿Cómo se dice 'Hola' en Aimara?",
+      "options": ["Kamisaraki", "Waliki", "Jisa", "Inti"],
+      "correctAnswer": "Kamisaraki",
+      "explanation": "Kamisaraki es el saludo básico en Aimara."
+    },
+    {
+      "question": "¿Qué significa 'Quta'?",
+      "options": ["Cerro", "Río", "Lago", "Mar"],
+      "correctAnswer": "Lago",
+      "explanation": "Quta significa Lago en Aimara (ej. Titiqaqa Quta)."
+    },
+    {
+      "question": "¿Cómo se dice 'Uno' en Aimara?",
+      "options": ["Maya", "Paya", "Quimsa", "Pusi"],
+      "correctAnswer": "Maya",
+      "explanation": "Maya es el número uno en Aimara."
+    },
+    {
+      "question": "¿Qué animal es 'Anu'?",
+      "options": ["Gato", "Llama", "Perro", "Oveja"],
+      "correctAnswer": "Perro",
+      "explanation": "Anu significa perro en Aimara."
+    },
+    {
+      "question": "¿Qué color es 'Ch'uxña'?",
+      "options": ["Rojo", "Verde", "Blanco", "Negro"],
+      "correctAnswer": "Verde",
+      "explanation": "Ch'uxña representa el color verde."
+    }
+  ],
+  "achievement": {
+    "name": "Aprendiz Aimara",
+    "description": "Completaste el examen básico de Aimara.",
+    "shareMessage": "¡Obtuve el logro Aprendiz Aimara en Aprende! 🇧🇴"
+  }
+}

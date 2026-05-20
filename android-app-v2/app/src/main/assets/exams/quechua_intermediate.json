@@ -1,0 +1,42 @@
+{
+  "language": "Quechua",
+  "level": "Intermedio",
+  "examTitle": "Quechua Intermedio",
+  "questions": [
+    {
+      "question": "¿Cómo se traduce 'Yo como manzana'?",
+      "options": ["Munsanata mikhuni", "Munsanata mikhunki", "Munsanata mikhun", "Munsana mikhuni"],
+      "correctAnswer": "Munsanata mikhuni",
+      "explanation": "La terminación '-ta' es el objeto directo y '-ni' indica primera persona."
+    },
+    {
+      "question": "¿Qué significa 'Maypin kanki'?",
+      "options": ["¿Quién eres?", "¿Dónde estás?", "¿Cómo estás?", "¿A dónde vas?"],
+      "correctAnswer": "¿Dónde estás?",
+      "explanation": "Maypi (dónde) - n (validador) - kanki (estás)."
+    },
+    {
+      "question": "Traduce: 'Mi casa es grande'",
+      "options": ["Wasiymi hatun", "Wasiy hatunmi", "Hatun wasiy", "Hatun wasiymi"],
+      "correctAnswer": "Wasiy hatunmi",
+      "explanation": "Wasiy (mi casa) hatun (grande) -mi (afirmación)."
+    },
+    {
+      "question": "¿Cómo se dice 'Mañana iré'?",
+      "options": ["Paqarin risaq", "Paqarin rini", "Qayna rini", "Paqarin rinki"],
+      "correctAnswer": "Paqarin risaq",
+      "explanation": "Paqarin es mañana y '-saq' es el sufijo de futuro para la primera persona."
+    },
+    {
+      "question": "Relaciona: 'Yachay wasi'",
+      "options": ["Casa de música", "Casa de saber (Escuela)", "Casa de comida", "Casa grande"],
+      "correctAnswer": "Casa de saber (Escuela)",
+      "explanation": "Yachay (saber) wasi (casa)."
+    }
+  ],
+  "achievement": {
+    "name": "Explorador Quechua",
+    "description": "Dominas frases básicas en Quechua.",
+    "shareMessage": "¡Ya soy Explorador Quechua en la app Aprende! 🏔️"
+  }
+}

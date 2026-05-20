@@ -1,0 +1,42 @@
+{
+  "language": "Quechua",
+  "level": "Fácil",
+  "examTitle": "Quechua Básico",
+  "questions": [
+    {
+      "question": "¿Cómo se dice 'Hola' en Quechua?",
+      "options": ["Allillanchu", "Waliki", "Jisa", "Inti"],
+      "correctAnswer": "Allillanchu",
+      "explanation": "Allillanchu es el saludo más común en Quechua."
+    },
+    {
+      "question": "¿Qué significa 'Killa'?",
+      "options": ["Sol", "Luna", "Estrella", "Nube"],
+      "correctAnswer": "Luna",
+      "explanation": "Killa significa Luna en Quechua."
+    },
+    {
+      "question": "¿Cómo se dice 'Uno' en Quechua?",
+      "options": ["Iskay", "Pichqa", "Huk", "Tawa"],
+      "correctAnswer": "Huk",
+      "explanation": "Huk es el número uno."
+    },
+    {
+      "question": "¿Qué animal es 'Alqu'?",
+      "options": ["Gato", "Perro", "Vaca", "Llama"],
+      "correctAnswer": "Perro",
+      "explanation": "Alqu significa perro en Quechua."
+    },
+    {
+      "question": "¿De qué color es 'Anqas'?",
+      "options": ["Rojo", "Verde", "Amarillo", "Azul"],
+      "correctAnswer": "Azul",
+      "explanation": "Anqas representa el color azul."
+    }
+  ],
+  "achievement": {
+    "name": "Aprendiz Quechua",
+    "description": "Completaste el examen básico de Quechua.",
+    "shareMessage": "¡Obtuve el logro Aprendiz Quechua en Aprende! 🇵🇪"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "language": "Quechua",
+  "level": "Difícil",
+  "examTitle": "Quechua Avanzado",
+  "questions": [
+    {
+      "question": "¿Qué significa el sufijo '-sqa' en 'Yachasqani'?",
+      "options": ["Pasado narrativo/experiencial", "Futuro próximo", "Presente continuo", "Obligación"],
+      "correctAnswer": "Pasado narrativo/experiencial",
+      "explanation": "El sufijo -sqa se usa para acciones pasadas de las que no se fue testigo directo o tienen relevancia actual."
+    },
+    {
+      "question": "Traduce: 'Si hubiera sabido, habría venido'",
+      "options": ["Yachayman karqa, hamuyman karqa", "Yachaspayqa hamuymanmi karqa", "Yachayman chayqa hamuymanmi karqa", "Yachaspayqa hamusaqmi karqa"],
+      "correctAnswer": "Yachaspayqa hamuymanmi karqa",
+      "explanation": "Usa la condicional -spa y el potencial -man karqa."
+    },
+    {
+      "question": "¿Qué función cumple el sufijo '-pis'?",
+      "options": ["Inclusión (también)", "Exclusión (solo)", "Pregunta", "Dirección"],
+      "correctAnswer": "Inclusión (también)",
+      "explanation": "'-pis' o '-pas' significa 'también'."
+    },
+    {
+      "question": "Identifica la estructura correcta de cortesía:",
+      "options": ["Ama hina kaspa", "Allinlla kachkani", "Imaynan kanki", "Ripuyña"],
+      "correctAnswer": "Ama hina kaspa",
+      "explanation": "Es la expresión para decir 'por favor' (no siendo así)."
+    },
+    {
+      "question": "¿Cuál es la capital histórica del Tawantinsuyu?",
+      "options": ["Qosqo", "Lima", "Tiwanaku", "Ayacucho"],
+      "correctAnswer": "Qosqo",
+      "explanation": "Qosqo (Cusco) significa 'ombligo del mundo'."
+    }
+  ],
+  "achievement": {
+    "name": "Maestro Quechua",
+    "description": "Nivel avanzado completado. ¡Eres un experto!",
+    "shareMessage": "¡Me convertí en Maestro Quechua en la app Aprende! 👑"
+  }
+}

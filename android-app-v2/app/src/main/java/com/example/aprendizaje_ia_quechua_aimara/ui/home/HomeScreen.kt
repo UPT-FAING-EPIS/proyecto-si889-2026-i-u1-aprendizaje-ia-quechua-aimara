@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Games
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.AsyncImage
 import com.example.aprendizaje_ia_quechua_aimara.ui.login.LoginViewModel
+import com.example.aprendizaje_ia_quechua_aimara.ui.practice.PracticeCategoryScreen
 
 /**
  * HomeScreen: Orquestador principal de la interfaz tras la autenticación.
@@ -30,6 +32,7 @@ fun HomeScreen(
     selectedLanguage: String,
     onSignOut: () -> Unit,
     onTemaClick: (String) -> Unit,
+    onPracticeCategorySelected: (String) -> Unit,
     loginViewModel: LoginViewModel = hiltViewModel()
 ) {
     val currentUser by loginViewModel.currentUser.collectAsState()
@@ -41,6 +44,7 @@ fun HomeScreen(
     val tabs = listOf(
         TabItem("Temas", Icons.Default.MenuBook),
         TabItem("Chat", Icons.Default.Chat),
+        TabItem("Prácticas", Icons.Default.Quiz),
         TabItem("Wordle", Icons.Default.Games)
     )
 
@@ -75,7 +79,8 @@ fun HomeScreen(
             when (selectedTab) {
                 0 -> TemasScreen(onTemaClick = onTemaClick)
                 1 -> ChatScreen()
-                2 -> WordleScreen()
+                2 -> PracticeCategoryScreen(onCategorySelected = onPracticeCategorySelected)
+                3 -> WordleScreen()
             }
         }
     }
