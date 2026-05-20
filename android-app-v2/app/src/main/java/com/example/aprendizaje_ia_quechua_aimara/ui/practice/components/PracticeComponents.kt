@@ -22,13 +22,14 @@ fun PracticeCard(
     subtitle: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    icon: (@Composable () -> Unit)? = null,
     containerColor: Color = MaterialTheme.colorScheme.surfaceVariant,
-    contentColor: Color = contentColorFor(containerColor)
+    contentColor: Color = Color.White
 ) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .height(120.dp)
+            .padding(vertical = 4.dp)
             .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
@@ -39,21 +40,33 @@ fun PracticeCard(
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
+                .fillMaxWidth()
+                .padding(24.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            if (icon != null) {
+                Box(
+                    modifier = Modifier.size(48.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    icon()
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+            }
             Text(
                 text = title,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = contentColor
             )
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = subtitle,
                 style = MaterialTheme.typography.bodyMedium,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = contentColor.copy(alpha = 0.8f)
             )
         }
     }
@@ -69,20 +82,20 @@ fun OptionTile(
 ) {
     val borderColor by animateColorAsState(
         targetValue = when {
-            isCorrect == true -> Color.Green
-            isCorrect == false -> Color.Red
-            isSelected -> MaterialTheme.colorScheme.primary
-            else -> MaterialTheme.colorScheme.outline
+            isCorrect == true -> Color(0xFF4CAF50)
+            isCorrect == false -> Color(0xFFF44336)
+            isSelected -> Color(0xFF2196F3)
+            else -> Color.Gray.copy(alpha = 0.5f)
         },
         label = "borderColor"
     )
 
     val containerColor by animateColorAsState(
         targetValue = when {
-            isCorrect == true -> Color.Green.copy(alpha = 0.1f)
-            isCorrect == false -> Color.Red.copy(alpha = 0.1f)
-            isSelected -> MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
-            else -> MaterialTheme.colorScheme.surface
+            isCorrect == true -> Color(0xFF4CAF50).copy(alpha = 0.2f)
+            isCorrect == false -> Color(0xFFF44336).copy(alpha = 0.2f)
+            isSelected -> Color(0xFF2196F3).copy(alpha = 0.2f)
+            else -> Color(0xFF1E1E1E)
         },
         label = "containerColor"
     )
@@ -93,7 +106,8 @@ fun OptionTile(
             .clickable(enabled = enabled) { onClick() },
         shape = RoundedCornerShape(12.dp),
         border = BorderStroke(2.dp, borderColor),
-        color = containerColor
+        color = containerColor,
+        contentColor = Color.White
     ) {
         Row(
             modifier = Modifier
@@ -104,7 +118,8 @@ fun OptionTile(
             Text(
                 text = text,
                 style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                color = Color.White
             )
             if (isCorrect == true) {
                 Text("✓", color = Color.Green, fontWeight = FontWeight.Bold)
@@ -130,7 +145,8 @@ fun ExamProgressHeader(
             Text(
                 text = "Pregunta ${currentQuestion + 1} de $totalQuestions",
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = Color.White
             )
         }
         Spacer(modifier = Modifier.height(8.dp))
@@ -139,7 +155,9 @@ fun ExamProgressHeader(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(8.dp),
-            strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
+            strokeCap = androidx.compose.ui.graphics.StrokeCap.Round,
+            trackColor = Color.Gray.copy(alpha = 0.3f),
+            color = Color(0xFF2196F3)
         )
     }
 }
