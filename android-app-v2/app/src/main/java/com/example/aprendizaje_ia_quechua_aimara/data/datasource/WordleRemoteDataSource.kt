@@ -22,7 +22,6 @@ class WordleRemoteDataSource @Inject constructor(
                 when (language) {
                     WordleLanguage.QUECHUA -> it.quechua.isNotBlank()
                     WordleLanguage.AIMARA -> it.aimara.isNotBlank()
-                    WordleLanguage.ESPANOL -> it.espanol.isNotBlank()
                 }
             }
 

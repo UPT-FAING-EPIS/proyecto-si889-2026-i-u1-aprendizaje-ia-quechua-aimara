@@ -101,7 +101,6 @@ fun WordleScreen(
                 val targetStr = when (uiState.language) {
                     WordleLanguage.QUECHUA -> wordleWord.quechua
                     WordleLanguage.AIMARA -> wordleWord.aimara
-                    WordleLanguage.ESPANOL -> wordleWord.espanol
                 }
 
                 WordleGrid(
