@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara
+package com.nescore.aprendizaje_ia_quechua_aimara
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

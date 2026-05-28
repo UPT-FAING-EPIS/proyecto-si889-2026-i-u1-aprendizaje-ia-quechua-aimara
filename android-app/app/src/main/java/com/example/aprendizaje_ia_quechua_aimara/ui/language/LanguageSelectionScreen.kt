@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.language
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.language
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

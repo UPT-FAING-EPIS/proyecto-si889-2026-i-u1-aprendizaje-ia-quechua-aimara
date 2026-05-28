@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.home
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.aprendizaje_ia_quechua_aimara.data.WordleRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.data.WordleRepository
 
 /**
  * WordleScreen: Interfaz de usuario para el juego de adivinanza de palabras.

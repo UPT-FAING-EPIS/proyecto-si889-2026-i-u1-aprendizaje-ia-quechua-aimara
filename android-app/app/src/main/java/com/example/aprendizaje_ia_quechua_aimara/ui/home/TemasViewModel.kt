@@ -1,9 +1,9 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.home
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aprendizaje_ia_quechua_aimara.data.TemasRepository
-import com.example.aprendizaje_ia_quechua_aimara.data.model.Palabra
+import com.nescore.aprendizaje_ia_quechua_aimara.data.TemasRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.data.model.Palabra
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

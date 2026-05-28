@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.data
+package com.nescore.aprendizaje_ia_quechua_aimara.data
 
 import com.google.firebase.functions.FirebaseFunctions
 import kotlinx.coroutines.tasks.await

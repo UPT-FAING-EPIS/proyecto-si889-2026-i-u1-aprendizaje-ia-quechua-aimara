@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aprendizaje_ia_quechua_aimara"
+    namespace = "com.nescore.aprendizaje_ia_quechua_aimara"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.aprendizaje_ia_quechua_aimara"
+        applicationId = "com.nescore.aprendizaje_ia_quechua_aimara"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

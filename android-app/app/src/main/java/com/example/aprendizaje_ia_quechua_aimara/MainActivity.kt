@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara
+package com.nescore.aprendizaje_ia_quechua_aimara
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,14 +13,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.aprendizaje_ia_quechua_aimara.data.AuthRepository
-import com.example.aprendizaje_ia_quechua_aimara.data.TemasRepository
-import com.example.aprendizaje_ia_quechua_aimara.ui.home.DetalleTemaScreen
-import com.example.aprendizaje_ia_quechua_aimara.ui.home.HomeScreen
-import com.example.aprendizaje_ia_quechua_aimara.ui.home.TemasViewModel
-import com.example.aprendizaje_ia_quechua_aimara.ui.login.LoginScreen
-import com.example.aprendizaje_ia_quechua_aimara.ui.login.LoginViewModel
-import com.example.aprendizaje_ia_quechua_aimara.ui.theme.Aprendizaje_IA_Qechua_AimaraTheme
+import com.nescore.aprendizaje_ia_quechua_aimara.data.AuthRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.data.TemasRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.home.DetalleTemaScreen
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.home.HomeScreen
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.home.TemasViewModel
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.login.LoginScreen
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.login.LoginViewModel
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.theme.Aprendizaje_IA_Qechua_AimaraTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
