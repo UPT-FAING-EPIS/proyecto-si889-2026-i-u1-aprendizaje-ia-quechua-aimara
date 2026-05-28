@@ -1,11 +1,11 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.login
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.login
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aprendizaje_ia_quechua_aimara.data.AuthRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.data.AuthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

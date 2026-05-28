@@ -1,9 +1,9 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.home
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aprendizaje_ia_quechua_aimara.data.WordleRepository
-import com.example.aprendizaje_ia_quechua_aimara.data.model.WordleWord
+import com.nescore.aprendizaje_ia_quechua_aimara.data.WordleRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.data.model.WordleWord
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

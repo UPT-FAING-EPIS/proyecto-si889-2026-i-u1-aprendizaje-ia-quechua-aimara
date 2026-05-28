@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.home
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size

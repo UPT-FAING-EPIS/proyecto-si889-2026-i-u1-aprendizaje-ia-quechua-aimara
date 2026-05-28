@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.login
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.login
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

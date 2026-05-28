@@ -1,4 +1,4 @@
-package com.example.aprendizaje_ia_quechua_aimara.ui.home
+package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import android.speech.tts.TextToSpeech
 import androidx.compose.animation.animateColorAsState
@@ -21,7 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.aprendizaje_ia_quechua_aimara.data.model.Palabra
+import com.nescore.aprendizaje_ia_quechua_aimara.data.model.Palabra
 import java.util.Locale
 
 /**

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1017057138451:android:ac150df2807429ce29ece6",
         "android_client_info": {
-          "package_name": "com.example.aprendizaje_ia_quechua_aimara"
+          "package_name": "com.nescore.aprendizaje_ia_quechua_aimara"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "1017057138451-d4ooo6la99mg3fuh68k3danp8dd53oi2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.aprendizaje_ia_quechua_aimara",
+            "package_name": "com.nescore.aprendizaje_ia_quechua_aimara",
             "certificate_hash": "e04f35c56a4ad6e4a82c6d6e308d15519b5e11c5"
           }
         },
