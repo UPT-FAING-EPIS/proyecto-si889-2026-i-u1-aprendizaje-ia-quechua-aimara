@@ -1,7 +1,9 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.domain.model
 
+import androidx.annotation.Keep
 import java.util.UUID
 
+@Keep
 data class ChatMessage(
     val id: String = UUID.randomUUID().toString(),
     val content: String,
@@ -23,10 +25,12 @@ data class ChatMessage(
     }
 }
 
+@Keep
 enum class MessageRole {
     USER, ASSISTANT
 }
 
+@Keep
 data class AIResponse(
     val spanish: String,
     val quechua: String,

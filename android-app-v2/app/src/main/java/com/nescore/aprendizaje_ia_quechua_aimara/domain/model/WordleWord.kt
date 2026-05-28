@@ -1,5 +1,8 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.domain.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class WordleWord(
     val id: String = "",
     val quechua: String = "",

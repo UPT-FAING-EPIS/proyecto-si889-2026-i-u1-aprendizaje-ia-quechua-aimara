@@ -1,9 +1,13 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.data.model
 
+import androidx.annotation.Keep
+
 /**
  * Modelo de datos para una palabra del juego Wordle.
  * Representa la estructura que se encuentra en Firestore.
  */
+
+@Keep
 data class WordleWord(
     val id: String = "",
     val palabra_objetivo: String = "", // La palabra que el usuario debe adivinar (ej: "ALLQU")

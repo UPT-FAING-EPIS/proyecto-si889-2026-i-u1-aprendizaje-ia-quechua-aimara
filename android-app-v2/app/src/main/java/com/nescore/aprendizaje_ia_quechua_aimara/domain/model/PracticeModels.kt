@@ -1,5 +1,8 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.domain.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class Exam(
     val language: String,
     val level: String,
@@ -8,6 +11,7 @@ data class Exam(
     val achievement: Achievement
 )
 
+@Keep
 data class Question(
     val question: String,
     val options: List<String>,
@@ -15,6 +19,7 @@ data class Question(
     val explanation: String
 )
 
+@Keep
 data class Achievement(
     val name: String,
     val description: String,

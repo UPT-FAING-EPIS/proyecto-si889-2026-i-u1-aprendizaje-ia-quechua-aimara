@@ -94,7 +94,6 @@ class WordleViewModel @Inject constructor(
         return when (_uiState.value.language) {
             WordleLanguage.QUECHUA -> word.quechua
             WordleLanguage.AIMARA -> word.aimara
-            WordleLanguage.ESPANOL -> word.espanol
         }.uppercase()
     }
 }
