@@ -12,8 +12,6 @@ class FirebaseChatRepository @Inject constructor(
     override suspend fun getAIResponse(prompt: String): Result<String> {
         return try {
             val data = hashMapOf("prompt" to prompt)
-            
-            // Forzamos la llamada a la región específica donde desplegaste
             val result = functions
                 .getHttpsCallable("getOpenAIResponse")
                 .call(data)
@@ -22,6 +20,29 @@ class FirebaseChatRepository @Inject constructor(
             val responseData = result.data as Map<*, *>
             val text = responseData["response"] as String
             Result.success(text)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getAIAudioResponse(audioPath: String): Result<Map<String, String>> {
+        return try {
+            // Enviamos el path directo para evitar errores de Object not found
+            val data = hashMapOf("audioPath" to audioPath)
+
+            val result = functions
+                .getHttpsCallable("processAudioMessage")
+                .call(data)
+                .await()
+
+            val responseData = result.data as Map<*, *>
+            val resultMap = mutableMapOf<String, String>()
+            responseData.forEach { (key, value) ->
+                if (key is String && value is String) {
+                    resultMap[key] = value
+                }
+            }
+            Result.success(resultMap)
         } catch (e: Exception) {
             Result.failure(e)
         }
