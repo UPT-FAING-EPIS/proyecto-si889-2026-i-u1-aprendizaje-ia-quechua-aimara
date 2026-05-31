@@ -1,5 +1,7 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.ui.chat
 
+import android.content.Context
+import android.net.Uri
 import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -7,22 +9,27 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.ChatMessage
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.MessageRole
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.usecase.GetAIResponseUseCase
-import com.google.firebase.auth.FirebaseAuth
+import com.nescore.aprendizaje_ia_quechua_aimara.domain.repository.ChatRepository
+import com.nescore.aprendizaje_ia_quechua_aimara.util.AudioRecorder
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import java.io.File
+import java.util.UUID
 import javax.inject.Inject
 
 @HiltViewModel
 class ChatViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val getAIResponseUseCase: GetAIResponseUseCase,
-    private val ttsManager: TTSManager,
-    private val sttManager: SpeechToTextManager
+    private val chatRepository: ChatRepository,
+    private val ttsManager: TTSManager
 ) : ViewModel() {
 
     private val _messages = mutableStateListOf<ChatMessage>()
@@ -30,157 +37,126 @@ class ChatViewModel @Inject constructor(
 
     var inputText by mutableStateOf("")
         private set
-
     var isLoading by mutableStateOf(false)
         private set
-
     var isRecording by mutableStateOf(false)
         private set
-
     var sttError by mutableStateOf<String?>(null)
         private set
 
-    private var sttSessionActive = false
-    private var stopRecordingTimeout: Job? = null
+    private val storage = FirebaseStorage.getInstance()
+    private val audioRecorder = AudioRecorder(context)
+    private var currentAudioFile: File? = null
 
-    fun onInputChange(newValue: String) {
-        inputText = newValue
-    }
-
-    fun speak(text: String, lang: String) {
-        ttsManager.speak(text, lang)
-    }
+    fun onInputChange(newValue: String) { inputText = newValue }
+    fun speak(text: String, lang: String) { ttsManager.speak(text, lang) }
 
     fun startRecording() {
-        Log.d("ChatFlow", "--- INICIO GRABACIÓN ---")
-        sttError = null
-        inputText = ""
-        isRecording = true
-        sttSessionActive = true
-        
-        sttManager.startListening(
-            onPartialResult = { result ->
-                if (sttSessionActive) {
-                    Log.d("ChatFlow", "Resultado Parcial: '$result'")
-                    inputText = result
-                }
-            },
-            onFinalResult = { result ->
-                if (sttSessionActive) {
-                    Log.d("ChatFlow", "Resultado Final Recibido: '$result' (Buffer actual: '$inputText')")
-                    stopRecordingTimeout?.cancel()
-                    sttSessionActive = false
-                    isRecording = false
-                    
-                    val textToSend = if (result.isNotBlank()) result else inputText
-                    if (textToSend.isNotBlank()) {
-                        Log.d("ChatFlow", "Procesando envío desde onFinalResult")
-                        sendMessage(textToSend)
-                    } else {
-                        Log.d("ChatFlow", "Resultado vacío, nada que enviar.")
-                    }
-                }
-            },
-            onError = { error ->
-                if (sttSessionActive) {
-                    Log.e("ChatFlow", "Error STT: $error")
-                    stopRecordingTimeout?.cancel()
-                    sttSessionActive = false
-                    isRecording = false
-                    sttError = error
-                    
-                    if (inputText.isNotBlank()) {
-                        Log.d("ChatFlow", "Error detectado, pero enviando buffer parcial: '$inputText'")
-                        sendMessage(inputText)
-                    }
-                }
-            },
-            onReady = { 
-                Log.d("ChatFlow", "Micrófono listo y escuchando...")
-            }
-        )
+        Log.d("ChatFlow", "[STEP 1] Iniciando grabación física")
+        try {
+            val file = File(context.cacheDir, "audio_${UUID.randomUUID()}.m4a")
+            currentAudioFile = file
+            audioRecorder.startRecording(file)
+            isRecording = true
+            sttError = null
+        } catch (e: Exception) {
+            Log.e("ChatFlow", "[ERROR] Fallo al iniciar grabación", e)
+            sttError = "Error de micrófono"
+            isRecording = false
+        }
     }
 
     fun stopRecording() {
         if (isRecording) {
-            Log.d("ChatFlow", "--- DETENCIÓN MANUAL SOLICITADA ---")
-            isRecording = false // UI feedback inmediato
-            sttManager.stopListening()
-            
-            // Timeout de seguridad: Si el sistema no responde en 2.5s, forzamos envío de lo que tengamos
-            stopRecordingTimeout?.cancel()
-            stopRecordingTimeout = viewModelScope.launch {
-                delay(2500)
-                if (sttSessionActive) {
-                    Log.w("ChatFlow", "Timeout de seguridad disparado. Forzando cierre de sesión STT.")
-                    sttSessionActive = false
-                    if (inputText.isNotBlank()) {
-                        Log.d("ChatFlow", "Enviando buffer capturado por timeout: '$inputText'")
-                        sendMessage(inputText)
-                    } else {
-                        Log.d("ChatFlow", "Timeout disparado pero no hay texto capturado.")
-                    }
-                }
+            Log.d("ChatFlow", ">>> DETENCIÓN MANUAL")
+            isRecording = false
+            try {
+                audioRecorder.stopRecording()
+                uploadAndProcessAudio()
+            } catch (e: Exception) {
+                Log.e("ChatFlow", "Fallo al detener micro", e)
             }
         }
     }
 
-    fun sendMessage(textOverride: String? = null) {
-        val text = (textOverride ?: inputText).trim()
-        Log.d("ChatFlow", "Intentando sendMessage. Texto: '$text', isLoading: $isLoading")
+    private fun uploadAndProcessAudio() {
+        val file = currentAudioFile ?: return
+        if (!file.exists() || file.length() == 0L) return
 
-        if (text.isEmpty()) {
-            Log.w("ChatFlow", "Cancelando envío: Texto vacío.")
-            return
-        }
-        
-        if (isLoading) {
-            Log.w("ChatFlow", "Cancelando envío: Ya hay una petición en curso.")
-            return
-        }
-
-        val auth = FirebaseAuth.getInstance()
-        val user = auth.currentUser
-
-        if (user == null) {
-            Log.e("ChatFlow", "Error: Usuario no autenticado.")
-            _messages.add(ChatMessage(content = "Error: No has iniciado sesión.", role = MessageRole.ASSISTANT))
-            return
-        }
-
-        _messages.add(ChatMessage(content = text, role = MessageRole.USER))
-        val currentInput = text
-        inputText = ""
         isLoading = true
-
         viewModelScope.launch {
             try {
-                Log.d("ChatFlow", "Solicitando Token y enviando a UseCase...")
-                user.getIdToken(true).await()
+                val user = FirebaseAuth.getInstance().currentUser ?: run {
+                    Log.e("ChatFlow", "No hay usuario activo")
+                    _messages.add(ChatMessage(content = "Error: Sesión no encontrada.", role = MessageRole.ASSISTANT))
+                    return@launch
+                }
+
+                // 1. Subida a Storage
+                val fileName = "audios/${user.uid}/${UUID.randomUUID()}.m4a"
+                val audioRef = storage.reference.child(fileName)
                 
-                getAIResponseUseCase(currentInput)
-                    .onSuccess { response ->
-                        Log.d("ChatFlow", "IA respondió con éxito.")
-                        _messages.add(ChatMessage(content = response, role = MessageRole.ASSISTANT))
+                Log.d("ChatFlow", "Subiendo audio a: ${audioRef.path}")
+                audioRef.putFile(Uri.fromFile(file)).await()
+
+                // 2. REFRESCAR TOKEN (Solución definitiva al error UNAUTHENTICATED)
+                // Se hace después de la subida por si esta tomó mucho tiempo.
+                Log.d("ChatFlow", "Forzando refresco de token antes de llamar a la Function...")
+                user.getIdToken(true).await()
+
+                // 3. Llamar a la Function enviando el PATH limpio
+                val cleanPath = audioRef.path.removePrefix("/")
+                Log.d("ChatFlow", "Llamando a Backend con Path: $cleanPath")
+
+                chatRepository.getAIAudioResponse(cleanPath)
+                    .onSuccess { data ->
+                        val transcription = data["transcription"] ?: ""
+                        val response = data["response"] ?: ""
+                        val feedback = data["feedback"] ?: ""
+
+                        _messages.add(ChatMessage(content = "(Voz): $transcription", role = MessageRole.USER))
+                        _messages.add(ChatMessage(content = "$response\n\n\n$feedback", role = MessageRole.ASSISTANT))
                     }
                     .onFailure { error ->
-                        Log.e("ChatFlow", "Error en UseCase/API: ${error.message}")
-                        _messages.add(ChatMessage(content = "Error del servidor: ${error.message}", role = MessageRole.ASSISTANT))
+                        Log.e("ChatFlow", "Error en Function", error)
+                        _messages.add(ChatMessage(content = "IA Error: ${error.message}", role = MessageRole.ASSISTANT))
                     }
+
             } catch (e: Exception) {
-                Log.e("ChatFlow", "Excepción en flujo de envío: ${e.message}")
+                Log.e("ChatFlow", "Excepción en flujo", e)
+                _messages.add(ChatMessage(content = "Error de conexión o autenticación: ${e.localizedMessage}", role = MessageRole.ASSISTANT))
+            } finally {
+                isLoading = false
+                if (file.exists()) file.delete()
+            }
+        }
+    }
+
+    fun sendMessage() {
+        val text = inputText.trim()
+        if (text.isEmpty() || isLoading) return
+        val user = FirebaseAuth.getInstance().currentUser ?: return
+        _messages.add(ChatMessage(content = text, role = MessageRole.USER))
+        inputText = ""
+        isLoading = true
+        viewModelScope.launch {
+            try {
+                user.getIdToken(true).await()
+                getAIResponseUseCase(text).onSuccess { response ->
+                    _messages.add(ChatMessage(content = response, role = MessageRole.ASSISTANT))
+                }.onFailure { error ->
+                    _messages.add(ChatMessage(content = "Error del servidor: ${error.message}", role = MessageRole.ASSISTANT))
+                }
+            } catch (e: Exception) {
                 _messages.add(ChatMessage(content = "Error de conexión.", role = MessageRole.ASSISTANT))
             } finally {
                 isLoading = false
-                Log.d("ChatFlow", "--- FIN DEL FLUJO DE MENSAJE ---")
             }
         }
     }
 
     override fun onCleared() {
         super.onCleared()
-        stopRecordingTimeout?.cancel()
         ttsManager.stop()
-        sttManager.destroy()
     }
 }

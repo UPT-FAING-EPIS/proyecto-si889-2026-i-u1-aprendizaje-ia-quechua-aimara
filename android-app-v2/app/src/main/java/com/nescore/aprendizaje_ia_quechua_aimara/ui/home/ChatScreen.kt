@@ -53,7 +53,13 @@ fun ChatScreen(
         }
     }
 
-    Column(modifier = Modifier.fillMaxSize().imePadding()) {
+    // Usamos background para que si hay algún gap por el teclado, sea del color del tema
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .imePadding() // Maneja el teclado
+    ) {
         LazyColumn(
             state = listState,
             modifier = Modifier.weight(1f).fillMaxWidth(),
@@ -191,9 +197,16 @@ fun ChatInputArea(
     isRecording: Boolean,
     enabled: Boolean
 ) {
-    Surface(tonalElevation = 2.dp, modifier = Modifier.fillMaxWidth()) {
+    Surface(
+        tonalElevation = 2.dp, 
+        modifier = Modifier.fillMaxWidth(),
+        color = MaterialTheme.colorScheme.surface // Asegura que el fondo del input no sea transparente
+    ) {
         Row(
-            modifier = Modifier.padding(8.dp).fillMaxWidth(),
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth()
+                .navigationBarsPadding(), // Asegura padding correcto con la barra de sistema
             verticalAlignment = Alignment.CenterVertically
         ) {
             IconButton(
@@ -234,7 +247,11 @@ fun ChatInputArea(
                 },
                 modifier = Modifier.weight(1f),
                 shape = RoundedCornerShape(24.dp),
-                enabled = enabled && !isRecording
+                enabled = enabled && !isRecording,
+                colors = OutlinedTextFieldDefaults.colors(
+                    unfocusedContainerColor = MaterialTheme.colorScheme.surface,
+                    focusedContainerColor = MaterialTheme.colorScheme.surface
+                )
             )
             
             IconButton(

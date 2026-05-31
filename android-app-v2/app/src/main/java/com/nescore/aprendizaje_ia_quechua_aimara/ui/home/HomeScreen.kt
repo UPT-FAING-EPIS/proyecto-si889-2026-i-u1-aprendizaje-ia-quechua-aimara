@@ -1,5 +1,6 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -73,9 +74,15 @@ fun HomeScreen(
                     )
                 }
             }
-        }
+        },
+        containerColor = MaterialTheme.colorScheme.background // Asegura que el fondo del Scaffold no sea negro
     ) { innerPadding ->
-        Surface(modifier = Modifier.padding(innerPadding)) {
+        Surface(
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding),
+            color = MaterialTheme.colorScheme.background
+        ) {
             when (selectedTab) {
                 0 -> TemasScreen(onTemaClick = onTemaClick)
                 1 -> ChatScreen()
