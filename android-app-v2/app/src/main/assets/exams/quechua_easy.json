@@ -1,42 +1,95 @@
-{
-  "language": "Quechua",
-  "level": "Fácil",
-  "examTitle": "Quechua Básico",
-  "questions": [
-    {
-      "question": "¿Cómo se dice 'Hola' en Quechua?",
-      "options": ["Allillanchu", "Waliki", "Jisa", "Inti"],
-      "correctAnswer": "Allillanchu",
-      "explanation": "Allillanchu es el saludo más común en Quechua."
-    },
-    {
-      "question": "¿Qué significa 'Killa'?",
-      "options": ["Sol", "Luna", "Estrella", "Nube"],
-      "correctAnswer": "Luna",
-      "explanation": "Killa significa Luna en Quechua."
-    },
-    {
-      "question": "¿Cómo se dice 'Uno' en Quechua?",
-      "options": ["Iskay", "Pichqa", "Huk", "Tawa"],
-      "correctAnswer": "Huk",
-      "explanation": "Huk es el número uno."
-    },
-    {
-      "question": "¿Qué animal es 'Alqu'?",
-      "options": ["Gato", "Perro", "Vaca", "Llama"],
-      "correctAnswer": "Perro",
-      "explanation": "Alqu significa perro en Quechua."
-    },
-    {
-      "question": "¿De qué color es 'Anqas'?",
-      "options": ["Rojo", "Verde", "Amarillo", "Azul"],
-      "correctAnswer": "Azul",
-      "explanation": "Anqas representa el color azul."
+[
+  {
+    "language": "Quechua",
+    "level": "Fácil",
+    "examTitle": "Saludos y Cortesía",
+    "description": "Aprende los saludos más comunes y frases de cortesía en Quechua.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Buenos días' en Quechua?",
+        "options": ["Allin p'unchay", "Allin ch'isi", "Allin tuta", "Allillanchu"],
+        "correctAnswer": "Allin p'unchay",
+        "explanation": "Allin p'unchay se usa para saludar por la mañana."
+      },
+      {
+        "question": "¿Qué significa 'Añay'?",
+        "options": ["Hola", "Adiós", "Gracias", "Perdón"],
+        "correctAnswer": "Gracias",
+        "explanation": "Añay o Sulpayki se usa para agradecer."
+      },
+      {
+        "question": "¿Cómo respondes a 'Allillanchu?' (¿Estás bien?)",
+        "options": ["Arí, allillanmi", "Mana", "Imaynalla", "Paqarinkama"],
+        "correctAnswer": "Arí, allillanmi",
+        "explanation": "Significa 'Sí, estoy bien'."
+      }
+    ],
+    "achievement": {
+      "name": "Saludo Inca",
+      "description": "Dominaste los saludos básicos.",
+      "shareMessage": "¡Ya sé saludar en Quechua! 🇵🇪"
     }
-  ],
-  "achievement": {
-    "name": "Aprendiz Quechua",
-    "description": "Completaste el examen básico de Quechua.",
-    "shareMessage": "¡Obtuve el logro Aprendiz Quechua en Aprende! 🇵🇪"
+  },
+  {
+    "language": "Quechua",
+    "level": "Fácil",
+    "examTitle": "Los Números del 1 al 5",
+    "description": "Aprende a contar los primeros números en Quechua.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Tres'?",
+        "options": ["Huk", "Iskay", "Kimsa", "Tawa"],
+        "correctAnswer": "Kimsa",
+        "explanation": "Kimsa es el número tres."
+      },
+      {
+        "question": "¿Qué número es 'Iskay'?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": "2",
+        "explanation": "Iskay representa el número dos."
+      },
+      {
+        "question": "¿Cómo se dice 'Cinco'?",
+        "options": ["Tawa", "Pichqa", "Soqta", "Qanchis"],
+        "correctAnswer": "Pichqa",
+        "explanation": "Pichqa es el número cinco."
+      }
+    ],
+    "achievement": {
+      "name": "Contador Imperial",
+      "description": "Aprendiste a contar hasta cinco.",
+      "shareMessage": "¡Ya cuento en Quechua! 1, 2, 3..."
+    }
+  },
+  {
+    "language": "Quechua",
+    "level": "Fácil",
+    "examTitle": "Los Colores Básicos",
+    "description": "Identifica los colores principales en el idioma de los Incas.",
+    "questions": [
+      {
+        "question": "¿Qué color es 'Puka'?",
+        "options": ["Azul", "Verde", "Rojo", "Blanco"],
+        "correctAnswer": "Rojo",
+        "explanation": "Puka significa rojo."
+      },
+      {
+        "question": "¿Cómo se dice 'Blanco'?",
+        "options": ["Yuraq", "Yana", "Q'ello", "Q'omer"],
+        "correctAnswer": "Yuraq",
+        "explanation": "Yuraq es el color blanco."
+      },
+      {
+        "question": "¿Qué color es 'Yana'?",
+        "options": ["Negro", "Amarillo", "Gris", "Marrón"],
+        "correctAnswer": "Negro",
+        "explanation": "Yana significa negro."
+      }
+    ],
+    "achievement": {
+      "name": "Arcoíris Andino",
+      "description": "Conoces los colores básicos en Quechua.",
+      "shareMessage": "¡Aprendí los colores en Quechua! 🌈"
+    }
   }
-}
+]

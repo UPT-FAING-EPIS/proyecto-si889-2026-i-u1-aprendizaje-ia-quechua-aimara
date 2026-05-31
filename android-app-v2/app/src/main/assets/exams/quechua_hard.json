@@ -1,42 +1,95 @@
-{
-  "language": "Quechua",
-  "level": "Difícil",
-  "examTitle": "Quechua Avanzado",
-  "questions": [
-    {
-      "question": "¿Qué significa el sufijo '-sqa' en 'Yachasqani'?",
-      "options": ["Pasado narrativo/experiencial", "Futuro próximo", "Presente continuo", "Obligación"],
-      "correctAnswer": "Pasado narrativo/experiencial",
-      "explanation": "El sufijo -sqa se usa para acciones pasadas de las que no se fue testigo directo o tienen relevancia actual."
-    },
-    {
-      "question": "Traduce: 'Si hubiera sabido, habría venido'",
-      "options": ["Yachayman karqa, hamuyman karqa", "Yachaspayqa hamuymanmi karqa", "Yachayman chayqa hamuymanmi karqa", "Yachaspayqa hamusaqmi karqa"],
-      "correctAnswer": "Yachaspayqa hamuymanmi karqa",
-      "explanation": "Usa la condicional -spa y el potencial -man karqa."
-    },
-    {
-      "question": "¿Qué función cumple el sufijo '-pis'?",
-      "options": ["Inclusión (también)", "Exclusión (solo)", "Pregunta", "Dirección"],
-      "correctAnswer": "Inclusión (también)",
-      "explanation": "'-pis' o '-pas' significa 'también'."
-    },
-    {
-      "question": "Identifica la estructura correcta de cortesía:",
-      "options": ["Ama hina kaspa", "Allinlla kachkani", "Imaynan kanki", "Ripuyña"],
-      "correctAnswer": "Ama hina kaspa",
-      "explanation": "Es la expresión para decir 'por favor' (no siendo así)."
-    },
-    {
-      "question": "¿Cuál es la capital histórica del Tawantinsuyu?",
-      "options": ["Qosqo", "Lima", "Tiwanaku", "Ayacucho"],
-      "correctAnswer": "Qosqo",
-      "explanation": "Qosqo (Cusco) significa 'ombligo del mundo'."
+[
+  {
+    "language": "Quechua",
+    "level": "Difícil",
+    "examTitle": "Gramática Avanzada",
+    "description": "Desafía tus conocimientos con sufijos complejos y estructuras gramaticales avanzadas.",
+    "questions": [
+      {
+        "question": "¿Qué significa el sufijo '-sqa' en 'Yachasqani'?",
+        "options": ["Pasado narrativo", "Futuro próximo", "Presente continuo", "Obligación"],
+        "correctAnswer": "Pasado narrativo",
+        "explanation": "El sufijo -sqa se usa para acciones pasadas de las que no se fue testigo directo."
+      },
+      {
+        "question": "Traduce: 'Si hubiera sabido, habría venido'",
+        "options": ["Yachayman karqa, hamuyman karqa", "Yachaspayqa hamuymanmi karqa", "Yachayman chayqa hamuymanmi karqa", "Yachaspayqa hamusaqmi karqa"],
+        "correctAnswer": "Yachaspayqa hamuymanmi karqa",
+        "explanation": "Usa la condicional -spa y el potencial -man karqa."
+      },
+      {
+        "question": "¿Qué función cumple el sufijo '-pis'?",
+        "options": ["Inclusión (también)", "Exclusión (solo)", "Pregunta", "Dirección"],
+        "correctAnswer": "Inclusión (también)",
+        "explanation": "'-pis' o '-pas' significa 'también'."
+      }
+    ],
+    "achievement": {
+      "name": "Maestro de la Lengua",
+      "description": "Dominas las estructuras más complejas del Quechua.",
+      "shareMessage": "¡Me convertí en Maestro Quechua! 👑"
     }
-  ],
-  "achievement": {
-    "name": "Maestro Quechua",
-    "description": "Nivel avanzado completado. ¡Eres un experto!",
-    "shareMessage": "¡Me convertí en Maestro Quechua en la app Aprende! 👑"
+  },
+  {
+    "language": "Quechua",
+    "level": "Difícil",
+    "examTitle": "Literatura y Cosmovisión",
+    "description": "Explora conceptos profundos de la cultura y pensamiento andino.",
+    "questions": [
+      {
+        "question": "¿Qué concepto define el 'Ayni'?",
+        "options": ["Reciprocidad", "Venganza", "Guerra", "Silencio"],
+        "correctAnswer": "Reciprocidad",
+        "explanation": "El Ayni es el principio de ayuda mutua entre comunidades."
+      },
+      {
+        "question": "¿Quién es el 'Willka'?",
+        "options": ["Un nieto o ser sagrado", "Un enemigo", "Un animal salvaje", "Una piedra común"],
+        "correctAnswer": "Un nieto o ser sagrado",
+        "explanation": "Willka tiene significados de sacralidad y linaje familiar."
+      },
+      {
+        "question": "¿Qué significa 'Pachakuti'?",
+        "options": ["Transformación del mundo", "Fin del tiempo", "Cosecha de maíz", "Lluvia intensa"],
+        "correctAnswer": "Transformación del mundo",
+        "explanation": "Pacha (tiempo/espacio) + Kuti (vuelta/cambio)."
+      }
+    ],
+    "achievement": {
+      "name": "Sabio Andino",
+      "description": "Comprendes la profundidad de la cosmovisión Quechua.",
+      "shareMessage": "¡Exploro la sabiduría de los Andes en Quechua! 🏔️"
+    }
+  },
+  {
+    "language": "Quechua",
+    "level": "Difícil",
+    "examTitle": "Dialectos y Variantes",
+    "description": "Pon a prueba tu oído y comprensión de diferentes variantes del Quechua.",
+    "questions": [
+      {
+        "question": "En la variante Cusco-Collao, ¿cómo se pronuncia la 'q' aspirada?",
+        "options": ["Como una j suave", "Como una k fuerte", "No se pronuncia", "Como una h"],
+        "correctAnswer": "Como una j suave",
+        "explanation": "La 'q' posvelar tiene un sonido distintivo similar a la 'j' pero más atrás."
+      },
+      {
+        "question": "¿Cuál es la principal diferencia entre el Quechua Chanka y el Cusco?",
+        "options": ["El uso de pentavocalismo", "La falta de consonantes glotalizadas", "El vocabulario básico", "La estructura de las oraciones"],
+        "correctAnswer": "La falta de consonantes glotalizadas",
+        "explanation": "El Chanka no usa las consonantes aspiradas ni glotalizadas que tiene el Cusco."
+      },
+      {
+        "question": "¿Qué significa 'Runasimi'?",
+        "options": ["Habla del hombre", "Boca de oro", "Canto de pájaro", "Grito de guerra"],
+        "correctAnswer": "Habla del hombre",
+        "explanation": "Runa (hombre/gente) + Simi (boca/idioma)."
+      }
+    ],
+    "achievement": {
+      "name": "Lingüista del Tawantinsuyu",
+      "description": "Reconoces las sutilezas de las variantes del Quechua.",
+      "shareMessage": "¡Soy un experto en variantes de Quechua! 🗣️"
+    }
   }
-}
+]

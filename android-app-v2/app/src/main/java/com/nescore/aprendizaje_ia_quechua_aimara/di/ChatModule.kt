@@ -4,6 +4,7 @@ import android.content.Context
 import com.nescore.aprendizaje_ia_quechua_aimara.data.repository.FirebaseChatRepository
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.repository.ChatRepository
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.chat.TTSManager
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.chat.SpeechToTextManager
 import com.google.firebase.FirebaseApp
 import com.google.firebase.functions.FirebaseFunctions
 import dagger.Module
@@ -32,4 +33,8 @@ object ChatModule {
     @Provides
     @Singleton
     fun provideTTSManager(@ApplicationContext context: Context): TTSManager = TTSManager(context)
+
+    @Provides
+    @Singleton
+    fun provideSpeechToTextManager(@ApplicationContext context: Context): SpeechToTextManager = SpeechToTextManager(context)
 }

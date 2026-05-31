@@ -50,12 +50,12 @@ class PracticeViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
             
-            // Reutilizamos el repositorio para obtener el examen del nivel seleccionado
-            val exam = repository.getExamByLevel(currentLanguage, currentLevel)
+            // Obtenemos la lista de exámenes para el nivel seleccionado
+            val exams = repository.getExamsByLevel(currentLanguage, currentLevel)
             
             _uiState.update { 
                 it.copy(
-                    practices = if (exam != null) listOf(exam) else emptyList(),
+                    practices = exams,
                     isLoading = false
                 )
             }

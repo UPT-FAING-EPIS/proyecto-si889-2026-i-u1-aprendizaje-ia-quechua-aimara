@@ -6,6 +6,7 @@ import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Exam
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Question
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.repository.PracticeRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
+import org.json.JSONArray
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -13,66 +14,75 @@ class PracticeRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : PracticeRepository {
 
-    override suspend fun getExams(language: String): List<Exam> {
-        val levels = listOf("easy", "intermediate", "hard")
-        return levels.mapNotNull { level ->
-            loadExamFromAssets(language.lowercase(), level)
-        }
+    override suspend fun getExamsByLevel(language: String, level: String): List<Exam> {
+        val levelKey = mapLevelToKey(level)
+        return loadExamsFromAssets(language.lowercase(), levelKey)
     }
 
-    override suspend fun getExamByLevel(language: String, level: String): Exam? {
-        val levelKey = when (level.lowercase()) {
-            "fácil" -> "easy"
-            "normal", "intermedio" -> "intermediate"
-            "difícil" -> "hard"
+    override suspend fun getExamByTitle(language: String, level: String, title: String): Exam? {
+        val levelKey = mapLevelToKey(level)
+        return loadExamsFromAssets(language.lowercase(), levelKey).find { it.examTitle == title }
+    }
+
+    private fun mapLevelToKey(level: String): String {
+        return when (level.lowercase()) {
+            "fácil", "easy" -> "easy"
+            "normal", "intermedio", "intermediate" -> "intermediate"
+            "difícil", "hard" -> "hard"
             else -> level.lowercase()
         }
-        return loadExamFromAssets(language.lowercase(), levelKey)
     }
 
-    private fun loadExamFromAssets(language: String, level: String): Exam? {
-        return try {
+    private fun loadExamsFromAssets(language: String, level: String): List<Exam> {
+        val exams = mutableListOf<Exam>()
+        try {
             val fileName = "${language}_$level.json"
             val jsonString = context.assets.open("exams/$fileName").bufferedReader().use { it.readText() }
-            val jsonObject = JSONObject(jsonString)
+            val jsonArray = JSONArray(jsonString)
             
-            val questionsArray = jsonObject.getJSONArray("questions")
-            val questions = mutableListOf<Question>()
-            for (i in 0 until questionsArray.length()) {
-                val qObj = questionsArray.getJSONObject(i)
-                val optionsArray = qObj.getJSONArray("options")
-                val options = mutableListOf<String>()
-                for (j in 0 until optionsArray.length()) {
-                    options.add(optionsArray.getString(j))
+            for (i in 0 until jsonArray.length()) {
+                val jsonObject = jsonArray.getJSONObject(i)
+                
+                val questionsArray = jsonObject.getJSONArray("questions")
+                val questions = mutableListOf<Question>()
+                for (j in 0 until questionsArray.length()) {
+                    val qObj = questionsArray.getJSONObject(j)
+                    val optionsArray = qObj.getJSONArray("options")
+                    val options = mutableListOf<String>()
+                    for (k in 0 until optionsArray.length()) {
+                        options.add(optionsArray.getString(k))
+                    }
+                    questions.add(
+                        Question(
+                            question = qObj.getString("question"),
+                            options = options,
+                            correctAnswer = qObj.getString("correctAnswer"),
+                            explanation = qObj.optString("explanation", "")
+                        )
+                    )
                 }
-                questions.add(
-                    Question(
-                        question = qObj.getString("question"),
-                        options = options,
-                        correctAnswer = qObj.getString("correctAnswer"),
-                        explanation = qObj.getString("explanation")
+                
+                val achObj = jsonObject.getJSONObject("achievement")
+                val achievement = Achievement(
+                    name = achObj.getString("name"),
+                    description = achObj.getString("description"),
+                    shareMessage = achObj.getString("shareMessage")
+                )
+                
+                exams.add(
+                    Exam(
+                        language = jsonObject.getString("language"),
+                        level = jsonObject.getString("level"),
+                        examTitle = jsonObject.getString("examTitle"),
+                        description = jsonObject.optString("description", ""),
+                        questions = questions,
+                        achievement = achievement
                     )
                 )
             }
-            
-            val achObj = jsonObject.getJSONObject("achievement")
-            val achievement = Achievement(
-                name = achObj.getString("name"),
-                description = achObj.getString("description"),
-                shareMessage = achObj.getString("shareMessage")
-            )
-            
-            Exam(
-                language = jsonObject.getString("language"),
-                level = jsonObject.getString("level"),
-                examTitle = jsonObject.getString("examTitle"),
-                description = jsonObject.optString("description", "Practica tus habilidades en $language"),
-                questions = questions,
-                achievement = achievement
-            )
         } catch (e: Exception) {
             e.printStackTrace()
-            null
         }
+        return exams
     }
 }
