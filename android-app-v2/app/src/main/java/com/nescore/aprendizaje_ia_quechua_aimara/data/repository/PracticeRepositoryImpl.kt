@@ -23,7 +23,7 @@ class PracticeRepositoryImpl @Inject constructor(
     override suspend fun getExamByLevel(language: String, level: String): Exam? {
         val levelKey = when (level.lowercase()) {
             "fácil" -> "easy"
-            "intermedio" -> "intermediate"
+            "normal", "intermedio" -> "intermediate"
             "difícil" -> "hard"
             else -> level.lowercase()
         }
@@ -66,6 +66,7 @@ class PracticeRepositoryImpl @Inject constructor(
                 language = jsonObject.getString("language"),
                 level = jsonObject.getString("level"),
                 examTitle = jsonObject.getString("examTitle"),
+                description = jsonObject.optString("description", "Practica tus habilidades en $language"),
                 questions = questions,
                 achievement = achievement
             )
