@@ -1,42 +1,95 @@
-{
-  "language": "Aimara",
-  "level": "Intermedio",
-  "examTitle": "Aimara Intermedio",
-  "questions": [
-    {
-      "question": "¿Cómo se dice 'Yo trabajo' en Aimara?",
-      "options": ["Nayax irnaqt'wa", "Jumax irnaqt'wa", "Jupax irnaqt'wa", "Nayax manq'wa"],
-      "correctAnswer": "Nayax irnaqt'wa",
-      "explanation": "Irnaqaña es trabajar. El sufijo -wa indica afirmación en primera persona."
-    },
-    {
-      "question": "¿Qué significa 'Kawkinkaskis'?",
-      "options": ["¿Quién es?", "¿Cómo estás?", "¿Dónde está?", "¿A dónde va?"],
-      "correctAnswer": "¿Dónde está?",
-      "explanation": "Kawki (dónde) - n (en) - kaski (está) - s (pregunta)."
-    },
-    {
-      "question": "Traduce: 'Mi hermano es alto'",
-      "options": ["Jilaqi jach'awa", "Jilax jach'awa", "Kullakax jach'awa", "Jilax jisk'awa"],
-      "correctAnswer": "Jilax jach'awa",
-      "explanation": "Jila es hermano, -x es posesivo/tópico, jach'a es grande/alto."
-    },
-    {
-      "question": "¿Cómo se dice 'Mañana vendré'?",
-      "options": ["Qharür jutäwa", "Qharür jutani", "Wasür jutäwa", "Qharür jutwa"],
-      "correctAnswer": "Qharür jutäwa",
-      "explanation": "Qharüru es mañana y jutäwa es vendré (futuro)."
-    },
-    {
-      "question": "Relaciona: 'Yatiqaña uta'",
-      "options": ["Casa de comida", "Casa de estudio (Escuela)", "Casa grande", "Casa de baile"],
-      "correctAnswer": "Casa de estudio (Escuela)",
-      "explanation": "Yatiqaña (aprender/estudiar) uta (casa)."
+[
+  {
+    "language": "Aimara",
+    "level": "Intermedio",
+    "examTitle": "Construcción de Frases",
+    "description": "Practica la estructura de oraciones básicas en Aimara.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Yo estoy comiendo'?",
+        "options": ["Nayax manq'askatwa", "Nayax sarnaqaskatwa", "Nayax ikiskatwa", "Nayax anataskatwa"],
+        "correctAnswer": "Nayax manq'askatwa",
+        "explanation": "Nayax (Yo) + manq'a (comer) + -ska (progresivo) + -twa (marcador de oración)."
+      },
+      {
+        "question": "¿Qué significa 'Kawkitsa jutta?'",
+        "options": ["¿Cómo estás?", "¿De dónde vienes?", "¿A dónde vas?", "¿Quién eres?"],
+        "correctAnswer": "¿De dónde vienes?",
+        "explanation": "Kawki (dónde) + -tsa (desde) + jutta (vienes)."
+      },
+      {
+        "question": "¿Cómo se dice 'Mañana trabajaré'?",
+        "options": ["Qharüruw irnaqä", "Jichhüruw irnaqtwa", "Masürurüw irnaqayäta", "Qharüruw sarnaqä"],
+        "correctAnswer": "Qharüruw irnaqä",
+        "explanation": "Qharüru (mañana) + irnaqa (trabajar) + -ä (futuro)."
+      }
+    ],
+    "achievement": {
+      "name": "Hablante del Sol",
+      "description": "Puedes describir tus acciones cotidianas.",
+      "shareMessage": "¡Ya construyo frases en Aimara! ☀️"
     }
-  ],
-  "achievement": {
-    "name": "Explorador Aimara",
-    "description": "Dominas frases básicas en Aimara.",
-    "shareMessage": "¡Ya soy Explorador Aimara en la app Aprende! 🇧🇴"
+  },
+  {
+    "language": "Aimara",
+    "level": "Intermedio",
+    "examTitle": "La Familia (Wila Masi)",
+    "description": "Vocabulario para identificar a los parientes en Aimara.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Padre'?",
+        "options": ["Awki", "Tayka", "Jila", "Cullaca"],
+        "correctAnswer": "Awki",
+        "explanation": "Awki es padre, Tayka es madre."
+      },
+      {
+        "question": "¿Qué significa 'Cullaca'?",
+        "options": ["Hermano", "Hermana", "Tía", "Abuela"],
+        "correctAnswer": "Hermana",
+        "explanation": "Cullaca es hermana, Jila es hermano."
+      },
+      {
+        "question": "¿Cómo se dice 'Abuelo'?",
+        "options": ["Achachila", "Awicha", "Ipa", "Anu"],
+        "correctAnswer": "Achachila",
+        "explanation": "Achachila es abuelo, Awicha es abuela."
+      }
+    ],
+    "achievement": {
+      "name": "Raíz Aimara",
+      "description": "Conoces los nombres de los miembros de la familia.",
+      "shareMessage": "¡Presento a mi familia en Aimara! 👨‍👩‍👧‍👦"
+    }
+  },
+  {
+    "language": "Aimara",
+    "level": "Intermedio",
+    "examTitle": "Animales del Altiplano",
+    "description": "Aprende los nombres de los animales más comunes de la región.",
+    "questions": [
+      {
+        "question": "¿Qué animal es 'Anu'?",
+        "options": ["Gato", "Llama", "Perro", "Zorro"],
+        "correctAnswer": "Perro",
+        "explanation": "Anu significa perro."
+      },
+      {
+        "question": "¿Cómo se dice 'Gato'?",
+        "options": ["Phisi", "Anu", "Qamaqi", "K'ili"],
+        "correctAnswer": "Phisi",
+        "explanation": "Phisi es gato."
+      },
+      {
+        "question": "¿Qué animal es 'Tiwanacu'?",
+        "options": ["Cóndor", "Vicuña", "Llama", "Ninguna de las anteriores"],
+        "correctAnswer": "Ninguna de las anteriores",
+        "explanation": "Tiwanaku es un lugar arqueológico, no un animal. Karwa es llama."
+      }
+    ],
+    "achievement": {
+      "name": "Guardián de la Fauna",
+      "description": "Reconoces los animales en Aimara.",
+      "shareMessage": "¡Conozco los animales del Altiplano! 🦙"
+    }
   }
-}
+]

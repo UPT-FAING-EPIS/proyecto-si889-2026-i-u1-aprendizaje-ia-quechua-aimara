@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetExamByLevelUseCase @Inject constructor(
     private val repository: PracticeRepository
 ) {
-    suspend operator fun invoke(language: String, level: String): Exam? {
-        return repository.getExamByLevel(language, level)
+    suspend operator fun invoke(language: String, level: String): List<Exam> {
+        return repository.getExamsByLevel(language, level)
     }
 }

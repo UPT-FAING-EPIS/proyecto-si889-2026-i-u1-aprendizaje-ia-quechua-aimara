@@ -1,42 +1,95 @@
-{
-  "language": "Aimara",
-  "level": "Difícil",
-  "examTitle": "Aimara Avanzado",
-  "questions": [
-    {
-      "question": "¿Qué función cumple el sufijo '-pach'?",
-      "options": ["Incertidumbre o probabilidad", "Certeza absoluta", "Dirección", "Pasado lejano"],
-      "correctAnswer": "Incertidumbre o probabilidad",
-      "explanation": "El sufijo -pacha expresa una suposición o probabilidad en el discurso."
-    },
-    {
-      "question": "Traduce: 'Aunque llueva, iré'",
-      "options": ["Jallkipas saräwa", "Jalluyas saräwa", "Jallu sasina saräwa", "Jallu saraña"],
-      "correctAnswer": "Jallkipas saräwa",
-      "explanation": "Usa la estructura concesiva con el sufijo -pas."
-    },
-    {
-      "question": "¿Qué significa 'Arunakasax markasawa'?",
-      "options": ["Nuestras lenguas son nuestro pueblo", "Mi lengua es mi casa", "Hablar es vivir", "Pueblo que habla"],
-      "correctAnswer": "Nuestras lenguas son nuestro pueblo",
-      "explanation": "Aru (lengua/voz) -naka (plural) -sa (nuestro) -x (tópico) marka (pueblo) -sa (nuestro) -wa (afirmación)."
-    },
-    {
-      "question": "Identifica el marcador de cortesía en Aimara:",
-      "options": ["Mirä", "Aruskipt'asipxañani", "Jakisiñkama", "Waliki"],
-      "correctAnswer": "Mirä",
-      "explanation": "Mirä se usa como un atenuador de cortesía, similar a 'por favor' en peticiones."
-    },
-    {
-      "question": "¿Qué significa el concepto de 'Suma Qamaña'?",
-      "options": ["Vivir Bien / Buen Vivir", "Pueblo grande", "Trabajo duro", "Fiesta del sol"],
-      "correctAnswer": "Vivir Bien / Buen Vivir",
-      "explanation": "Es un paradigma de vida basado en la armonía con la comunidad y la naturaleza."
+[
+  {
+    "language": "Aimara",
+    "level": "Difícil",
+    "examTitle": "Morfología y Sufijos",
+    "description": "Prueba tu conocimiento sobre los sufijos más complejos de la lengua Aimara.",
+    "questions": [
+      {
+        "question": "¿Qué función cumple el sufijo '-pach'?",
+        "options": ["Incertidumbre o probabilidad", "Certeza absoluta", "Dirección", "Pasado lejano"],
+        "correctAnswer": "Incertidumbre o probabilidad",
+        "explanation": "El sufijo -pacha expresa una suposición o probabilidad en el discurso."
+      },
+      {
+        "question": "Traduce: 'Aunque llueva, iré'",
+        "options": ["Jallkipas saräwa", "Jalluyas saräwa", "Jallu sasina saräwa", "Jallu saraña"],
+        "correctAnswer": "Jallkipas saräwa",
+        "explanation": "Usa la estructura concesiva con el sufijo -pas."
+      },
+      {
+        "question": "¿Qué significa el sufijo '-xa' en el sistema de tópicos?",
+        "options": ["Marca el sujeto de la oración", "Marca el tiempo pasado", "Atenúa la oración", "No tiene significado"],
+        "correctAnswer": "Marca el sujeto de la oración",
+        "explanation": "El sufijo -xa es un atenuador o marcador de tópico muy común en Aimara."
+      }
+    ],
+    "achievement": {
+      "name": "Gramático del Altiplano",
+      "description": "Dominas los sufijos complejos del Aimara.",
+      "shareMessage": "¡Soy un experto en gramática Aimara! 📚"
     }
-  ],
-  "achievement": {
-    "name": "Maestro Aimara",
-    "description": "Nivel avanzado completado. ¡Jallalla!",
-    "shareMessage": "¡Alcancé el rango de Maestro Aimara en la app Aprende! 🇧🇴👑"
+  },
+  {
+    "language": "Aimara",
+    "level": "Difícil",
+    "examTitle": "Cosmovisión: Suma Qamaña",
+    "description": "Conceptos avanzados sobre el pensamiento y la vida Aimara.",
+    "questions": [
+      {
+        "question": "¿Qué significa el concepto de 'Suma Qamaña'?",
+        "options": ["Vivir Bien / Buen Vivir", "Pueblo grande", "Trabajo duro", "Fiesta del sol"],
+        "correctAnswer": "Vivir Bien / Buen Vivir",
+        "explanation": "Es un paradigma de vida basado en la armonía con la comunidad y la naturaleza."
+      },
+      {
+        "question": "¿Qué representa la 'Wiphala'?",
+        "options": ["La unidad de los pueblos", "Solo una bandera de guerra", "Un dibujo decorativo", "El fin del imperio"],
+        "correctAnswer": "La unidad de los pueblos",
+        "explanation": "La Wiphala simboliza la igualdad, armonía y unidad de los pueblos andinos."
+      },
+      {
+        "question": "¿Qué significa 'Arunakasax markasawa'?",
+        "options": ["Nuestras lenguas son nuestro pueblo", "Mi lengua es mi casa", "Hablar es vivir", "Pueblo que habla"],
+        "correctAnswer": "Nuestras lenguas son nuestro pueblo",
+        "explanation": "Refleja la importancia del idioma para la identidad cultural."
+      }
+    ],
+    "achievement": {
+      "name": "Sabio de los Andes",
+      "description": "Comprendes profundamente el pensamiento Aimara.",
+      "shareMessage": "¡Exploro la sabiduría Aimara! 🏔️"
+    }
+  },
+  {
+    "language": "Aimara",
+    "level": "Difícil",
+    "examTitle": "Sintaxis y Traducción",
+    "description": "Desafíos de traducción y estructura de oraciones complejas.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'No quiero ir'?",
+        "options": ["Janiw sarañ munkti", "Nayax sarnaqä", "Janiw munkti", "Sarañ munatwa"],
+        "correctAnswer": "Janiw sarañ munkti",
+        "explanation": "Janiw (No) + saraña (ir) + mun- (querer) + -kti (negativo)."
+      },
+      {
+        "question": "Traduce: 'Él/Ella está trabajando en el campo'",
+        "options": ["Jupax yapun irnaqaskiwa", "Nayax yapun kani", "Jupax irnaqä", "Markan irnaqasktatwa"],
+        "correctAnswer": "Jupax yapun irnaqaskiwa",
+        "explanation": "Jupax (Él/Ella) + yapu (campo) + -n (en) + irnaqa (trabajar) + -ski (progresivo) + -wa (afirmativo)."
+      },
+      {
+        "question": "¿Qué significa 'Aruskipt'asipxañani'?",
+        "options": ["Hablaremos entre nosotros", "Vamos a comer", "Hasta mañana", "Muchas gracias"],
+        "correctAnswer": "Hablaremos entre nosotros",
+        "explanation": "Es el lema de la lengua Aimara que invita al diálogo."
+      }
+    ],
+    "achievement": {
+      "name": "Traductor Real",
+      "description": "Puedes traducir oraciones complejas con precisión.",
+      "shareMessage": "¡Traduzco Aimara con maestría! ✍️"
+    }
   }
-}
+]

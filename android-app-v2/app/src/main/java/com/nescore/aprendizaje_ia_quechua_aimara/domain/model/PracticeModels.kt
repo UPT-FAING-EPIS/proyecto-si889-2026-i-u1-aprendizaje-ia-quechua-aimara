@@ -7,6 +7,7 @@ data class Exam(
     val language: String,
     val level: String,
     val examTitle: String,
+    val description: String = "",
     val questions: List<Question>,
     val achievement: Achievement
 )

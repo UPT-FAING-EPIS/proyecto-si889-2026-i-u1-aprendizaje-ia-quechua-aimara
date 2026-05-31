@@ -1,42 +1,95 @@
-{
-  "language": "Aimara",
-  "level": "Fácil",
-  "examTitle": "Aimara Básico",
-  "questions": [
-    {
-      "question": "¿Cómo se dice 'Hola' en Aimara?",
-      "options": ["Kamisaraki", "Waliki", "Jisa", "Inti"],
-      "correctAnswer": "Kamisaraki",
-      "explanation": "Kamisaraki es el saludo básico en Aimara."
-    },
-    {
-      "question": "¿Qué significa 'Quta'?",
-      "options": ["Cerro", "Río", "Lago", "Mar"],
-      "correctAnswer": "Lago",
-      "explanation": "Quta significa Lago en Aimara (ej. Titiqaqa Quta)."
-    },
-    {
-      "question": "¿Cómo se dice 'Uno' en Aimara?",
-      "options": ["Maya", "Paya", "Quimsa", "Pusi"],
-      "correctAnswer": "Maya",
-      "explanation": "Maya es el número uno en Aimara."
-    },
-    {
-      "question": "¿Qué animal es 'Anu'?",
-      "options": ["Gato", "Llama", "Perro", "Oveja"],
-      "correctAnswer": "Perro",
-      "explanation": "Anu significa perro en Aimara."
-    },
-    {
-      "question": "¿Qué color es 'Ch'uxña'?",
-      "options": ["Rojo", "Verde", "Blanco", "Negro"],
-      "correctAnswer": "Verde",
-      "explanation": "Ch'uxña representa el color verde."
+[
+  {
+    "language": "Aimara",
+    "level": "Fácil",
+    "examTitle": "Saludos Iniciales",
+    "description": "Aprende los saludos básicos en la lengua del Altiplano.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Hola' (A todos) en Aimara?",
+        "options": ["Kamisaki", "Aski jayp'u", "Aruskisipañani", "Yuspajara"],
+        "correctAnswer": "Kamisaki",
+        "explanation": "Kamisaki es el saludo general en Aimara."
+      },
+      {
+        "question": "¿Qué significa 'Jisa'?",
+        "options": ["No", "Tal vez", "Sí", "Mañana"],
+        "correctAnswer": "Sí",
+        "explanation": "Jisa significa sí, Jani significa no."
+      },
+      {
+        "question": "¿Cómo se dice 'Gracias'?",
+        "options": ["Waliki", "Yuspajara", "Saraki", "Kamisaki"],
+        "correctAnswer": "Yuspajara",
+        "explanation": "Yuspajara es un préstamo adaptado para dar las gracias."
+      }
+    ],
+    "achievement": {
+      "name": "Voz del Altiplano",
+      "description": "Dominaste los saludos básicos en Aimara.",
+      "shareMessage": "¡Ya sé saludar en Aimara! 🇧🇴"
     }
-  ],
-  "achievement": {
-    "name": "Aprendiz Aimara",
-    "description": "Completaste el examen básico de Aimara.",
-    "shareMessage": "¡Obtuve el logro Aprendiz Aimara en Aprende! 🇧🇴"
+  },
+  {
+    "language": "Aimara",
+    "level": "Fácil",
+    "examTitle": "Números del 1 al 5",
+    "description": "Practica los primeros números en Aimara.",
+    "questions": [
+      {
+        "question": "¿Cómo se dice 'Uno'?",
+        "options": ["Maya", "Paya", "Quimsa", "Pusi"],
+        "correctAnswer": "Maya",
+        "explanation": "Maya es el número uno."
+      },
+      {
+        "question": "¿Qué número es 'Pusi'?",
+        "options": ["2", "3", "4", "5"],
+        "correctAnswer": "4",
+        "explanation": "Pusi representa el número cuatro."
+      },
+      {
+        "question": "¿Cómo se dice 'Tres'?",
+        "options": ["Maya", "Quimsa", "Phisca", "Paya"],
+        "correctAnswer": "Quimsa",
+        "explanation": "Quimsa es el número tres."
+      }
+    ],
+    "achievement": {
+      "name": "Contador Aimara",
+      "description": "Aprendiste a contar hasta cinco.",
+      "shareMessage": "¡Cuento en Aimara! Maya, Paya, Quimsa..."
+    }
+  },
+  {
+    "language": "Aimara",
+    "level": "Fácil",
+    "examTitle": "Colores en Aimara",
+    "description": "Identifica los colores de la Wiphala.",
+    "questions": [
+      {
+        "question": "¿Qué color es 'Wila'?",
+        "options": ["Azul", "Blanco", "Rojo", "Verde"],
+        "correctAnswer": "Rojo",
+        "explanation": "Wila significa rojo."
+      },
+      {
+        "question": "¿Cómo se dice 'Blanco'?",
+        "options": ["Janq'u", "Ch'iyara", "Q'illu", "Ch'uxña"],
+        "correctAnswer": "Janq'u",
+        "explanation": "Janq'u es el color blanco."
+      },
+      {
+        "question": "¿Qué color es 'Ch'iyara'?",
+        "options": ["Negro", "Amarillo", "Gris", "Naranja"],
+        "correctAnswer": "Negro",
+        "explanation": "Ch'iyara significa negro."
+      }
+    ],
+    "achievement": {
+      "name": "Colorido Aimara",
+      "description": "Identificas los colores básicos.",
+      "shareMessage": "¡Conozco los colores en Aimara! 🎨"
+    }
   }
-}
+]

@@ -26,7 +26,7 @@ import com.nescore.aprendizaje_ia_quechua_aimara.ui.home.HomeScreen
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.home.WordleScreen
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.login.LoginScreen
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.practice.ExamScreen
-import com.nescore.aprendizaje_ia_quechua_aimara.ui.practice.PracticeLevelsScreen
+import com.nescore.aprendizaje_ia_quechua_aimara.ui.practice.PracticeListScreen
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.practice.ResultScreen
 import com.nescore.aprendizaje_ia_quechua_aimara.ui.theme.Aprendizaje_IA_Qechua_AimaraTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,7 +42,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             Aprendizaje_IA_Qechua_AimaraTheme {
                 val navController = rememberNavController()
-                val context = LocalContext.current
                 val rootView = LocalView.current
                 var selectedLanguage by remember { mutableStateOf("Quechua") }
 
@@ -74,7 +73,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             },
                             onPracticeCategorySelected = { language ->
-                                navController.navigate("practice_levels/$language")
+                                navController.navigate("practice_list/$language")
                             }
                         )
                     }
@@ -97,12 +96,12 @@ class MainActivity : ComponentActivity() {
                     }
 
                     // Rutas de Prácticas
-                    composable("practice_levels/{language}") { backStackEntry ->
+                    composable("practice_list/{language}") { backStackEntry ->
                         val language = backStackEntry.arguments?.getString("language") ?: ""
-                        PracticeLevelsScreen(
+                        PracticeListScreen(
                             language = language,
-                            onLevelSelected = { level ->
-                                navController.navigate("practice_exam/$language/$level")
+                            onPracticeSelected = { lang, level ->
+                                navController.navigate("practice_exam/$lang/$level")
                             },
                             onBack = { navController.popBackStack() }
                         )
@@ -117,7 +116,7 @@ class MainActivity : ComponentActivity() {
                             onBack = { navController.popBackStack() },
                             onFinish = { score, total, achievement, shareMessage ->
                                 navController.navigate("practice_results/$score/$total/$achievement/$shareMessage") {
-                                    popUpTo("practice_exam/$language/$level") { inclusive = true }
+                                    popUpTo("practice_list/$language") { inclusive = false }
                                 }
                             }
                         )

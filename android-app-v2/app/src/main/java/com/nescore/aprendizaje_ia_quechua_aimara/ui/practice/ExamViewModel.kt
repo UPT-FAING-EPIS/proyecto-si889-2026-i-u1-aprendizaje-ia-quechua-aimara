@@ -34,9 +34,9 @@ class ExamViewModel @Inject constructor(
     fun loadExam(language: String, level: String) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            val exam = getExamByLevelUseCase(language, level)
-            if (exam != null) {
-                _uiState.update { it.copy(exam = exam, isLoading = false) }
+            val exams = getExamByLevelUseCase(language, level)
+            if (exams.isNotEmpty()) {
+                _uiState.update { it.copy(exam = exams.first(), isLoading = false) }
             } else {
                 _uiState.update { it.copy(isLoading = false, error = "No se pudo cargar el examen") }
             }
