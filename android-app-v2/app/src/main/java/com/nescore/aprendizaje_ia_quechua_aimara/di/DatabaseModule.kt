@@ -30,6 +30,7 @@ object DatabaseModule {
     @Provides
     fun provideTemaDao(database: AppDatabase): TemaDao = database.temaDao()
 
+
     @Provides
     fun provideWordleDao(database: AppDatabase): WordleDao = database.wordleDao()
 
