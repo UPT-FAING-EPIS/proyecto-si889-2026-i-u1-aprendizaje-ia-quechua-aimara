@@ -1,12 +1,19 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.data.repository
 
+import com.nescore.aprendizaje_ia_quechua_aimara.data.local.dao.ChatDao
+import com.nescore.aprendizaje_ia_quechua_aimara.data.local.entity.toDomain
+import com.nescore.aprendizaje_ia_quechua_aimara.data.local.entity.toEntity
+import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.ChatMessage
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.repository.ChatRepository
 import com.google.firebase.functions.FirebaseFunctions
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class FirebaseChatRepository @Inject constructor(
-    private val functions: FirebaseFunctions
+    private val functions: FirebaseFunctions,
+    private val chatDao: ChatDao
 ) : ChatRepository {
 
     override suspend fun getAIResponse(prompt: String): Result<String> {
@@ -27,7 +34,6 @@ class FirebaseChatRepository @Inject constructor(
 
     override suspend fun getAIAudioResponse(audioPath: String): Result<Map<String, String>> {
         return try {
-            // Enviamos el path directo para evitar errores de Object not found
             val data = hashMapOf("audioPath" to audioPath)
 
             val result = functions
@@ -46,5 +52,23 @@ class FirebaseChatRepository @Inject constructor(
         } catch (e: Exception) {
             Result.failure(e)
         }
+    }
+
+    override fun getMessages(): Flow<List<ChatMessage>> {
+        return chatDao.getAllMessages().map { entities ->
+            entities.map { it.toDomain() }
+        }
+    }
+
+    override suspend fun saveMessage(message: ChatMessage) {
+        chatDao.insertMessage(message.toEntity())
+    }
+
+    override suspend fun saveMessages(messages: List<ChatMessage>) {
+        chatDao.insertMessages(messages.map { it.toEntity() })
+    }
+
+    override suspend fun clearChat() {
+        chatDao.deleteAllMessages()
     }
 }
