@@ -1,7 +1,5 @@
 <center>
 
-[comment]: <img src="./media/media/image1.png" style="width:1.088in;height:1.46256in" alt="escudo.png" />
-
 ![./media/media/image1.png](./media/logo-upt.png)
 
 **UNIVERSIDAD PRIVADA DE TACNA**
@@ -21,7 +19,7 @@ Integrantes:
 ***Mamani Estaña, Junior (2022075474)***
 ***Serrano Ibañez, Nestor Juice Yomar (2022075474)***
 
-**Tacna – Perú**
+**Tacna - Perú**
 
 ***2026***
 
@@ -106,10 +104,10 @@ Integrantes:
 1. <span id="_Toc52661346" class="anchor"></span>**Introducción**
 
     **1.1 Propósito**
-    [cite_start]Desarrollar un sistema móvil con inteligencia artificial que permita mejorar el aprendizaje de los idiomas quechua y aimara mediante una plataforma interactiva, accesible y personalizada[cite: 655]. [cite_start]Se busca optimizar el proceso incorporando ejercicios dinámicos, chatbot educativo y reconocimiento de voz para fomentar la preservación de lenguas originarias[cite: 656].
+    [cite_start]Desarrollar una aplicación móvil interactiva que facilite el aprendizaje de quechua y aimara de forma personalizada[cite: 655]. [cite_start]Para lograrlo, la plataforma integrará ejercicios prácticos, un chatbot asistente y herramientas de reconocimiento de voz que ayuden a conservar y difundir estas lenguas originarias[cite: 656].
 
     **1.2 Alcance**
-    [cite_start]El sistema incluye módulos estructurados de aprendizaje, ejercicios interactivos, evaluaciones automáticas, seguimiento del progreso, chatbot con IA y reconocimiento de voz para pronunciación[cite: 658]. [cite_start]Ofrece contenidos personalizados según el nivel de conocimiento de cada usuario[cite: 659].
+    [cite_start]La aplicación comprende lecciones estructuradas por niveles, ejercicios prácticos, exámenes auto-evaluativos, registro de progreso, un chatbot de práctica conversacional y reconocimiento de voz[cite: 658]. [cite_start]El contenido se adapta de acuerdo al nivel del estudiante[cite: 659].
 
     **1.3 Definiciones, Siglas y Abreviaturas**
     * [cite_start]**SRS**: Documento de Especificación de Requisitos del Software[cite: 661].
@@ -121,17 +119,17 @@ Integrantes:
     * Informe de Factibilidad del Sistema[cite: 392].
 
     **1.5 Visión General**
-    La visión es desarrollar una aplicación móvil innovadora que facilite el aprendizaje de lenguas originarias mediante IA, promoviendo la preservación cultural y el acceso a la educación digital intuitiva y eficiente[cite: 668, 669].
+    Buscamos crear una herramienta móvil accesible que acerque las lenguas originarias a más personas mediante tecnología interactiva, promoviendo el rescate cultural y ofreciendo una alternativa digital intuitiva y eficiente[cite: 668, 669].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 2. <span id="_Toc52661347" class="anchor"></span>**Posicionamiento**
 
     **2.1 Oportunidad de negocio**
-    Existe una escasez de aplicaciones enfocadas en el aprendizaje de quechua y aimara con tecnologías modernas, lo que representa una oportunidad para una solución innovadora que combine educación e inteligencia artificial[cite: 672, 673].
+    Hay pocas aplicaciones destinadas a la enseñanza del quechua y el aimara que usen tecnologías recientes. Esto abre una oportunidad para ofrecer una alternativa digital que combine el aprendizaje interactivo con asistentes de inteligencia artificial[cite: 672, 673].
 
     **2.2 Definición del problema**
-    El aprendizaje de estas lenguas presenta limitaciones por la falta de herramientas digitales accesibles e interactivas[cite: 675]. Los métodos tradicionales no se adaptan a las necesidades actuales y faltan plataformas que utilicen IA para mejorar habilidades como la pronunciación[cite: 676].
+    El estudio de estos idiomas carece de herramientas digitales modernas e interactivas[cite: 675]. Los métodos de enseñanza tradicionales no logran atraer a los usuarios más jóvenes, y no existen plataformas accesibles que empleen tecnología para practicar la pronunciación o la conversación[cite: 676].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -147,7 +145,7 @@ Integrantes:
     * [cite_start]**Administrador**: Encargado de gestionar contenido, usuarios y reportes[cite: 681].
 
     **3.3 Entorno de usuario**
-    [cite_start]Aplicación móvil Android desarrollada en Kotlin para dispositivos con acceso a internet[cite: 683]. [cite_start]Los usuarios generales interactúan con módulos y herramientas de IA, mientras el administrador gestiona el sistema[cite: 684, 685].
+    [cite_start]La aplicación se ejecuta en dispositivos Android y requiere conexión a internet[cite: 683]. [cite_start]Los estudiantes acceden a las lecciones y herramientas de práctica, mientras que los administradores pueden gestionar los contenidos y usuarios[cite: 684, 685].
 
     **3.4 Perfiles de los interesados**
     * **Equipo de Desarrollo**: Responsables de la construcción, integración de IA, pruebas y mantenimiento del sistema[cite: 688].
@@ -167,7 +165,7 @@ Integrantes:
 4. <span id="_Toc52661349" class="anchor"></span>**Vista General del Producto**
 
     **4.1 Perspectiva del producto**
-    Aplicación móvil educativa que integra IA para ofrecer una experiencia personalizada, combinando procesamiento de lenguaje natural y reconocimiento de voz[cite: 699, 700].
+    Es una aplicación móvil educativa orientada al autoaprendizaje. Integra herramientas de procesamiento de lenguaje y reconocimiento de voz para personalizar el avance de cada alumno[cite: 699, 700].
 
     **4.2 Resumen de capacidades**
     * [cite_start]Registro y autenticación de usuarios[cite: 702].
@@ -176,16 +174,16 @@ Integrantes:
     * [cite_start]Seguimiento de progreso y generación de reportes[cite: 707, 708].
 
     **4.3 Suposiciones y dependencias**
-    * [cite_start]Uso de dispositivos Android compatibles con acceso a internet[cite: 710].
-    * Dependencia de servicios Firebase y APIs de inteligencia artificial externas[cite: 711].
-    * [cite_start]Validación previa del contenido educativo por especialistas[cite: 712].
+    * [cite_start]Los usuarios necesitan un teléfono Android compatible y conexión a internet[cite: 710].
+    * El funcionamiento depende de la disponibilidad de Firebase y de las APIs de inteligencia artificial externas[cite: 711].
+    * [cite_start]El contenido lingüístico debe ser revisado y aprobado por especialistas para garantizar su precisión[cite: 712].
 
     **4.4 Costos y precios**
     * **Costo Total del Proyecto**: S/. [cite_start]5,993.00[cite: 714].
     * **Costo Mensual Operativo**: S/. 1,997.67[cite: 714].
 
     **4.5 Licenciamiento e instalación**
-    Instalación mediante archivo APK en dispositivos Android (API 24/7.0 o superior)[cite: 466]. El licenciamiento se ajustará a términos de servicios en la nube y APIs de terceros (GPT-4o-mini, Google Cloud)[cite: 493].
+    La instalación se realiza mediante un archivo APK en dispositivos Android con API 24 o superior[cite: 466]. El licenciamiento se ajusta a las condiciones de uso de Firebase y las APIs de terceros empleadas en la lógica del sistema[cite: 493].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -199,17 +197,17 @@ Integrantes:
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 6. <span id="_Toc52661351" class="anchor"></span>**Restricciones**
-* Necesidad obligatoria de internet para funciones de IA y sincronización[cite: 725].
-* [cite_start]Limitado a dispositivos Android 8.0 o superior[cite: 726].
-* [cite_start]Presupuesto definido que condiciona el volumen de uso de APIs externas[cite: 728].
+* Es obligatorio contar con conexión a internet para usar el chatbot y guardar el progreso[cite: 725].
+* [cite_start]La aplicación requiere sistemas Android 8.0 (API 26) o superior[cite: 726].
+* [cite_start]El presupuesto asignado limita la cantidad de consultas mensuales a las APIs externas de inteligencia artificial[cite: 728].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 7. <span id="_Toc52661352" class="anchor"></span>**Rangos de Calidad**
-* **Disponibilidad**: Mínimo 99% mensual[cite: 730].
-* [cite_start]**Rendimiento**: Tiempo de respuesta ≤ 3 segundos en operaciones comunes[cite: 731].
-* [cite_start]**Seguridad**: Autenticación y almacenamiento seguro de datos personales[cite: 733].
-* **Usabilidad**: Interfaz intuitiva para usuarios con distintos niveles tecnológicos[cite: 732].
+* **Disponibilidad**: El servicio debe mantenerse activo al menos el 99% del tiempo cada mes[cite: 730].
+* [cite_start]**Rendimiento**: Las funciones comunes dentro de la app deben responder en un máximo de 3 segundos[cite: 731].
+* [cite_start]**Seguridad**: Protegemos los perfiles mediante autenticación cifrada y almacenamiento seguro de datos[cite: 733].
+* **Usabilidad**: La interfaz es sencilla y fácil de navegar, adaptada a usuarios de cualquier nivel tecnológico[cite: 732].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -222,24 +220,24 @@ Integrantes:
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 9. <span id="_Toc52661354" class="anchor"></span>**Otros requerimientos del producto**
-* [cite_start]**Estándares Legales**: Cumplimiento de la Ley N° 29733 (Protección de Datos Personales)[cite: 746].
-* [cite_start]**Estándares de Comunicación**: Mensajes claros, instrucciones simples y retroalimentación comprensible[cite: 747].
-* **Estándares de Usabilidad**: Navegación intuitiva para personas con poca experiencia tecnológica[cite: 748].
-* [cite_start]**Estándares de Calidad**: Estabilidad y bajo margen de errores durante el uso[cite: 750].
+* [cite_start]**Estándares Legales**: Cumplimos con la Ley N° 29733 de Protección de Datos Personales en el manejo de perfiles de usuario[cite: 746].
+* [cite_start]**Estándares de Comunicación**: Los avisos e instrucciones dentro de la app son claros y fáciles de entender[cite: 747].
+* **Estándares de Usabilidad**: La navegación está diseñada para personas que no están familiarizadas con las aplicaciones móviles[cite: 748].
+* [cite_start]**Estándares de Calidad**: Buscamos un bajo margen de fallos durante el uso diario de la aplicación[cite: 750].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 <span id="_Toc52661355" class="anchor"></span>**CONCLUSIONES**
-* [cite_start]El sistema es una solución innovadora que utiliza IA para optimizar el proceso educativo de lenguas originarias[cite: 752].
-* El proyecto cumple un objetivo social y cultural clave para la preservación de los idiomas quechua y aimara[cite: 753].
-* [cite_start]El diseño permite que la aplicación sea escalable y eficiente para futuras mejoras tecnológicas[cite: 754].
+* [cite_start]La aplicación es una propuesta interactiva para mejorar la enseñanza de lenguas originarias a través de tecnología móvil[cite: 752].
+* El proyecto tiene un propósito social enfocado en la conservación del quechua y el aimara[cite: 753].
+* [cite_start]El diseño técnico con arquitectura MVVM permite añadir nuevas lecciones y herramientas de forma sencilla en el futuro[cite: 754].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 <span id="_Toc52661356" class="anchor"></span>**RECOMENDACIONES**
-* [cite_start]Validar el contenido constantemente con especialistas lingüísticos para asegurar la precisión cultural[cite: 756].
-* Optimizar el uso de APIs de IA para controlar costos y mejorar el rendimiento[cite: 757].
-* [cite_start]Realizar pruebas con usuarios reales para perfeccionar la experiencia de usuario final[cite: 758].
+* [cite_start]Recomendamos revisar periódicamente las traducciones y audios con especialistas lingüísticos para asegurar la calidad[cite: 756].
+* Sugerimos optimizar el consumo de las APIs de inteligencia artificial para controlar los costos mensuales de operación[cite: 757].
+* [cite_start]Realizar pruebas con estudiantes reales ayudará a identificar problemas en la interfaz y mejorar la experiencia de uso[cite: 758].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 

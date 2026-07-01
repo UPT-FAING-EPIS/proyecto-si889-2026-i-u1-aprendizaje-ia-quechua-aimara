@@ -1,7 +1,5 @@
 <center>
 
-[comment]: <img src="./media/media/image1.png" style="width:1.088in;height:1.46256in" alt="escudo.png" />
-
 ![./media/media/image1.png](./media/logo-upt.png)
 
 [cite_start]**UNIVERSIDAD PRIVADA DE TACNA** [cite: 1]
@@ -14,14 +12,14 @@
 
 Curso: *Patrones de Software* [cite: 5]
 
-Docente: *Mag. Ing. [cite_start]Patrick Cuadros Quiroga* [cite: 6]
+Docente: *Mag. Ing. Patrick Cuadros Quiroga* [cite: 6]
 
 Integrantes:
 
 [cite_start]***Mamani Estaña, Junior (2022075474)*** [cite: 8]
 ***Serrano Ibañez, Nestor Juice Yomar (2022075474)*** [cite: 9]
 
-**Tacna – Perú** [cite: 10]
+**Tacna - Perú** [cite: 10]
 
 ***2026*** [cite: 11]
 
@@ -33,7 +31,7 @@ Sistema *Sistema móvil con inteligencia artificial para el aprendizaje de quech
 
 Informe de Factibilidad [cite: 13]
 
-Versión *1.0* [cite: 14]
+Versión *1.0*
 
 |CONTROL DE VERSIONES|||||| [cite: 15]
 | :-: | :- | :- | :- | :- | :- |
@@ -44,29 +42,37 @@ Versión *1.0* [cite: 14]
 
 # **INDICE GENERAL** [cite: 16]
 
-[1. [cite_start]Descripción del Proyecto](#_Toc52661346) [cite: 17]
+[1. Descripción del Proyecto](#_Toc52661346) [cite: 17]
 
-[2. [cite_start]Riesgos](#_Toc52661347) [cite: 18]
+[2. Riesgos](#_Toc52661347) [cite: 18]
 
-[3. [cite_start]Análisis de la Situación actual](#_Toc52661348) [cite: 19]
+[3. Análisis de la Situación actual](#_Toc52661348) [cite: 19]
 
-[4. [cite_start]Estudio de Factibilidad](#_Toc52661349) [cite: 20]
+[4. Estudio de Factibilidad](#_Toc52661349) [cite: 20]
 
-[cite_start][4.1 Factibilidad Técnica](#_Toc52661350) [cite: 21]
+[4.1 Factibilidad Técnica](#_Toc52661350) [cite: 21]
 
-[cite_start][4.2 Factibilidad económica](#_Toc52661351) [cite: 22]
+[4.2 Factibilidad económica](#_Toc52661351) [cite: 22]
 
-[cite_start][4.3 Factibilidad Operativa](#_Toc52661352) [cite: 23]
+[4.3 Factibilidad Operativa](#_Toc52661352) [cite: 23]
 
-[cite_start][4.4 Factibilidad Legal](#_Toc52661353) [cite: 24]
+[4.4 Factibilidad Legal](#_Toc52661353) [cite: 24]
 
-[cite_start][4.5 Factibilidad Social](#_Toc52661354) [cite: 25]
+[4.5 Factibilidad Social](#_Toc52661354) [cite: 25]
 
-[cite_start][4.6 Factibilidad Ambiental](#_Toc52661355) [cite: 26]
+[4.6 Factibilidad Ambiental](#_Toc52661355) [cite: 26]
 
-[5. [cite_start]Análisis Financiero](#_Toc52661356) [cite: 27]
+[5. Análisis Financiero](#_Toc52661356) [cite: 27]
 
-[6. [cite_start]Conclusiones](#_Toc52661357) [cite: 28]
+
+            ##### Criterios de Evaluación Financiera
+            | Métrica Financiera | Valor Estimado | Estado de Viabilidad |
+            | :--- | :--- | :--- |
+            | Valor Actual Neto (VAN) | S/. 2,047.54 | Viable (VAN > 0) |
+            | Tasa Interna de Retorno (TIR) | 26% | Viable (TIR > 8% de Tasa de Descuento) |
+            | Relación Beneficio / Costo (B/C) | 1.34 | Viable (B/C > 1.0) |
+            
+[6. Conclusiones](#_Toc52661357) [cite: 28]
 
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
@@ -82,7 +88,7 @@ Versión *1.0* [cite: 14]
     3 meses[cite: 34].
 
     1.3. Descripción [cite: 35]
-    El proyecto consiste en el desarrollo de un sistema móvil con inteligencia artificial orientado al aprendizaje de los idiomas quechua y aimara mediante el uso de tecnologías digitales accesibles para cualquier usuario[cite: 36]. Este sistema permitirá aprender de manera interactiva a través de contenidos educativos como vocabulario, frases y estructuras básicas, integrando herramientas de IA para personalizar el progreso[cite: 37]. Asimismo, incorpora simulación de conversaciones tipo chatbot y reconocimiento de voz para mejorar la pronunciación[cite: 38]. Su importancia reside en la preservación y difusión de lenguas originarias que forman parte de la identidad cultural andina en un contexto de riesgo de desaparición[cite: 39].
+    Desarrollaremos una aplicación móvil para la enseñanza de quechua y aimara[cite: 36]. La aplicación incluirá lecciones interactivas de vocabulario, expresiones comunes y gramática básica, integrando herramientas de IA para adaptar el aprendizaje[cite: 37]. Para apoyar al estudiante, la plataforma contará con un chatbot interactivo y reconocimiento de voz para practicar la pronunciación[cite: 38]. El propósito es facilitar el estudio de estas lenguas y contribuir a su preservación, ya que son parte de la identidad cultural andina y se encuentran en riesgo de desaparecer[cite: 39].
 
     1.4. Objetivos [cite: 40]
 
@@ -90,30 +96,30 @@ Versión *1.0* [cite: 14]
         Implementar un sistema móvil con inteligencia artificial para optimizar el aprendizaje de los idiomas quechua y aimara mediante el uso de herramientas digitales interactivas[cite: 42].
 
         1.4.2 Objetivos Específicos [cite: 43]
-        * [cite_start]Implementar un módulo de aprendizaje interactivo para adquirir conocimientos de vocabulario, frases y estructuras gramaticales de manera progresiva[cite: 44].
-        * [cite_start]Implementar un sistema de almacenamiento de datos para gestionar el progreso del usuario, historial y evaluaciones en una base de datos centralizada[cite: 45].
-        * Generar reportes de avance que permitan evaluar el nivel de aprendizaje y adaptar los contenidos según el desempeño[cite: 46].
-        * [cite_start]Optimizar la experiencia mediante el uso de IA, incorporando un chatbot educativo y reconocimiento de voz[cite: 47].
+        * [cite_start]Desarrollar un módulo educativo interactivo que enseñe vocabulario, frases comunes y gramática de forma progresiva[cite: 44].
+        * [cite_start]Configurar una base de datos para almacenar el historial de estudio, evaluaciones y el avance de los usuarios[cite: 45].
+        * Desarrollar un minijuego interactivo basado en Wordle bilingüe y un sistema de clasificación (Leaderboard) en tiempo real para motivar y evaluar el progreso de los usuarios.
+        * [cite_start]Integrar funciones de inteligencia artificial, como un asistente de conversación (chatbot) y un sistema de reconocimiento de voz para mejorar la pronunciación[cite: 47].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 2. [cite_start]<span id="_Toc52661347" class="anchor"></span>**Riesgos** [cite: 48]
 
-    * El manejo de información personal implica el riesgo de pérdida o acceso no autorizado a los datos si no se implementan medidas de seguridad adecuadas[cite: 49].
-    * [cite_start]Si el sistema no está optimizado o no soporta múltiples usuarios simultáneos, podría presentar fallos de rendimiento afectando la experiencia de uso[cite: 50].
-    * [cite_start]La falta de conexión a internet o el acceso limitado a dispositivos en algunas zonas puede dificultar el uso del sistema en ciertas comunidades[cite: 51].
-    * El riesgo de enseñar información incorrecta si no se cuenta con contenido educativo validado por expertos en quechua y aimara[cite: 52].
+    * Filtración o pérdida de datos personales si no configuramos correctamente las reglas de seguridad y el cifrado en la base de datos[cite: 49].
+    * [cite_start]Problemas de velocidad o caídas del servicio si la aplicación no soporta un incremento rápido de usuarios activos[cite: 50].
+    * [cite_start]Dificultades de acceso en zonas rurales debido a la falta de cobertura de internet o a la escasez de teléfonos móviles[cite: 51].
+    * Difusión de traducciones erróneas si el material educativo no es supervisado y aprobado por especialistas en las lenguas quechua y aimara[cite: 52].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 3. <span id="_Toc52661348" class="anchor"></span>**Análisis de la Situación actual** [cite: 53]
 
     3.1. Planteamiento del problema [cite: 54]
-    Actualmente, el aprendizaje de lenguas originarias enfrenta dificultades por la falta de recursos educativos accesibles y adaptados a nuevas tecnologías[cite: 55]. Los métodos tradicionales no logran captar el interés de las nuevas generaciones, provocando una disminución en su uso[cite: 56]. Existe una escasez de herramientas digitales que permitan aprender de manera autónoma y práctica[cite: 57]. Además, la ausencia de sistemas que aprovechen la IA para personalizar el aprendizaje limita la adaptación a las necesidades de cada usuario[cite: 58]. La carencia de estas herramientas no solo afecta el acceso a la educación, sino que contribuye a la pérdida de la riqueza cultural que representan estos idiomas[cite: 61].
+    El aprendizaje del quechua y el aimara tiene pocos recursos didácticos adaptados a los dispositivos móviles actuales[cite: 55]. Las clases tradicionales no suelen atraer a los jóvenes, lo que acelera el desuso de estas lenguas[cite: 56]. Tampoco hay suficientes herramientas digitales diseñadas para el autoaprendizaje[cite: 57]. Por otro lado, la falta de plataformas interactivas que utilicen inteligencia artificial impide ofrecer una experiencia de estudio personalizada[cite: 58]. Esto limita las opciones de educación bilingüe y acelera la pérdida de la herencia cultural que representan ambos idiomas[cite: 61].
 
     3.2. Consideraciones de hardware y software [cite: 63]
     * [cite_start]**Estaciones de Trabajo:** Procesador AMD Ryzen 5 5600 o Intel Core i5 de 11ª Gen, 16 GB de RAM y 256 GB SSD NVMe[cite: 65, 66, 67, 68].
-    * [cite_start]**Lado del Servidor:** Infraestructura Firebase (BaaS), Firebase Auth con Google ID, Cloud Firestore y Cloud Functions para lógica de IA[cite: 72, 73, 74, 75, 76].
+    * [cite_start]**Lado del Servidor:** Infraestructura Firebase (BaaS), Firebase Auth con Google ID, Firebase Realtime Database (RTDB) y Cloud Functions para lógica de IA[cite: 72, 73, 74, 75, 76].
     * **Lado del Cliente:** Plataforma Android Nativo, lenguaje Kotlin (1.9+), entorno Android Studio Panda 2 y arquitectura MVVM con Jetpack Compose[cite: 79, 80, 81, 82, 83, 84].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
@@ -121,7 +127,7 @@ Versión *1.0* [cite: 14]
 4. <span id="_Toc52661349" class="anchor"></span>**Estudio de Factibilidad** [cite: 89]
 
     4.1. <span id="_Toc52661350" class="anchor"></span>Factibilidad Técnica [cite: 90]
-    Se dispone de estaciones de trabajo con procesadores de alto rendimiento y memoria RAM de 16 GB, críticos para el ciclo de desarrollo con Android Studio Ladybug y emuladores[cite: 92, 93, 94]. El proyecto adopta un modelo de computación en la nube mediante Firebase para gestionar autenticación, persistencia y lógica de IA, lo que garantiza alta disponibilidad y escalabilidad inmediata[cite: 95, 96, 100]. La aplicación está diseñada para dispositivos Android con API 26 o superior, manteniendo una experiencia de usuario consistente en diversos tamaños de pantalla gracias a Jetpack Compose[cite: 101, 103, 104].
+    El equipo de desarrollo cuenta con computadoras con 16 GB de memoria RAM y procesadores modernos, recursos necesarios para ejecutar Android Studio y los emuladores de prueba[cite: 92, 93, 94]. Para evitar la complejidad de configurar servidores propios, el backend utilizará Firebase (autenticación y base de datos) y APIs de inteligencia artificial[cite: 95, 96, 100]. En el lado del cliente, la aplicación requiere Android 8.0 (API 26) o superior y utiliza Jetpack Compose para asegurar que el diseño visual funcione correctamente en pantallas de diferentes tamaños[cite: 101, 103, 104].
 
     4.2. <span id="_Toc52661351" class="anchor"></span>Factibilidad Económica [cite: 105]
 
@@ -163,16 +169,16 @@ Versión *1.0* [cite: 14]
         | **Total** | **S/. 1997.67** | **S/. 5993.00** |
 
     4.3. <span id="_Toc52661352" class="anchor"></span>Factibilidad Operativa [cite: 120]
-    El sistema ofrece una plataforma interactiva y accesible que optimiza el aprendizaje mediante contenidos organizados y asistencia inteligente[cite: 121, 122]. Su desarrollo se apoya en tecnologías modernas como Android Studio y arquitectura MVVM, permitiendo una implementación eficiente[cite: 123]. El impacto en los usuarios será positivo, promoviendo la inclusión digital y preservación cultural[cite: 125]. Los interesados incluyen usuarios finales, desarrolladores, instituciones educativas y la sociedad en general[cite: 126, 127, 128, 129, 130].
+    La aplicación está pensada para el estudio individual, estructurando el avance del alumno por niveles[cite: 121, 122]. Al desarrollar el proyecto con la arquitectura MVVM y Kotlin, facilitamos la incorporación de nuevas funciones y correcciones a largo plazo[cite: 123]. Creemos que la aplicación motivará a los estudiantes gracias a sus herramientas interactivas, ayudando a revalorizar estos idiomas[cite: 125]. Los principales interesados son los propios estudiantes y los docentes o investigadores dedicados a la enseñanza de lenguas nativas[cite: 126, 127, 128, 129, 130].
 
     4.4. <span id="_Toc52661353" class="anchor"></span>Factibilidad Legal [cite: 131]
-    El sistema cumple con la Ley N° 29733 (Protección de Datos Personales) asegurando el tratamiento adecuado de la información mediante cifrado y almacenamiento seguro[cite: 135, 139]. También se rige por la Ley N° 29571 (Código de Protección y Defensa del Consumidor) garantizando información clara y veraz sobre las funcionalidades[cite: 145, 146, 149]. Se aplican además controles de seguridad basados en la Norma Técnica ISO 27001 para garantizar la integridad y disponibilidad de los datos[cite: 155, 158, 160].
+    La aplicación se alinea con la Ley N° 29733 (Protección de Datos Personales) de Perú mediante la implementación de autenticación segura y reglas de acceso en Firebase para proteger el perfil del usuario[cite: 135, 139]. Asimismo, respeta la Ley N° 29571 (Código de Protección y Defensa del Consumidor) al describir con claridad sus funciones sin publicidad engañosa[cite: 145, 146, 149]. Por último, los procesos de desarrollo siguen los estándares de seguridad de la norma ISO 27001 para resguardar la información almacenada[cite: 155, 158, 160].
 
     4.5. <span id="_Toc52661354" class="anchor"></span>Factibilidad Social [cite: 164]
-    El proyecto contribuye directamente al fortalecimiento del aprendizaje de lenguas originarias, favoreciendo la revalorización cultural y el respeto por la diversidad lingüística[cite: 165, 167]. Promueve la inclusión social al brindar oportunidades de aprendizaje en diferentes contextos, fortaleciendo la identidad cultural del país y evitando la desaparición de los idiomas quechua y aimara[cite: 169, 170].
+    Este proyecto busca fortalecer la identidad andina y fomentar el respeto hacia la diversidad lingüística en el Perú[cite: 165, 167]. Al ser una herramienta digital interactiva y gratuita, facilita que personas de distintas edades y regiones tengan la oportunidad de aprender o recuperar el uso del quechua y el aimara, apoyando la preservación de estas lenguas originarias[cite: 169, 170].
 
     4.6. <span id="_Toc52661355" class="anchor"></span>Factibilidad Ambiental [cite: 171]
-    La implementación digital reduce significativamente el uso de materiales físicos como papel y guías educativas tradicionales[cite: 172, 173]. El uso de servicios en la nube (Firebase) optimiza el consumo energético al operar en centros de datos con políticas de eficiencia, evitando la necesidad de servidores físicos locales de mayor consumo eléctrico[cite: 174, 175, 176].
+    Al ser una solución de software móvil, no requiere de guías impresas, libros ni folletos en papel[cite: 172, 173]. El uso de servicios en la nube como Firebase minimiza el gasto de electricidad, ya que delega el almacenamiento en centros de datos optimizados y con certificación de eficiencia energética, en lugar de mantener servidores locales encendidos de forma continua[cite: 174, 175, 176].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
@@ -181,22 +187,22 @@ Versión *1.0* [cite: 14]
     5.1. Justificación de la Inversión [cite: 180]
 
         5.1.1. Beneficios del Proyecto [cite: 181]
-        * [cite_start]**Beneficios Tangibles:** Incremento del 40% en acceso al aprendizaje, reducción del 70% en costos de materiales físicos y mejora del 30% en eficiencia del tiempo de aprendizaje[cite: 182, 183, 184, 185].
-        * [cite_start]**Beneficios Intangibles:** Mejora en la experiencia dinámica con IA, preservación de lenguas originarias y promoción de la inclusión digital[cite: 186, 187, 188, 190].
+        * [cite_start]**Beneficios tangibles:** Estimamos un aumento del 40% en el acceso a material de estudio en comparación con clases presenciales, un ahorro del 70% en compra de guías físicas y una reducción del 30% en el tiempo de estudio diario gracias al aprendizaje adaptativo[cite: 182, 183, 184, 185].
+        * [cite_start]**Beneficios intangibles:** Interacción didáctica mediante inteligencia artificial, apoyo a la conservación del patrimonio cultural y mayor inclusión en el acceso a herramientas digitales[cite: 186, 187, 188, 190].
 
         5.1.2. [cite_start]Criterios de Inversión [cite: 191]
 
             5.1.2.1. [cite_start]Relación Beneficio/Costo (B/C) [cite: 192]
-            La relación B/C es de S/. [cite_start]1.34[cite: 203]. [cite_start]Al ser mayor a uno, el proyecto es aceptable; por cada sol de gasto se obtiene una utilidad adicional de 0.46 céntimos[cite: 204, 215].
+            La relación B/C es de S/. [cite_start]1.34[cite: 203]. [cite_start]Como este índice supera el valor de 1.0, el proyecto se considera viable; por cada sol invertido, se espera obtener un retorno de 0.34 soles[cite: 204, 215].
 
             5.1.2.2. [cite_start]Valor Actual Neto (VAN) [cite: 205]
-            El VAN es de S/. [cite_start]2,047.54[cite: 203]. [cite_start]Al ser superior a cero, el proyecto es rentable y debe ser aceptado[cite: 206].
+            El VAN calculado es de S/. [cite_start]2,047.54[cite: 203]. [cite_start]Al ser superior a cero, el proyecto es rentable y debe ser aceptado[cite: 206].
 
             [cite_start]5.1.2.3 Tasa Interna de Retorno (TIR) [cite: 207]
-            [cite_start]La TIR es del 26%, superior a la tasa de descuento del 8% asumida como costo de oportunidad[cite: 203, 208]. [cite_start]Esto confirma que el retorno esperado es mayor al costo del capital, siendo financieramente viable[cite: 209].
+            [cite_start]La TIR es del 26%, cifra que supera la tasa de descuento de referencia fijada en 8%[cite: 203, 208]. [cite_start]Este porcentaje confirma la viabilidad financiera del proyecto al superar el costo de oportunidad del capital[cite: 209].
 
 <div style="page-break-after: always; visibility: hidden">\pagebreak</div>
 
 6. [cite_start]<span id="_Toc52661357" class="anchor"></span>**Conclusiones** [cite: 210]
 
-    [cite_start]El proyecto es técnicamente viable al emplear herramientas modernas como Android Studio y Kotlin que garantizan escalabilidad y accesibilidad[cite: 211]. [cite_start]El análisis económico confirma su rentabilidad con resultados financieros positivos, superando la tasa de descuento y generando beneficios sostenibles[cite: 212, 216]. [cite_start]Operativamente, el sistema facilita el aprendizaje autónomo mediante una interfaz adaptativa e intuitiva[cite: 218, 220]. [cite_start]Jurídicamente, cumple con las leyes de protección de datos y defensa del consumidor vigentes en Perú[cite: 221]. [cite_start]Socialmente, genera un impacto positivo en la preservación cultural e inclusión educativa[cite: 222, 223]. [cite_start]Ambientalmente, promueve prácticas sostenibles al digitalizar el aprendizaje y optimizar el consumo energético[cite: 225, 226, 228].
+    [cite_start]El desarrollo de la aplicación es viable desde todas sus dimensiones. En el aspecto técnico, la combinación de Kotlin y Firebase permite estructurar una aplicación scalable y de fácil mantenimiento[cite: 211]. [cite_start]El análisis financiero confirma la rentabilidad del proyecto al registrar un VAN positivo y una TIR del 26%, superior a la tasa de descuento mínima esperada[cite: 212, 216]. [cite_start]Operativamente, la interfaz intuitiva facilita que cualquier usuario aprenda de manera autónoma y a su propio ritmo[cite: 218, 220]. [cite_start]En el plano legal, el diseño protege los datos personales del alumno conforme a la ley peruana[cite: 221]. [cite_start]Finalmente, el proyecto genera beneficios sociales al promover el rescate cultural del quechua y aimara, y aporta al cuidado del medio ambiente al evitar el uso de materiales impresos[cite: 222, 223, 225, 226, 228].
