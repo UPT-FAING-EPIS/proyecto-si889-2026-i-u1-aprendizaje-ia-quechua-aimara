@@ -29,8 +29,8 @@ class WordleRepositoryImpl @Inject constructor(
             val localWords = localDataSource.getRandomWordsByCategory(category.lowercase())
             val filtered = localWords.map { it.toDomain() }.filter {
                 when (language) {
-                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank()
-                    WordleLanguage.AIMARA -> it.aimara.isNotBlank()
+                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank() && it.quechua.length <= 6
+                    WordleLanguage.AIMARA -> it.aimara.isNotBlank() && it.aimara.length <= 6
                 }
             }
             
@@ -43,8 +43,8 @@ class WordleRepositoryImpl @Inject constructor(
             val localWords = localDataSource.getRandomWordsByCategory(category.lowercase())
             val filtered = localWords.map { it.toDomain() }.filter {
                 when (language) {
-                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank()
-                    WordleLanguage.AIMARA -> it.aimara.isNotBlank()
+                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank() && it.quechua.length <= 6
+                    WordleLanguage.AIMARA -> it.aimara.isNotBlank() && it.aimara.length <= 6
                 }
             }
             if (filtered.isNotEmpty()) {

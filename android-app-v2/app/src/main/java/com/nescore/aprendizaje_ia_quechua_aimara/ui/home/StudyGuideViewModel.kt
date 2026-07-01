@@ -1,6 +1,7 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.ui.home
 
 import android.app.Application
+import android.content.Context
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -32,18 +33,20 @@ class StudyGuideViewModel @Inject constructor(
     private val getTemasUseCase: GetTemasUseCase,
     private val getPalabrasPorTemaUseCase: GetPalabrasPorTemaUseCase,
     private val assessPronunciationUseCase: AssessPronunciationUseCase,
-    private val ttsManager: TTSManager
+    private val ttsManager: TTSManager,
+    private val auth: FirebaseAuth,
+    private val database: FirebaseDatabase
 ) : AndroidViewModel(application) {
 
+    private val sharedPrefs = application.getSharedPreferences("study_guide_prefs_v2", Context.MODE_PRIVATE)
     private val audioRecorder = AudioRecorder(application)
     private var currentAudioFile: File? = null
     private val storage = FirebaseStorage.getInstance()
-    private val database = FirebaseDatabase.getInstance()
     private var recordStartTime = 0L
 
     // Devuelve el UID del usuario actual (logueado o anónimo)
     // Firebase Auth siempre proporciona un UID incluso para sesiones anónimas
-    private fun getCurrentUid(): String? = FirebaseAuth.getInstance().currentUser?.uid
+    private fun getCurrentUid(): String? = auth.currentUser?.uid
 
     private val _uiState = MutableStateFlow(StudyGuideUiState())
     val uiState: StateFlow<StudyGuideUiState> = _uiState.asStateFlow()
@@ -56,28 +59,39 @@ class StudyGuideViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             getTemasUseCase().onSuccess { temas ->
-                // Cargar el progreso de todos los temas desde Firebase en paralelo
                 val progressMap = mutableMapOf<String, Int>()
                 val uid = getCurrentUid()
+                val lang = _uiState.value.language.lowercase()
+
+                // Cargar primero el progreso local desde SharedPreferences
+                temas.forEach { tema ->
+                    val completedSetLocal = sharedPrefs.getStringSet("${lang}_${tema.id}", emptySet()) ?: emptySet()
+                    progressMap[tema.id] = completedSetLocal.size
+                }
+
+                // Cargar e integrar progreso de Firebase en segundo plano
                 if (uid != null) {
                     try {
                         val snapshot = database
                             .getReference("progreso")
                             .child(uid)
                             .child("guia")
+                            .child(lang)
                             .get()
                             .await()
                         temas.forEach { tema ->
                             val temaSnap = snapshot.child(tema.id)
-                            val count = temaSnap.childrenCount.toInt()
-                            progressMap[tema.id] = count
+                            val completedWordsFirebase = temaSnap.children.mapNotNull { it.key }.toSet()
+                            if (completedWordsFirebase.isNotEmpty()) {
+                                val localSet = sharedPrefs.getStringSet("${lang}_${tema.id}", emptySet())?.toMutableSet() ?: mutableSetOf()
+                                localSet.addAll(completedWordsFirebase)
+                                sharedPrefs.edit().putStringSet("${lang}_${tema.id}", localSet).apply()
+                                progressMap[tema.id] = localSet.size
+                            }
                         }
                     } catch (e: Exception) {
-                        Log.e("StudyGuideVM", "Error cargando progreso de Firebase", e)
-                        temas.forEach { progressMap[it.id] = 0 }
+                        Log.e("StudyGuideVM", "Error cargando progreso de Firebase para $lang", e)
                     }
-                } else {
-                    temas.forEach { progressMap[it.id] = 0 }
                 }
                 _uiState.update { it.copy(temas = temas, progress = progressMap, isLoading = false) }
             }.onFailure { e ->
@@ -95,11 +109,46 @@ class StudyGuideViewModel @Inject constructor(
                     currentWordIndex = 0, 
                     sttResult = null, 
                     feedback = null, 
-                    isCorrect = null
+                    isCorrect = null,
+                    completedWords = emptySet()
                 ) 
             }
+            
+            val lang = _uiState.value.language.lowercase()
+            
+            // Cargar primero localmente
+            val completedSet = sharedPrefs.getStringSet("${lang}_${tema.id}", emptySet())?.toMutableSet() ?: mutableSetOf()
+            
+            // Cargar desde Firebase de fondo
+            val uid = getCurrentUid()
+            if (uid != null) {
+                try {
+                    val snapshot = database
+                        .getReference("progreso")
+                        .child(uid)
+                        .child("guia")
+                        .child(lang)
+                        .child(tema.id)
+                        .get()
+                        .await()
+                    snapshot.children.forEach { childSnap ->
+                        childSnap.key?.let { completedSet.add(it) }
+                    }
+                    // Guardar localmente
+                    sharedPrefs.edit().putStringSet("${lang}_${tema.id}", completedSet).apply()
+                } catch (e: Exception) {
+                    Log.e("StudyGuideVM", "Error cargando palabras completadas para $lang", e)
+                }
+            }
+
             getPalabrasPorTemaUseCase(tema.nombre).onSuccess { palabras ->
-                _uiState.update { it.copy(palabras = palabras, isLoading = false) }
+                _uiState.update { 
+                    it.copy(
+                        palabras = palabras, 
+                        completedWords = completedSet,
+                        isLoading = false 
+                    ) 
+                }
                 if (palabras.isNotEmpty()) {
                     speakCurrentWord()
                 }
@@ -136,7 +185,11 @@ class StudyGuideViewModel @Inject constructor(
     }
 
     fun setLanguage(language: String) {
-        _uiState.update { it.copy(language = language) }
+        val oldLang = _uiState.value.language
+        if (oldLang.lowercase() != language.lowercase()) {
+            _uiState.update { it.copy(language = language) }
+            loadTemas()
+        }
     }
 
     fun startRecording() {
@@ -176,12 +229,12 @@ class StudyGuideViewModel @Inject constructor(
         val file = currentAudioFile ?: return
         if (!file.exists() || file.length() == 0L) return
 
-        _uiState.update { it.copy(isLoading = true, feedback = "Analizando pronunciación con IA...", isCorrect = null) }
+        _uiState.update { it.copy(isAnalyzing = true, feedback = "Analizando pronunciación con IA...", isCorrect = null) }
 
         viewModelScope.launch {
             try {
                 val user = FirebaseAuth.getInstance().currentUser ?: run {
-                    _uiState.update { it.copy(isLoading = false, feedback = "Sesión de usuario no detectada.", isCorrect = false) }
+                    _uiState.update { it.copy(isAnalyzing = false, feedback = "Sesión de usuario no detectada.", isCorrect = false) }
                     return@launch
                 }
 
@@ -208,7 +261,7 @@ class StudyGuideViewModel @Inject constructor(
 
                         _uiState.update { 
                             it.copy(
-                                isLoading = false, 
+                                isAnalyzing = false, 
                                 sttResult = transcription,
                                 isCorrect = isCorrect,
                                 feedback = feedback
@@ -223,7 +276,7 @@ class StudyGuideViewModel @Inject constructor(
                         Log.e("StudyGuideViewModel", "Error in pronunciation assessment", error)
                         _uiState.update { 
                             it.copy(
-                                isLoading = false, 
+                                isAnalyzing = false, 
                                 feedback = "Error al evaluar con IA: ${error.message}", 
                                 isCorrect = false
                             ) 
@@ -233,7 +286,7 @@ class StudyGuideViewModel @Inject constructor(
                 Log.e("StudyGuideViewModel", "Exception in pronunciation assessment flow", e)
                 _uiState.update { 
                     it.copy(
-                        isLoading = false, 
+                        isAnalyzing = false, 
                         feedback = "Error de red o conexión: ${e.localizedMessage}", 
                         isCorrect = false
                     ) 
@@ -243,6 +296,21 @@ class StudyGuideViewModel @Inject constructor(
                     file.delete()
                 }
             }
+        }
+    }
+
+    fun previousWord() {
+        val state = _uiState.value
+        if (state.currentWordIndex > 0) {
+            _uiState.update {
+                it.copy(
+                    currentWordIndex = it.currentWordIndex - 1,
+                    sttResult = null,
+                    feedback = null,
+                    isCorrect = null
+                )
+            }
+            speakCurrentWord()
         }
     }
 
@@ -263,11 +331,17 @@ class StudyGuideViewModel @Inject constructor(
         }
     }
 
-    private fun saveWordCompleted(temaId: String, wordEspanol: String) {
-        val uid = getCurrentUid() ?: run {
-            Log.w("StudyGuideVM", "No hay usuario activo, no se puede guardar el progreso")
-            return
+    fun resetEvaluation() {
+        _uiState.update { 
+            it.copy(
+                sttResult = null,
+                feedback = null,
+                isCorrect = null
+            )
         }
+    }
+
+    private fun saveWordCompleted(temaId: String, wordEspanol: String) {
         // Sanitizamos la clave para que sea válida en Firebase RTDB (sin puntos, corchetes, etc.)
         val safeKey = wordEspanol
             .replace(".", "_")
@@ -276,40 +350,42 @@ class StudyGuideViewModel @Inject constructor(
             .replace("[", "_")
             .replace("]", "_")
             .replace("/", "_")
-        val ref = database
-            .getReference("progreso")
-            .child(uid)
-            .child("guia")
-            .child(temaId)
-            .child(safeKey)
+        
+        val lang = _uiState.value.language.lowercase()
 
-        // Guardamos la palabra como clave con valor true
-        // Si ya existe, setValue es idempotente — no duplica datos
-        ref.setValue(true)
-            .addOnSuccessListener {
-                Log.d("StudyGuideVM", "Progreso guardado: $temaId / $safeKey")
-                // Actualizamos el conteo en el estado local
-                viewModelScope.launch {
-                    try {
-                        val snapshot = database
-                            .getReference("progreso")
-                            .child(uid)
-                            .child("guia")
-                            .child(temaId)
-                            .get()
-                            .await()
-                        val count = snapshot.childrenCount.toInt()
-                        val updatedProgress = _uiState.value.progress.toMutableMap()
-                        updatedProgress[temaId] = count
-                        _uiState.update { it.copy(progress = updatedProgress) }
-                    } catch (e: Exception) {
-                        Log.e("StudyGuideVM", "Error al leer conteo actualizado", e)
-                    }
+        // 1. Guardar localmente de forma inmediata (siempre funciona, offline compatible)
+        val completedSetLocal = sharedPrefs.getStringSet("${lang}_${temaId}", emptySet())?.toMutableSet() ?: mutableSetOf()
+        completedSetLocal.add(safeKey)
+        sharedPrefs.edit().putStringSet("${lang}_${temaId}", completedSetLocal).apply()
+
+        val updatedProgress = _uiState.value.progress.toMutableMap()
+        updatedProgress[temaId] = completedSetLocal.size
+        _uiState.update { 
+            it.copy(
+                progress = updatedProgress,
+                completedWords = completedSetLocal
+            ) 
+        }
+
+        // 2. Guardar en Firebase (asíncrono)
+        val uid = getCurrentUid()
+        if (uid != null) {
+            val ref = database
+                .getReference("progreso")
+                .child(uid)
+                .child("guia")
+                .child(lang)
+                .child(temaId)
+                .child(safeKey)
+
+            ref.setValue(true)
+                .addOnSuccessListener {
+                    Log.d("StudyGuideVM", "Progreso guardado en Firebase: $temaId / $safeKey")
                 }
-            }
-            .addOnFailureListener { e ->
-                Log.e("StudyGuideVM", "Error guardando progreso en Firebase", e)
-            }
+                .addOnFailureListener { e ->
+                    Log.e("StudyGuideVM", "Error guardando progreso en Firebase", e)
+                }
+        }
     }
 
     override fun onCleared() {
@@ -323,9 +399,11 @@ data class StudyGuideUiState(
     val progress: Map<String, Int> = emptyMap(),
     val activeTema: Tema? = null,
     val palabras: List<Palabra> = emptyList(),
+    val completedWords: Set<String> = emptySet(),
     val currentWordIndex: Int = 0,
     val language: String = "quechua",
     val isLoading: Boolean = false,
+    val isAnalyzing: Boolean = false,
     val isListening: Boolean = false,
     val sttResult: String? = null,
     val feedback: String? = null,

@@ -54,7 +54,7 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Aprende") },
+                title = { Text("Aru Yachay") },
                 actions = {
                     UserAvatar(isGuest = isGuest, photoUrl = userPhotoUrl)
                     TextButton(onClick = {
