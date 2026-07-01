@@ -1,95 +1,88 @@
 [
   {
-    "language": "Quechua",
-    "level": "Fácil",
-    "examTitle": "Saludos y Cortesía",
-    "description": "Aprende los saludos más comunes y frases de cortesía en Quechua.",
+    "language": "quechua",
+    "level": "easy",
+    "examTitle": "Saludos Básicos",
+    "description": "Comprueba lo aprendido sobre saludos y expresiones simples en Quechua.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Buenos días' en Quechua?",
-        "options": ["Allin p'unchay", "Allin ch'isi", "Allin tuta", "Allillanchu"],
-        "correctAnswer": "Allin p'unchay",
-        "explanation": "Allin p'unchay se usa para saludar por la mañana."
+        "question": "¿Cómo se dice 'Hola' o '¿Cómo estás?' en Quechua?",
+        "options": [
+          "Allianllachu",
+          "Imaynalla",
+          "Rimaykullayki"
+        ],
+        "correctAnswer": "Allianllachu",
+        "explanation": "Allianllachu (o Allillanchu) es la forma clásica de saludar e interrogar por el bienestar de otro."
       },
       {
-        "question": "¿Qué significa 'Añay'?",
-        "options": ["Hola", "Adiós", "Gracias", "Perdón"],
+        "question": "¿Qué significa 'Añay' en Quechua?",
+        "options": [
+          "Gracias",
+          "Por favor",
+          "Hola"
+        ],
         "correctAnswer": "Gracias",
-        "explanation": "Añay o Sulpayki se usa para agradecer."
+        "explanation": "Añay es el término para manifestar agradecimiento o dar las gracias."
       },
       {
-        "question": "¿Cómo respondes a 'Allillanchu?' (¿Estás bien?)",
-        "options": ["Arí, allillanmi", "Mana", "Imaynalla", "Paqarinkama"],
-        "correctAnswer": "Arí, allillanmi",
-        "explanation": "Significa 'Sí, estoy bien'."
+        "question": "¿Cómo se dice 'Hasta mañana' en Quechua?",
+        "options": [
+          "Paqarinqkama",
+          "Tupananchiskama",
+          "Allin tuta"
+        ],
+        "correctAnswer": "Paqarinqkama",
+        "explanation": "Paqarinqkama (o Paqarinkama) es la despedida temporal que significa 'Hasta mañana'."
       }
     ],
     "achievement": {
-      "name": "Saludo Inca",
-      "description": "Dominaste los saludos básicos.",
-      "shareMessage": "¡Ya sé saludar en Quechua! 🇵🇪"
+      "name": "Cortesía Inca",
+      "description": "Dominas los saludos básicos en Quechua.",
+      "shareMessage": "¡Logré aprobar mi examen de Saludos Básicos en Quechua en Aru Yachay!"
     }
   },
   {
-    "language": "Quechua",
-    "level": "Fácil",
-    "examTitle": "Los Números del 1 al 5",
-    "description": "Aprende a contar los primeros números en Quechua.",
+    "language": "quechua",
+    "level": "easy",
+    "examTitle": "Pronombres y Origen",
+    "description": "Práctica simple sobre identidad y procedencia en Quechua.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Tres'?",
-        "options": ["Huk", "Iskay", "Kimsa", "Tawa"],
-        "correctAnswer": "Kimsa",
-        "explanation": "Kimsa es el número tres."
+        "question": "¿Cómo se dice el pronombre personal 'Yo' en Quechua?",
+        "options": [
+          "Noqa",
+          "Qan",
+          "Pay"
+        ],
+        "correctAnswer": "Noqa",
+        "explanation": "Noqa es el pronombre de primera persona en singular ('Yo')."
       },
       {
-        "question": "¿Qué número es 'Iskay'?",
-        "options": ["1", "2", "3", "4"],
-        "correctAnswer": "2",
-        "explanation": "Iskay representa el número dos."
+        "question": "¿Qué significa la pregunta '¿Maymantataq kanki?'?",
+        "options": [
+          "¿De dónde eres?",
+          "¿Cómo estás?",
+          "¿Cuál es tu nombre?"
+        ],
+        "correctAnswer": "¿De dónde eres?",
+        "explanation": "El sufijo '-manta' indica origen. Por ello, interroga la procedencia geográfica."
       },
       {
-        "question": "¿Cómo se dice 'Cinco'?",
-        "options": ["Tawa", "Pichqa", "Soqta", "Qanchis"],
-        "correctAnswer": "Pichqa",
-        "explanation": "Pichqa es el número cinco."
+        "question": "¿Cómo se responde correctamente a '¿Imataq sutiyki?' (¿Cómo te llamas?)?",
+        "options": [
+          "Sutiyqa Juanmi",
+          "Noqa kani Juan",
+          "Allillanmi kani"
+        ],
+        "correctAnswer": "Sutiyqa Juanmi",
+        "explanation": "La estructura correcta de respuesta de posesión es: 'Sutiy-qa [Nombre]-mi/n'."
       }
     ],
     "achievement": {
-      "name": "Contador Imperial",
-      "description": "Aprendiste a contar hasta cinco.",
-      "shareMessage": "¡Ya cuento en Quechua! 1, 2, 3..."
-    }
-  },
-  {
-    "language": "Quechua",
-    "level": "Fácil",
-    "examTitle": "Los Colores Básicos",
-    "description": "Identifica los colores principales en el idioma de los Incas.",
-    "questions": [
-      {
-        "question": "¿Qué color es 'Puka'?",
-        "options": ["Azul", "Verde", "Rojo", "Blanco"],
-        "correctAnswer": "Rojo",
-        "explanation": "Puka significa rojo."
-      },
-      {
-        "question": "¿Cómo se dice 'Blanco'?",
-        "options": ["Yuraq", "Yana", "Q'ello", "Q'omer"],
-        "correctAnswer": "Yuraq",
-        "explanation": "Yuraq es el color blanco."
-      },
-      {
-        "question": "¿Qué color es 'Yana'?",
-        "options": ["Negro", "Amarillo", "Gris", "Marrón"],
-        "correctAnswer": "Negro",
-        "explanation": "Yana significa negro."
-      }
-    ],
-    "achievement": {
-      "name": "Arcoíris Andino",
-      "description": "Conoces los colores básicos en Quechua.",
-      "shareMessage": "¡Aprendí los colores en Quechua! 🌈"
+      "name": "Identidad Básica",
+      "description": "Sabes identificarte y preguntar procedencias en Quechua.",
+      "shareMessage": "¡Ya sé presentarme en Quechua gracias a Aru Yachay!"
     }
   }
 ]

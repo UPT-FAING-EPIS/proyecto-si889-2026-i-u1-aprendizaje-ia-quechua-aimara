@@ -1,95 +1,88 @@
 [
   {
-    "language": "Quechua",
-    "level": "Intermedio",
-    "examTitle": "Frases Cotidianas",
-    "description": "Aprende a construir oraciones sobre actividades diarias.",
+    "language": "quechua",
+    "level": "intermediate",
+    "examTitle": "La Familia y Relaciones",
+    "description": "Pon a prueba tu vocabulario sobre parentescos y relaciones familiares.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Estoy comiendo'?",
-        "options": ["Mikhushani", "Puñushani", "Llamk'ashani", "Tusuypuni"],
-        "correctAnswer": "Mikhushani",
-        "explanation": "Mikhuy (comer) + -sha (progresivo) + -ni (yo)."
+        "question": "¿Cómo se dice 'Madre' en Quechua?",
+        "options": [
+          "Mama",
+          "Tayta",
+          "Wawqi"
+        ],
+        "correctAnswer": "Mama",
+        "explanation": "Mama es the término quechua para Madre."
       },
       {
-        "question": "¿Qué significa 'Maypin kanki?'",
-        "options": ["¿Quién eres?", "¿Dónde estás?", "¿A dónde vas?", "¿Qué haces?"],
-        "correctAnswer": "¿Dónde estás?",
-        "explanation": "Maypi (dónde) + -n (validador) + kanki (eres/estás)."
+        "question": "¿Qué significa la palabra 'Tayta'?",
+        "options": [
+          "Padre",
+          "Hermano",
+          "Hijo"
+        ],
+        "correctAnswer": "Padre",
+        "explanation": "Tayta es el término formal y cariñoso para Padre."
       },
       {
-        "question": "¿Cómo se dice 'Mañana iré a la ciudad'?",
-        "options": ["Paqarin llaqtata risaq", "Qanwan risaq", "Kaypi kani", "Llaqtamanta hamuni"],
-        "correctAnswer": "Paqarin llaqtata risaq",
-        "explanation": "Paqarin (mañana) + llaqtata (a la ciudad) + risaq (iré)."
+        "question": "¿Cómo llama un varón a su hermano en Quechua?",
+        "options": [
+          "Wawqi",
+          "Tura",
+          "Ñaña"
+        ],
+        "correctAnswer": "Wawqi",
+        "explanation": "Wawqi es la denominación exclusiva que usa un varón para referirse a su hermano."
       }
     ],
     "achievement": {
-      "name": "Hablante Activo",
-      "description": "Puedes describir acciones presentes y futuras.",
-      "shareMessage": "¡Ya formo oraciones en Quechua! 🗣️"
+      "name": "Hermandad Andina",
+      "description": "Dominas el árbol genealógico en Quechua.",
+      "shareMessage": "¡Superé el examen de parentescos en Quechua!"
     }
   },
   {
-    "language": "Quechua",
-    "level": "Intermedio",
-    "examTitle": "La Familia y Parentesco",
-    "description": "Vocabulario para describir a los miembros de tu familia.",
+    "language": "quechua",
+    "level": "intermediate",
+    "examTitle": "Alimentos y Campo",
+    "description": "Aprende los nombres de los cultivos e ingredientes más populares.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Mi madre'?",
-        "options": ["Mamay", "Tatay", "Waway", "Pani"],
-        "correctAnswer": "Mamay",
-        "explanation": "Mama (madre) + -y (posesivo de primera persona)."
+        "question": "¿Qué alimento es 'Papa' en Quechua?",
+        "options": [
+          "Papa",
+          "Sara",
+          "Ch'arki"
+        ],
+        "correctAnswer": "Papa",
+        "explanation": "Papa conserva su nombre original en Quechua."
       },
       {
-        "question": "¿Qué significa 'Wawqe'?",
-        "options": ["Hermano de hombre", "Hermano de mujer", "Tío", "Abuelo"],
-        "correctAnswer": "Hermano de hombre",
-        "explanation": "Wawqe es el término que un hombre usa para referirse a su hermano."
+        "question": "¿Qué animal representa la palabra 'Ukucha'?",
+        "options": [
+          "Ratón",
+          "Perro",
+          "Oveja"
+        ],
+        "correctAnswer": "Ratón",
+        "explanation": "Ukucha es el nombre quechua para el ratón."
       },
       {
-        "question": "¿Cómo se dice 'Abuela' en Quechua?",
-        "options": ["Awicha", "Machula", "Ipa", "Kaka"],
-        "correctAnswer": "Awicha",
-        "explanation": "Awicha o Hatun Mama es abuela."
+        "question": "¿Cómo se dice 'Agua' en Quechua?",
+        "options": [
+          "Yaku",
+          "Unu",
+          "Ambo"
+        ],
+        "correctAnswer": "Yaku",
+        "explanation": "Yaku es el término estándar para Agua (también 'Unu' en ciertas variantes centrales)."
       }
     ],
     "achievement": {
-      "name": "Vínculo Familiar",
-      "description": "Conoces los términos de parentesco.",
-      "shareMessage": "¡Puedo presentar a mi familia en Quechua! 👨‍👩‍👧‍👦"
-    }
-  },
-  {
-    "language": "Quechua",
-    "level": "Intermedio",
-    "examTitle": "Ubicación y Direcciones",
-    "description": "Aprende a orientarte y dar direcciones básicas.",
-    "questions": [
-      {
-        "question": "¿Qué significa 'Paña'?",
-        "options": ["Izquierda", "Derecha", "Arriba", "Abajo"],
-        "correctAnswer": "Derecha",
-        "explanation": "Paña es derecha, Lloq'e es izquierda."
-      },
-      {
-        "question": "¿Cómo se dice 'Cerca'?",
-        "options": ["Qaylla", "Karu", "Wichay", "Uray"],
-        "correctAnswer": "Qaylla",
-        "explanation": "Qaylla es cerca, Karu es lejos."
-      },
-      {
-        "question": "¿Qué significa 'Uray'?",
-        "options": ["Hacia arriba", "Hacia abajo", "Adentro", "Afuera"],
-        "correctAnswer": "Hacia abajo",
-        "explanation": "Uray indica dirección descendente."
-      }
-    ],
-    "achievement": {
-      "name": "Guía Andino",
-      "description": "Sabes dar direcciones básicas.",
-      "shareMessage": "¡No me pierdo, ya sé dar direcciones en Quechua! 🗺️"
+      "name": "Alimentador Aprendiz",
+      "description": "Completaste el vocabulario de alimentos intermedios.",
+      "shareMessage": "¡Aprobé mi práctica de Alimentos en Quechua!"
     }
   }
 ]

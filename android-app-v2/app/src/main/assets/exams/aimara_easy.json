@@ -1,95 +1,88 @@
 [
   {
-    "language": "Aimara",
-    "level": "Fácil",
-    "examTitle": "Saludos Iniciales",
-    "description": "Aprende los saludos básicos en la lengua del Altiplano.",
+    "language": "aimara",
+    "level": "easy",
+    "examTitle": "Saludos y Presentaciones",
+    "description": "Expresiones y saludos comunes en la cultura aymara.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Hola' (A todos) en Aimara?",
-        "options": ["Kamisaki", "Aski jayp'u", "Aruskisipañani", "Yuspajara"],
-        "correctAnswer": "Kamisaki",
-        "explanation": "Kamisaki es el saludo general en Aimara."
+        "question": "¿Cómo se dice 'Hola' o '¿Cómo estás?' en Aimara?",
+        "options": [
+          "Kamisaraki",
+          "Waliki",
+          "Yuspagara"
+        ],
+        "correctAnswer": "Kamisaraki",
+        "explanation": "Kamisaraki es el saludo clásico y más extendido en el idioma Aimara."
       },
       {
-        "question": "¿Qué significa 'Jisa'?",
-        "options": ["No", "Tal vez", "Sí", "Mañana"],
-        "correctAnswer": "Sí",
-        "explanation": "Jisa significa sí, Jani significa no."
+        "question": "¿Qué significa la respuesta 'Waliki'?",
+        "options": [
+          "Estoy bien",
+          "Gracias",
+          "Adiós"
+        ],
+        "correctAnswer": "Estoy bien",
+        "explanation": "Waliki (o Walikiwa) denota afirmación y bienestar."
       },
       {
-        "question": "¿Cómo se dice 'Gracias'?",
-        "options": ["Waliki", "Yuspajara", "Saraki", "Kamisaki"],
-        "correctAnswer": "Yuspajara",
-        "explanation": "Yuspajara es un préstamo adaptado para dar las gracias."
+        "question": "¿Cómo se dice 'Hasta luego' en Aimara?",
+        "options": [
+          "Jikisiñakama",
+          "Kamisaraki",
+          "Qharürkama"
+        ],
+        "correctAnswer": "Jikisiñakama",
+        "explanation": "Jikisiñakama es la fórmula para despedirse temporalmente."
       }
     ],
     "achievement": {
-      "name": "Voz del Altiplano",
-      "description": "Dominaste los saludos básicos en Aimara.",
-      "shareMessage": "¡Ya sé saludar en Aimara! 🇧🇴"
+      "name": "Cortesía del Altiplano",
+      "description": "Sabes saludar adecuadamente en Aimara.",
+      "shareMessage": "¡Logré aprobar mi examen de Saludos en Aimara en Aru Yachay!"
     }
   },
   {
-    "language": "Aimara",
-    "level": "Fácil",
-    "examTitle": "Números del 1 al 5",
-    "description": "Practica los primeros números en Aimara.",
+    "language": "aimara",
+    "level": "easy",
+    "examTitle": "Pronombres y Preguntas",
+    "description": "Introducción a los pronombres de persona y preguntas básicas en Aimara.",
     "questions": [
       {
-        "question": "¿Cómo se dice 'Uno'?",
-        "options": ["Maya", "Paya", "Quimsa", "Pusi"],
-        "correctAnswer": "Maya",
-        "explanation": "Maya es el número uno."
+        "question": "¿Cómo se dice el pronombre 'Tú' en Aimara?",
+        "options": [
+          "Jumaxa",
+          "Nayaxa",
+          "Jupaxa"
+        ],
+        "correctAnswer": "Jumaxa",
+        "explanation": "Jumaxa (o Juma) representa la segunda persona en singular ('Tú')."
       },
       {
-        "question": "¿Qué número es 'Pusi'?",
-        "options": ["2", "3", "4", "5"],
-        "correctAnswer": "4",
-        "explanation": "Pusi representa el número cuatro."
+        "question": "¿Qué significa la pregunta '¿Kunasa sutimaxa?'?",
+        "options": [
+          "¿Cuál es tu nombre?",
+          "¿De dónde eres?",
+          "¿Cómo estás?"
+        ],
+        "correctAnswer": "¿Cuál es tu nombre?",
+        "explanation": "Kunasa (¿Qué?) + Sutimaxa (tu nombre) interroga la identidad del usuario."
       },
       {
-        "question": "¿Cómo se dice 'Tres'?",
-        "options": ["Maya", "Quimsa", "Phisca", "Paya"],
-        "correctAnswer": "Quimsa",
-        "explanation": "Quimsa es el número tres."
+        "question": "¿Cómo se expresa gratitud o se dice 'Gracias' en Aimara?",
+        "options": [
+          "Yuspagara",
+          "Waliki",
+          "Kamisaraki"
+        ],
+        "correctAnswer": "Yuspagara",
+        "explanation": "Yuspagara es el préstamo adaptado usado tradicionalmente para decir gracias."
       }
     ],
     "achievement": {
-      "name": "Contador Aimara",
-      "description": "Aprendiste a contar hasta cinco.",
-      "shareMessage": "¡Cuento en Aimara! Maya, Paya, Quimsa..."
-    }
-  },
-  {
-    "language": "Aimara",
-    "level": "Fácil",
-    "examTitle": "Colores en Aimara",
-    "description": "Identifica los colores de la Wiphala.",
-    "questions": [
-      {
-        "question": "¿Qué color es 'Wila'?",
-        "options": ["Azul", "Blanco", "Rojo", "Verde"],
-        "correctAnswer": "Rojo",
-        "explanation": "Wila significa rojo."
-      },
-      {
-        "question": "¿Cómo se dice 'Blanco'?",
-        "options": ["Janq'u", "Ch'iyara", "Q'illu", "Ch'uxña"],
-        "correctAnswer": "Janq'u",
-        "explanation": "Janq'u es el color blanco."
-      },
-      {
-        "question": "¿Qué color es 'Ch'iyara'?",
-        "options": ["Negro", "Amarillo", "Gris", "Naranja"],
-        "correctAnswer": "Negro",
-        "explanation": "Ch'iyara significa negro."
-      }
-    ],
-    "achievement": {
-      "name": "Colorido Aimara",
-      "description": "Identificas los colores básicos.",
-      "shareMessage": "¡Conozco los colores en Aimara! 🎨"
+      "name": "Identidad Aymara",
+      "description": "Dominas pronombres y presentaciones básicas.",
+      "shareMessage": "¡Ya sé dar las gracias y presentarme en Aimara!"
     }
   }
 ]

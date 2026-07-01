@@ -1,16 +1,19 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.ui.practice
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Translate
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -69,7 +72,7 @@ fun PracticeCategoryScreen(
 fun PracticeListScreen(
     language: String,
     viewModel: PracticeViewModel = hiltViewModel(),
-    onPracticeSelected: (String, String) -> Unit,
+    onPracticeSelected: (String, String, String) -> Unit,
     onBack: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -77,6 +80,10 @@ fun PracticeListScreen(
 
     LaunchedEffect(language) {
         viewModel.init(language)
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.loadCompletedPractices()
     }
 
     Scaffold(
@@ -124,33 +131,87 @@ fun PracticeListScreen(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(uiState.practices) { practice ->
+                        val safeTitle = practice.examTitle
+                            .replace(".", "_")
+                            .replace("#", "_")
+                            .replace("$", "_")
+                            .replace("[", "_")
+                            .replace("]", "_")
+                            .replace("/", "_")
+                        val isCompleted = uiState.completedPractices.contains(safeTitle)
+
                         Card(
-                            onClick = { onPracticeSelected(language, uiState.selectedLevel) },
+                            onClick = { onPracticeSelected(language, uiState.selectedLevel, practice.examTitle) },
                             modifier = Modifier.fillMaxWidth(),
+                            border = if (isCompleted) BorderStroke(1.5.dp, Color(0xFF4CAF50)) else null,
                             colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.surfaceVariant
+                                containerColor = if (isCompleted) {
+                                    Color(0xFF4CAF50).copy(alpha = 0.12f)
+                                } else {
+                                    MaterialTheme.colorScheme.surfaceVariant
+                                }
                             )
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
-                                Text(
-                                    text = practice.examTitle,
-                                    style = MaterialTheme.typography.titleLarge,
-                                    fontWeight = FontWeight.Bold
-                                )
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Text(
+                                        text = practice.examTitle,
+                                        style = MaterialTheme.typography.titleLarge,
+                                        fontWeight = FontWeight.Bold,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                    if (isCompleted) {
+                                        Icon(
+                                            imageVector = Icons.Default.CheckCircle,
+                                            contentDescription = "Completado",
+                                            tint = Color(0xFF4CAF50),
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                    }
+                                }
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
                                     text = practice.description,
                                     style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    color = if (isCompleted) {
+                                        MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
+                                    } else {
+                                        MaterialTheme.colorScheme.onSurfaceVariant
+                                    }
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
-                                SuggestionChip(
-                                    onClick = { },
-                                    label = { 
-                                        Text("${practice.questions.size} preguntas") 
-                                    },
-                                    enabled = false
-                                )
+                                Row(
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    SuggestionChip(
+                                        onClick = { },
+                                        label = { 
+                                            Text("${practice.questions.size} preguntas") 
+                                        },
+                                        enabled = false
+                                    )
+                                    if (isCompleted) {
+                                        SuggestionChip(
+                                            onClick = { },
+                                            label = { 
+                                                Text("Completado", color = Color(0xFF2E7D32)) 
+                                            },
+                                            enabled = false,
+                                            colors = SuggestionChipDefaults.suggestionChipColors(
+                                                disabledLabelColor = Color(0xFF2E7D32)
+                                            ),
+                                            border = SuggestionChipDefaults.suggestionChipBorder(
+                                                enabled = false,
+                                                disabledBorderColor = Color(0xFF4CAF50).copy(alpha = 0.5f)
+                                            )
+                                        )
+                                    }
+                                }
                             }
                         }
                     }

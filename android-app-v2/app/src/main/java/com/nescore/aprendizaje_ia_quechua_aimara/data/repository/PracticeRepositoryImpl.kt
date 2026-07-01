@@ -1,27 +1,117 @@
 package com.nescore.aprendizaje_ia_quechua_aimara.data.repository
 
 import android.content.Context
+import com.google.firebase.database.FirebaseDatabase
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Achievement
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Exam
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Question
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.repository.PracticeRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.tasks.await
 import org.json.JSONArray
 import org.json.JSONObject
 import javax.inject.Inject
 
 class PracticeRepositoryImpl @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,
+    private val database: FirebaseDatabase
 ) : PracticeRepository {
 
     override suspend fun getExamsByLevel(language: String, level: String): List<Exam> {
         val levelKey = mapLevelToKey(level)
-        return loadExamsFromAssets(language.lowercase(), levelKey)
+        val langKey = language.lowercase()
+
+        try {
+            val snapshot = database.getReference("practicas")
+                .child(langKey)
+                .child(levelKey)
+                .get()
+                .await()
+
+            if (snapshot.exists()) {
+                val exams = mutableListOf<Exam>()
+                snapshot.children.forEach { examSnap ->
+                    val exam = parseExamFromSnapshot(examSnap, langKey, levelKey)
+                    if (exam != null) {
+                        exams.add(exam)
+                    }
+                }
+                if (exams.isNotEmpty()) {
+                    return exams
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return loadExamsFromAssets(langKey, levelKey)
     }
 
     override suspend fun getExamByTitle(language: String, level: String, title: String): Exam? {
         val levelKey = mapLevelToKey(level)
-        return loadExamsFromAssets(language.lowercase(), levelKey).find { it.examTitle == title }
+        val langKey = language.lowercase()
+
+        try {
+            val safeTitle = title
+                .replace(".", "_")
+                .replace("#", "_")
+                .replace("$", "_")
+                .replace("[", "_")
+                .replace("]", "_")
+                .replace("/", "_")
+
+            val snapshot = database.getReference("practicas")
+                .child(langKey)
+                .child(levelKey)
+                .child(safeTitle)
+                .get()
+                .await()
+
+            if (snapshot.exists()) {
+                val exam = parseExamFromSnapshot(snapshot, langKey, levelKey)
+                if (exam != null) {
+                    return exam
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return loadExamsFromAssets(langKey, levelKey).find { it.examTitle == title }
+    }
+
+    private fun parseExamFromSnapshot(snapshot: com.google.firebase.database.DataSnapshot, language: String, level: String): Exam? {
+        try {
+            val examTitle = snapshot.child("examTitle").value as? String ?: return null
+            val description = snapshot.child("description").value as? String ?: ""
+            
+            val questions = mutableListOf<Question>()
+            snapshot.child("questions").children.forEach { qSnap ->
+                val questionText = qSnap.child("question").value as? String ?: ""
+                val correctAnswer = qSnap.child("correctAnswer").value as? String ?: ""
+                val explanation = qSnap.child("explanation").value as? String ?: ""
+                
+                val options = mutableListOf<String>()
+                qSnap.child("options").children.forEach { optSnap ->
+                    val opt = optSnap.value as? String
+                    if (opt != null) {
+                        options.add(opt)
+                    }
+                }
+                questions.add(Question(questionText, options, correctAnswer, explanation))
+            }
+            
+            val achSnap = snapshot.child("achievement")
+            val achName = achSnap.child("name").value as? String ?: "Logro"
+            val achDesc = achSnap.child("description").value as? String ?: "Completaste el examen"
+            val achShare = achSnap.child("shareMessage").value as? String ?: "¡Logré superar el examen!"
+            val achievement = Achievement(achName, achDesc, achShare)
+            
+            return Exam(language, level, examTitle, description, questions, achievement)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return null
+        }
     }
 
     private fun mapLevelToKey(level: String): String {

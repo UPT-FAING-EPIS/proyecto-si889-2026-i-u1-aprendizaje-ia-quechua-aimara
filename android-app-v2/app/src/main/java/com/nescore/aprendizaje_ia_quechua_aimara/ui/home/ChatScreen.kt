@@ -89,7 +89,7 @@ fun ChatScreen(
                         onSpeak = { text, lang -> viewModel.speak(text, lang) }
                     )
                 } else {
-                    SimpleAssistantBubble(message.content)
+                    SimpleAssistantBubble(message.content, onSpeak = { text, lang -> viewModel.speak(text, lang) })
                 }
             }
 
@@ -178,13 +178,22 @@ fun LanguageRow(label: String, text: String, langCode: String, onSpeak: (String,
 }
 
 @Composable
-fun SimpleAssistantBubble(text: String) {
+fun SimpleAssistantBubble(text: String, onSpeak: (String, String) -> Unit) {
     Surface(
         color = MaterialTheme.colorScheme.surfaceVariant,
         shape = RoundedCornerShape(16.dp, 16.dp, 16.dp, 0.dp),
         modifier = Modifier.widthIn(max = 280.dp)
     ) {
-        Text(text, modifier = Modifier.padding(12.dp))
+        Row(
+            modifier = Modifier.padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text, modifier = Modifier.weight(1f), fontSize = 15.sp)
+            Spacer(modifier = Modifier.width(8.dp))
+            IconButton(onClick = { onSpeak(text, "es") }, modifier = Modifier.size(24.dp)) {
+                Icon(Icons.Default.VolumeUp, contentDescription = "Escuchar", modifier = Modifier.size(18.dp))
+            }
+        }
     }
 }
 

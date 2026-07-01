@@ -58,7 +58,12 @@ class FirebaseAuthDataSource @Inject constructor(
             val googleIdToken = GoogleIdTokenCredential.createFrom(credential.data)
             val firebaseCredential = GoogleAuthProvider.getCredential(googleIdToken.idToken, null)
             
-            firebaseAuth.signInWithCredential(firebaseCredential).await()
+            val currentUser = firebaseAuth.currentUser
+            if (currentUser != null && currentUser.isAnonymous) {
+                currentUser.linkWithCredential(firebaseCredential).await()
+            } else {
+                firebaseAuth.signInWithCredential(firebaseCredential).await()
+            }
             Result.success(Unit)
         } catch (e: Exception) {
             Result.failure(e)

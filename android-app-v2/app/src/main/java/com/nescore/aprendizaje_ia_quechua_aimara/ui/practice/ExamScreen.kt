@@ -22,6 +22,7 @@ import com.nescore.aprendizaje_ia_quechua_aimara.ui.practice.components.OptionTi
 fun ExamScreen(
     language: String,
     level: String,
+    examTitle: String,
     onBack: () -> Unit,
     onFinish: (Int, Int, String, String) -> Unit,
     viewModel: ExamViewModel = hiltViewModel()
@@ -30,7 +31,7 @@ fun ExamScreen(
     val scrollState = rememberScrollState()
 
     LaunchedEffect(Unit) {
-        viewModel.loadExam(language, level)
+        viewModel.loadExam(language, level, examTitle)
     }
 
     LaunchedEffect(uiState.isExamCompleted) {

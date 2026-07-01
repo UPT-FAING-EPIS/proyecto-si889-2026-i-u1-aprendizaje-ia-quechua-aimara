@@ -100,19 +100,21 @@ class MainActivity : ComponentActivity() {
                         val language = backStackEntry.arguments?.getString("language") ?: ""
                         PracticeListScreen(
                             language = language,
-                            onPracticeSelected = { lang, level ->
-                                navController.navigate("practice_exam/$lang/$level")
+                            onPracticeSelected = { lang, level, title ->
+                                navController.navigate("practice_exam/$lang/$level/$title")
                             },
                             onBack = { navController.popBackStack() }
                         )
                     }
 
-                    composable("practice_exam/{language}/{level}") { backStackEntry ->
+                    composable("practice_exam/{language}/{level}/{examTitle}") { backStackEntry ->
                         val language = backStackEntry.arguments?.getString("language") ?: ""
                         val level = backStackEntry.arguments?.getString("level") ?: ""
+                        val examTitle = backStackEntry.arguments?.getString("examTitle") ?: ""
                         ExamScreen(
                             language = language,
                             level = level,
+                            examTitle = examTitle,
                             onBack = { navController.popBackStack() },
                             onFinish = { score, total, achievement, shareMessage ->
                                 navController.navigate("practice_results/$score/$total/$achievement/$shareMessage") {

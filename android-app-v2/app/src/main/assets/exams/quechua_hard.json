@@ -1,95 +1,88 @@
 [
   {
-    "language": "Quechua",
-    "level": "Difícil",
-    "examTitle": "Gramática Avanzada",
-    "description": "Desafía tus conocimientos con sufijos complejos y estructuras gramaticales avanzadas.",
+    "language": "quechua",
+    "level": "hard",
+    "examTitle": "Gramática y Sufijos",
+    "description": "Análisis profundo sobre los sufijos validadores y locativos en Quechua.",
     "questions": [
       {
-        "question": "¿Qué significa el sufijo '-sqa' en 'Yachasqani'?",
-        "options": ["Pasado narrativo", "Futuro próximo", "Presente continuo", "Obligación"],
-        "correctAnswer": "Pasado narrativo",
-        "explanation": "El sufijo -sqa se usa para acciones pasadas de las que no se fue testigo directo."
+        "question": "¿Qué sufijo se utiliza para formular preguntas que requieren respuesta de Sí/No?",
+        "options": [
+          "-chu",
+          "-mi",
+          "-pi"
+        ],
+        "correctAnswer": "-chu",
+        "explanation": "El sufijo enclítico '-chu' sirve para hacer preguntas cerradas de sí o no."
       },
       {
-        "question": "Traduce: 'Si hubiera sabido, habría venido'",
-        "options": ["Yachayman karqa, hamuyman karqa", "Yachaspayqa hamuymanmi karqa", "Yachayman chayqa hamuymanmi karqa", "Yachaspayqa hamusaqmi karqa"],
-        "correctAnswer": "Yachaspayqa hamuymanmi karqa",
-        "explanation": "Usa la condicional -spa y el potencial -man karqa."
+        "question": "¿Qué sufijo indica origen o procedencia de un lugar (ej. 'de Cusco')?",
+        "options": [
+          "-manta",
+          "-wan",
+          "-pa"
+        ],
+        "correctAnswer": "-manta",
+        "explanation": "El sufijo locativo/ablativo '-manta' significa 'desde' o 'de'."
       },
       {
-        "question": "¿Qué función cumple el sufijo '-pis'?",
-        "options": ["Inclusión (también)", "Exclusión (solo)", "Pregunta", "Dirección"],
-        "correctAnswer": "Inclusión (también)",
-        "explanation": "'-pis' o '-pas' significa 'también'."
+        "question": "¿Qué significa el sufijo '-pi' en sustantivos?",
+        "options": [
+          "En (locativo)",
+          "Con (comitativo)",
+          "Para (benefactivo)"
+        ],
+        "correctAnswer": "En (locativo)",
+        "explanation": "El sufijo '-pi' es el locativo estático que indica estar 'en' un sitio."
       }
     ],
     "achievement": {
-      "name": "Maestro de la Lengua",
-      "description": "Dominas las estructuras más complejas del Quechua.",
-      "shareMessage": "¡Me convertí en Maestro Quechua! 👑"
+      "name": "Gramático Imperial",
+      "description": "Has dominado el uso avanzado de sufijos quechuas.",
+      "shareMessage": "¡Aprobé el examen avanzado de sufijos quechuas!"
     }
   },
   {
-    "language": "Quechua",
-    "level": "Difícil",
-    "examTitle": "Literatura y Cosmovisión",
-    "description": "Explora conceptos profundos de la cultura y pensamiento andino.",
+    "language": "quechua",
+    "level": "hard",
+    "examTitle": "Profesiones y Trabajos",
+    "description": "Términos complejos sobre cargos y profesiones de la comunidad.",
     "questions": [
       {
-        "question": "¿Qué concepto define el 'Ayni'?",
-        "options": ["Reciprocidad", "Venganza", "Guerra", "Silencio"],
-        "correctAnswer": "Reciprocidad",
-        "explanation": "El Ayni es el principio de ayuda mutua entre comunidades."
+        "question": "¿Qué significa la ocupación 'Yachachiq'?",
+        "options": [
+          "Profesor",
+          "Médico",
+          "Juez"
+        ],
+        "correctAnswer": "Profesor",
+        "explanation": "Yachachiq es la persona que enseña (profesor o tutor)."
       },
       {
-        "question": "¿Quién es el 'Willka'?",
-        "options": ["Un nieto o ser sagrado", "Un enemigo", "Un animal salvaje", "Una piedra común"],
-        "correctAnswer": "Un nieto o ser sagrado",
-        "explanation": "Willka tiene significados de sacralidad y linaje familiar."
+        "question": "¿Quién es el 'Hampiq' en la comunidad?",
+        "options": [
+          "Médico",
+          "Sacerdote",
+          "Tejedor"
+        ],
+        "correctAnswer": "Médico",
+        "explanation": "Hampiq (de Hampi = medicina) es el médico o sanador."
       },
       {
-        "question": "¿Qué significa 'Pachakuti'?",
-        "options": ["Transformación del mundo", "Fin del tiempo", "Cosecha de maíz", "Lluvia intensa"],
-        "correctAnswer": "Transformación del mundo",
-        "explanation": "Pacha (tiempo/espacio) + Kuti (vuelta/cambio)."
+        "question": "¿Cómo se traduce la ocupación 'Wasi ruwaq'?",
+        "options": [
+          "Constructor de casas",
+          "Cocinero",
+          "Pescador"
+        ],
+        "correctAnswer": "Constructor de casas",
+        "explanation": "Wasi (casa) + Ruwaq (hacedor/constructor) significa constructor de casas."
       }
     ],
     "achievement": {
-      "name": "Sabio Andino",
-      "description": "Comprendes la profundidad de la cosmovisión Quechua.",
-      "shareMessage": "¡Exploro la sabiduría de los Andes en Quechua! 🏔️"
-    }
-  },
-  {
-    "language": "Quechua",
-    "level": "Difícil",
-    "examTitle": "Dialectos y Variantes",
-    "description": "Pon a prueba tu oído y comprensión de diferentes variantes del Quechua.",
-    "questions": [
-      {
-        "question": "En la variante Cusco-Collao, ¿cómo se pronuncia la 'q' aspirada?",
-        "options": ["Como una j suave", "Como una k fuerte", "No se pronuncia", "Como una h"],
-        "correctAnswer": "Como una j suave",
-        "explanation": "La 'q' posvelar tiene un sonido distintivo similar a la 'j' pero más atrás."
-      },
-      {
-        "question": "¿Cuál es la principal diferencia entre el Quechua Chanka y el Cusco?",
-        "options": ["El uso de pentavocalismo", "La falta de consonantes glotalizadas", "El vocabulario básico", "La estructura de las oraciones"],
-        "correctAnswer": "La falta de consonantes glotalizadas",
-        "explanation": "El Chanka no usa las consonantes aspiradas ni glotalizadas que tiene el Cusco."
-      },
-      {
-        "question": "¿Qué significa 'Runasimi'?",
-        "options": ["Habla del hombre", "Boca de oro", "Canto de pájaro", "Grito de guerra"],
-        "correctAnswer": "Habla del hombre",
-        "explanation": "Runa (hombre/gente) + Simi (boca/idioma)."
-      }
-    ],
-    "achievement": {
-      "name": "Lingüista del Tawantinsuyu",
-      "description": "Reconoces las sutilezas de las variantes del Quechua.",
-      "shareMessage": "¡Soy un experto en variantes de Quechua! 🗣️"
+      "name": "Sabio de la Comunidad",
+      "description": "Dominas los términos complejos de profesiones en Quechua.",
+      "shareMessage": "¡Superé el examen difícil de Ocupaciones en Quechua!"
     }
   }
 ]

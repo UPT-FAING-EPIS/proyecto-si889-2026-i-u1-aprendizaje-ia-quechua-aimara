@@ -399,6 +399,9 @@ class StudyGuideViewModel @Inject constructor(
             ref.setValue(true)
                 .addOnSuccessListener {
                     Log.d("StudyGuideVM", "Progreso guardado en Firebase: $temaId / $safeKey")
+                    viewModelScope.launch {
+                        com.nescore.aprendizaje_ia_quechua_aimara.util.LeaderboardHelper.updateLeaderboard(uid)
+                    }
                 }
                 .addOnFailureListener { e ->
                     Log.e("StudyGuideVM", "Error guardando progreso en Firebase", e)
