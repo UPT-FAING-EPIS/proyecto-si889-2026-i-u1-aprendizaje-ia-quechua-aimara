@@ -9,8 +9,9 @@ class AssessPronunciationUseCase @Inject constructor(
     suspend operator fun invoke(
         audioPath: String,
         targetWord: String,
-        language: String
+        language: String,
+        translation: String
     ): Result<Map<String, Any>> {
-        return chatRepository.assessPronunciation(audioPath, targetWord, language)
+        return chatRepository.assessPronunciation(audioPath, targetWord, language, translation)
     }
 }

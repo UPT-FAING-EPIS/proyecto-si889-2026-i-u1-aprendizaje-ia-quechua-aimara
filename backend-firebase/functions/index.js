@@ -11,6 +11,33 @@ admin.initializeApp();
 
 const openaiApiKey = defineSecret("OPENAI_API_KEY");
 
+// Helper to filter Whisper silence/noise hallucinations
+function isWhisperHallucination(text) {
+  if (!text) return true;
+  const lower = text.toLowerCase().trim();
+  if (lower.length === 0) return true;
+  
+  const hallucinations = [
+    "amara.org",
+    "subtítulo",
+    "subtitulado",
+    "gracias por ver",
+    "thank you for watching",
+    "transcripción por",
+    "traducido por",
+    "asociación de la comunidad",
+    "reproducción de vídeo",
+    "este vídeo"
+  ];
+  
+  for (const phrase of hallucinations) {
+    if (lower.includes(phrase)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // --- 1. FLUJO DE TEXTO ---
 exports.getOpenAIResponse = onCall(
     {
@@ -127,11 +154,11 @@ exports.processAudioMessage = onCall(
         console.log("Transcripción exitosa:", userText);
 
         const cleanText = userText.trim().replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]/g, "");
-        if (cleanText.length === 0) {
-          console.log("Audio sin contenido de voz. Retornando respuesta predeterminada.");
+        if (cleanText.length === 0 || isWhisperHallucination(userText)) {
+          console.log("Audio sin contenido de voz o alucinación de Whisper detectada.");
           return {
             transcription: "",
-            response: "Disculpa, no logré escuchar ningún sonido en el mensaje de voz. ¿Podrías hablar de nuevo?",
+            response: "Disculpa, no logré escuchar tu voz en el audio. ¿Podrías intentar hablar de nuevo?",
             feedback: "Audio en silencio o sin voz detectable."
           };
         }
@@ -208,7 +235,7 @@ exports.assessPronunciation = onCall(
           request.auth ? request.auth.uid : "ANONIMO",
       );
 
-      const { audioPath, targetWord, language } = request.data;
+      const { audioPath, targetWord, language, translation } = request.data;
 
       if (!audioPath || !targetWord || !language) {
         throw new HttpsError(
@@ -246,12 +273,12 @@ exports.assessPronunciation = onCall(
         console.log("Transcripción de Whisper:", userText);
 
         const cleanText = userText.trim().replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]/g, "");
-        if (cleanText.length === 0) {
-          console.log("Audio sin contenido de voz en evaluación. Retornando fallo predeterminado.");
+        if (cleanText.length === 0 || isWhisperHallucination(userText)) {
+          console.log("Audio sin contenido de voz o alucinación de Whisper detectada en evaluación.");
           return {
             transcription: "",
             isCorrect: false,
-            feedback: "No se detectó ningún sonido o palabra. Por favor, habla más fuerte y claro cerca del micrófono."
+            feedback: "No se detectó tu voz o la pronunciación de la palabra. Por favor, habla más fuerte y claro cerca del micrófono."
           };
         }
 
@@ -264,9 +291,9 @@ exports.assessPronunciation = onCall(
               role: "system",
               content:
                 "Eres un evaluador lingüístico experto en lenguas andinas (Quechua y Aimara).\n" +
-                "El usuario está tratando de pronunciar la palabra: \"" + targetWord + "\" en el idioma " + language + ".\n" +
+                "El usuario está tratando de pronunciar la palabra: \"" + targetWord + "\"" + (translation ? " (que significa \"" + translation + "\" en español)" : "") + " en el idioma " + language + ".\n" +
                 "El sistema de transcripción escuchó y escribió lo siguiente: \"" + userText + "\".\n" +
-                "Analiza la similitud fonética y determina si la pronunciación es correcta o aceptable. Ten en cuenta que el transcriptor está configurado en español, por lo que adaptará sonidos nativos a letras en español (por ejemplo, transcribir 'puka' como 'puca' o 'poca' es fonéticamente aceptable).\n" +
+                "Analiza la similitud fonética de lo escuchado con respecto a la palabra objetivo y determina si la pronunciación es correcta o aceptable. Ten en cuenta que el transcriptor está configurado en español, por lo que adaptará sonidos nativos a letras en español (por ejemplo, transcribir 'puka' como 'puca' o 'poca' es fonéticamente aceptable).\n" +
                 "Responde estrictamente en formato JSON con los siguientes campos:\n" +
                 "{\n" +
                 "  \"isCorrect\": true o false,\n" +

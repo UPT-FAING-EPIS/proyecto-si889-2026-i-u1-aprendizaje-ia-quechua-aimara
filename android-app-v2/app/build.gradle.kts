@@ -15,8 +15,8 @@ android {
         applicationId = "com.nescore.aprendizaje_ia_quechua_aimara"
         minSdk = 24
         targetSdk = 35
-        versionCode = 4
-        versionName = "1.0.4"
+        versionCode = 6
+        versionName = "1.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

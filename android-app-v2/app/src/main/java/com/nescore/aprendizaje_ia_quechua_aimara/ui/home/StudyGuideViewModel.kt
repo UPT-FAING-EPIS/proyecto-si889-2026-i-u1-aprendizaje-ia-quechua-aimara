@@ -142,10 +142,28 @@ class StudyGuideViewModel @Inject constructor(
             }
 
             getPalabrasPorTemaUseCase(tema.nombre).onSuccess { palabras ->
+                // Buscar el índice de la primera palabra que aún no ha sido completada
+                var firstPendingIndex = 0
+                for (i in palabras.indices) {
+                    val w = palabras[i]
+                    val safeKey = w.espanol
+                        .replace(".", "_")
+                        .replace("#", "_")
+                        .replace("$", "_")
+                        .replace("[", "_")
+                        .replace("]", "_")
+                        .replace("/", "_")
+                    if (!completedSet.contains(safeKey)) {
+                        firstPendingIndex = i
+                        break
+                    }
+                }
+
                 _uiState.update { 
                     it.copy(
                         palabras = palabras, 
                         completedWords = completedSet,
+                        currentWordIndex = firstPendingIndex,
                         isLoading = false 
                     ) 
                 }
@@ -253,7 +271,7 @@ class StudyGuideViewModel @Inject constructor(
                 }
 
                 val cleanPath = audioRef.path.removePrefix("/")
-                assessPronunciationUseCase(cleanPath, targetWord, state.language)
+                assessPronunciationUseCase(cleanPath, targetWord, state.language, word.espanol)
                     .onSuccess { data ->
                         val transcription = data["transcription"] as? String ?: ""
                         val isCorrect = data["isCorrect"] as? Boolean ?: false

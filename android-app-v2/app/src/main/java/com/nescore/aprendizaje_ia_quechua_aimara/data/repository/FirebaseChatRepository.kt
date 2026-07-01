@@ -75,13 +75,15 @@ class FirebaseChatRepository @Inject constructor(
     override suspend fun assessPronunciation(
         audioPath: String,
         targetWord: String,
-        language: String
+        language: String,
+        translation: String
     ): Result<Map<String, Any>> {
         return try {
             val data = hashMapOf(
                 "audioPath" to audioPath,
                 "targetWord" to targetWord,
-                "language" to language
+                "language" to language,
+                "translation" to translation
             )
             val result = functions
                 .getHttpsCallable("assessPronunciation")
