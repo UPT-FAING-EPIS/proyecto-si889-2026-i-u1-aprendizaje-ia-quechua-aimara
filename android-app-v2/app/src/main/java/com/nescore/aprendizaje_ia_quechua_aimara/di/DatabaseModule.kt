@@ -6,6 +6,7 @@ import com.nescore.aprendizaje_ia_quechua_aimara.data.local.AppDatabase
 import com.nescore.aprendizaje_ia_quechua_aimara.data.local.dao.ChatDao
 import com.nescore.aprendizaje_ia_quechua_aimara.data.local.dao.TemaDao
 import com.nescore.aprendizaje_ia_quechua_aimara.data.local.dao.WordleDao
+import com.nescore.aprendizaje_ia_quechua_aimara.data.local.dao.PalabraDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,16 +25,20 @@ object DatabaseModule {
             context,
             AppDatabase::class.java,
             "aprendizaje_db"
-        ).build()
+        )
+        .fallbackToDestructiveMigration()
+        .build()
     }
 
     @Provides
     fun provideTemaDao(database: AppDatabase): TemaDao = database.temaDao()
-
 
     @Provides
     fun provideWordleDao(database: AppDatabase): WordleDao = database.wordleDao()
 
     @Provides
     fun provideChatDao(database: AppDatabase): ChatDao = database.chatDao()
+
+    @Provides
+    fun providePalabraDao(database: AppDatabase): PalabraDao = database.palabraDao()
 }

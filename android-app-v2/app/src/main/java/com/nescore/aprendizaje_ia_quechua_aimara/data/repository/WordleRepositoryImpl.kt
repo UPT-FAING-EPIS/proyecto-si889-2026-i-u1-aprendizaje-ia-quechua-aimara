@@ -19,7 +19,40 @@ class WordleRepositoryImpl @Inject constructor(
 ) : WordleRepository {
 
     override suspend fun getRandomWord(language: WordleLanguage, category: String): Result<WordleWord> {
-        return remoteDataSource.getRandomWord(language, category)
+        return try {
+            val remoteResult = remoteDataSource.getWordleWords()
+            remoteResult.onSuccess { remoteWords ->
+                localDataSource.deleteAllWords()
+                localDataSource.insertWords(remoteWords.map { it.toEntity() })
+            }
+            
+            val localWords = localDataSource.getRandomWordsByCategory(category.lowercase())
+            val filtered = localWords.map { it.toDomain() }.filter {
+                when (language) {
+                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank()
+                    WordleLanguage.AIMARA -> it.aimara.isNotBlank()
+                }
+            }
+            
+            if (filtered.isNotEmpty()) {
+                Result.success(filtered.random())
+            } else {
+                Result.failure(Exception("No se encontraron palabras para la categoría $category en $language"))
+            }
+        } catch (e: Exception) {
+            val localWords = localDataSource.getRandomWordsByCategory(category.lowercase())
+            val filtered = localWords.map { it.toDomain() }.filter {
+                when (language) {
+                    WordleLanguage.QUECHUA -> it.quechua.isNotBlank()
+                    WordleLanguage.AIMARA -> it.aimara.isNotBlank()
+                }
+            }
+            if (filtered.isNotEmpty()) {
+                Result.success(filtered.random())
+            } else {
+                Result.failure(e)
+            }
+        }
     }
 
     override fun getAllWords(): Flow<List<WordleWord>> {

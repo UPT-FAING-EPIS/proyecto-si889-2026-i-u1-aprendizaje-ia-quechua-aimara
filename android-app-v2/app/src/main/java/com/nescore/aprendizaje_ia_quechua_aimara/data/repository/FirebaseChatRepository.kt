@@ -71,4 +71,33 @@ class FirebaseChatRepository @Inject constructor(
     override suspend fun clearChat() {
         chatDao.deleteAllMessages()
     }
+
+    override suspend fun assessPronunciation(
+        audioPath: String,
+        targetWord: String,
+        language: String
+    ): Result<Map<String, Any>> {
+        return try {
+            val data = hashMapOf(
+                "audioPath" to audioPath,
+                "targetWord" to targetWord,
+                "language" to language
+            )
+            val result = functions
+                .getHttpsCallable("assessPronunciation")
+                .call(data)
+                .await()
+
+            val responseData = result.data as Map<*, *>
+            val resultMap = mutableMapOf<String, Any>()
+            responseData.forEach { (key, value) ->
+                if (key is String && value != null) {
+                    resultMap[key] = value
+                }
+            }
+            Result.success(resultMap)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
 }

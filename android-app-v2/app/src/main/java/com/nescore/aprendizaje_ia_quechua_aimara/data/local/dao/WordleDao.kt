@@ -12,6 +12,9 @@ interface WordleDao {
     @Query("SELECT * FROM wordle_words")
     fun getAllWords(): Flow<List<WordleWordEntity>>
 
+    @Query("SELECT * FROM wordle_words WHERE categoria = :category ORDER BY RANDOM() LIMIT 10")
+    suspend fun getRandomWordsByCategory(category: String): List<WordleWordEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWords(words: List<WordleWordEntity>)
 

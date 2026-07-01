@@ -47,6 +47,7 @@ class ChatViewModel @Inject constructor(
     private val storage = FirebaseStorage.getInstance()
     private val audioRecorder = AudioRecorder(context)
     private var currentAudioFile: File? = null
+    private var recordStartTime = 0L
 
     fun onInputChange(newValue: String) { inputText = newValue }
     fun speak(text: String, lang: String) { ttsManager.speak(text, lang) }
@@ -56,6 +57,7 @@ class ChatViewModel @Inject constructor(
         try {
             val file = File(context.cacheDir, "audio_${UUID.randomUUID()}.m4a")
             currentAudioFile = file
+            recordStartTime = System.currentTimeMillis()
             audioRecorder.startRecording(file)
             isRecording = true
             sttError = null
@@ -72,6 +74,15 @@ class ChatViewModel @Inject constructor(
             isRecording = false
             try {
                 audioRecorder.stopRecording()
+                val duration = System.currentTimeMillis() - recordStartTime
+                if (duration < 800) {
+                    Log.d("ChatFlow", "Audio demasiado corto: ${duration}ms")
+                    sttError = "El audio es demasiado corto"
+                    currentAudioFile?.let {
+                        if (it.exists()) it.delete()
+                    }
+                    return
+                }
                 uploadAndProcessAudio()
             } catch (e: Exception) {
                 Log.e("ChatFlow", "Fallo al detener micro", e)

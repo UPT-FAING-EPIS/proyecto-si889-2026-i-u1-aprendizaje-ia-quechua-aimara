@@ -126,6 +126,16 @@ exports.processAudioMessage = onCall(
 
         console.log("Transcripción exitosa:", userText);
 
+        const cleanText = userText.trim().replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]/g, "");
+        if (cleanText.length === 0) {
+          console.log("Audio sin contenido de voz. Retornando respuesta predeterminada.");
+          return {
+            transcription: "",
+            response: "Disculpa, no logré escuchar ningún sonido en el mensaje de voz. ¿Podrías hablar de nuevo?",
+            feedback: "Audio en silencio o sin voz detectable."
+          };
+        }
+
         // C. Procesar texto con GPT
         console.log("Generando respuesta y feedback con GPT...");
 
@@ -176,6 +186,112 @@ exports.processAudioMessage = onCall(
         throw new HttpsError(
             "internal",
             `No pudimos procesar tu audio: ${error.message}`,
+        );
+      } finally {
+        if (fs.existsSync(tempFilePath)) {
+          await fs.remove(tempFilePath);
+        }
+      }
+    },
+);
+
+// --- 3. EVALUACIÓN DE PRONUNCIACIÓN DE AUDIO ---
+exports.assessPronunciation = onCall(
+    {
+      secrets: [openaiApiKey],
+      region: "us-central1",
+      timeoutSeconds: 300,
+    },
+    async (request) => {
+      console.log(
+          "Nueva petición de evaluación de pronunciación. Usuario:",
+          request.auth ? request.auth.uid : "ANONIMO",
+      );
+
+      const { audioPath, targetWord, language } = request.data;
+
+      if (!audioPath || !targetWord || !language) {
+        throw new HttpsError(
+            "invalid-argument",
+            "audioPath, targetWord y language son obligatorios.",
+        );
+      }
+
+      const openai = new OpenAI({
+        apiKey: openaiApiKey.value(),
+      });
+
+      const tempFilePath = path.join(
+          os.tmpdir(),
+          `audio_assess_${Date.now()}.m4a`,
+      );
+
+      try {
+        // A. Descargar audio desde Firebase Storage
+        console.log("Descargando archivo para evaluación:", audioPath);
+        const bucket = admin.storage().bucket();
+        await bucket.file(audioPath).download({
+          destination: tempFilePath,
+        });
+
+        // B. Transcribir Audio usando Whisper
+        console.log("Enviando a Whisper...");
+        const transcription = await openai.audio.transcriptions.create({
+          file: fs.createReadStream(tempFilePath),
+          model: "whisper-1",
+          language: "es", // Whisper transcribirá lo que entiende en formato español
+        });
+
+        const userText = transcription.text;
+        console.log("Transcripción de Whisper:", userText);
+
+        const cleanText = userText.trim().replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]/g, "");
+        if (cleanText.length === 0) {
+          console.log("Audio sin contenido de voz en evaluación. Retornando fallo predeterminado.");
+          return {
+            transcription: "",
+            isCorrect: false,
+            feedback: "No se detectó ningún sonido o palabra. Por favor, habla más fuerte y claro cerca del micrófono."
+          };
+        }
+
+        // C. Evaluar pronunciación con GPT-4
+        console.log("Evaluando con GPT-4...");
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4o", // Usamos gpt-4o de alto nivel para un análisis acústico y lingüístico riguroso
+          messages: [
+            {
+              role: "system",
+              content:
+                "Eres un evaluador lingüístico experto en lenguas andinas (Quechua y Aimara).\n" +
+                "El usuario está tratando de pronunciar la palabra: \"" + targetWord + "\" en el idioma " + language + ".\n" +
+                "El sistema de transcripción escuchó y escribió lo siguiente: \"" + userText + "\".\n" +
+                "Analiza la similitud fonética y determina si la pronunciación es correcta o aceptable. Ten en cuenta que el transcriptor está configurado en español, por lo que adaptará sonidos nativos a letras en español (por ejemplo, transcribir 'puka' como 'puca' o 'poca' es fonéticamente aceptable).\n" +
+                "Responde estrictamente en formato JSON con los siguientes campos:\n" +
+                "{\n" +
+                "  \"isCorrect\": true o false,\n" +
+                "  \"feedback\": \"Una explicación breve, amigable y constructiva sobre cómo sonó y consejos de pronunciación si falló.\"\n" +
+                "}"
+            }
+          ],
+          response_format: {
+            type: "json_object",
+          },
+        });
+
+        const aiResult = JSON.parse(completion.choices[0].message.content);
+        console.log("Resultado de evaluación:", aiResult);
+
+        return {
+          transcription: userText,
+          isCorrect: aiResult.isCorrect === true || aiResult.isCorrect === "true",
+          feedback: aiResult.feedback
+        };
+      } catch (error) {
+        console.error("Critical Assessment Error:", error);
+        throw new HttpsError(
+            "internal",
+            `Error al evaluar la pronunciación: ${error.message}`,
         );
       } finally {
         if (fs.existsSync(tempFilePath)) {

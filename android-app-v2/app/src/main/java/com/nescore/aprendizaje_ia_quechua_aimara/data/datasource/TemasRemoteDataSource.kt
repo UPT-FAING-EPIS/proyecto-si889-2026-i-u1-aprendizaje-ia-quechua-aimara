@@ -2,8 +2,7 @@ package com.nescore.aprendizaje_ia_quechua_aimara.data.datasource
 
 import com.nescore.aprendizaje_ia_quechua_aimara.data.model.Palabra
 import com.nescore.aprendizaje_ia_quechua_aimara.domain.model.Tema
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.tasks.await
 import java.text.Normalizer
 import javax.inject.Inject
@@ -11,20 +10,42 @@ import javax.inject.Singleton
 
 @Singleton
 class TemasRemoteDataSource @Inject constructor(
-    private val firestore: FirebaseFirestore
+    private val database: FirebaseDatabase
 ) {
     suspend fun getTemas(): Result<List<Tema>> {
         return try {
-            // En una app real, esto vendría de una colección "temas_config"
-            val temasPredeterminados = listOf(
-                Tema("saludos", "Saludos", "Aprende a saludar"),
-                Tema("numeros", "Números", "Cuenta en Quechua y Aimara"),
-                Tema("familia", "Familia", "Miembros de la familia"),
-                Tema("colores", "Colores", "Los colores de la naturaleza"),
-                Tema("cuerpohumano", "Cuerpo Humano", "Partes del cuerpo"),
-                Tema("animales", "Animales", "Animales de la región")
-            )
-            Result.success(temasPredeterminados)
+            val snapshot = database.getReference("temas").get().await()
+            val temasList = snapshot.children.mapNotNull { childSnapshot ->
+                val id = childSnapshot.key ?: return@mapNotNull null
+                val nombre = when (id) {
+                    "animales" -> "Animales"
+                    "colores" -> "Colores"
+                    "cuerpoHumano" -> "Cuerpo Humano"
+                    "numeros" -> "Números"
+                    "saludos" -> "Saludos"
+                    "alimentos" -> "Alimentos"
+                    "naturaleza" -> "Naturaleza"
+                    "hogar" -> "Hogar"
+                    "profesiones" -> "Profesiones"
+                    "ropa" -> "Ropa"
+                    else -> id.replaceFirstChar { it.uppercase() }
+                }
+                val descripcion = when (id) {
+                    "animales" -> "Animales de la región"
+                    "colores" -> "Los colores de la naturaleza"
+                    "cuerpoHumano" -> "Partes del cuerpo"
+                    "numeros" -> "Cuenta en Quechua y Aimara"
+                    "saludos" -> "Aprende a saludar"
+                    "alimentos" -> "Vocabulario de alimentos"
+                    "naturaleza" -> "Elementos de la naturaleza"
+                    "hogar" -> "Cosas del hogar"
+                    "profesiones" -> "Profesiones y oficios"
+                    "ropa" -> "Prendas de vestir"
+                    else -> "Aprende sobre $nombre"
+                }
+                Tema(id = id, nombre = nombre, descripcion = descripcion)
+            }
+            Result.success(temasList)
         } catch (e: Exception) {
             Result.failure(e)
         }
@@ -33,14 +54,16 @@ class TemasRemoteDataSource @Inject constructor(
     suspend fun getPalabrasPorTema(nombreTema: String): Result<List<Palabra>> {
         return try {
             val idDocumento = normalizarId(nombreTema)
-            val snapshot = firestore.collection("temas")
-                .document(idDocumento)
-                .collection("items")
-                .orderBy("orden", Query.Direction.ASCENDING)
+            val snapshot = database.getReference("temas")
+                .child(idDocumento)
+                .child("items")
                 .get()
                 .await()
             
-            Result.success(snapshot.toObjects(Palabra::class.java))
+            val palabrasList = snapshot.children.mapNotNull { itemSnapshot ->
+                itemSnapshot.getValue(Palabra::class.java)
+            }
+            Result.success(palabrasList)
         } catch (e: Exception) {
             Result.failure(e)
         }
@@ -48,7 +71,8 @@ class TemasRemoteDataSource @Inject constructor(
 
     private fun normalizarId(texto: String): String {
         val temp = Normalizer.normalize(texto.lowercase(), Normalizer.Form.NFD)
-        return temp.replace("\\p{InCombiningDiacriticalMarks}+".toRegex(), "")
+        val normalized = temp.replace("\\p{InCombiningDiacriticalMarks}+".toRegex(), "")
             .replace(" ", "")
+        return if (normalized == "cuerpohumano") "cuerpoHumano" else normalized
     }
 }

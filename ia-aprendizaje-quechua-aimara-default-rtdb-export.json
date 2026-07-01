@@ -1,0 +1,1166 @@
+{
+  "temas": {
+    "animales": {
+      "items": {
+        "a1": {
+          "aimara": "Anu",
+          "espanol": "Perro",
+          "quechua": "Allqu"
+        },
+        "a2": {
+          "aimara": "Misi",
+          "espanol": "Gato",
+          "quechua": "Misi"
+        },
+        "a3": {
+          "aimara": "Waka",
+          "espanol": "Vaca",
+          "quechua": "Waka"
+        },
+        "a4": {
+          "aimara": "Kunturi",
+          "espanol": "Cóndor",
+          "quechua": "Kuntur"
+        },
+        "a5": {
+          "aimara": "Atuq",
+          "espanol": "Zorro",
+          "quechua": "Atuq"
+        },
+        "a6": {
+          "aimara": "Challwa",
+          "espanol": "Pez",
+          "quechua": "Challwa"
+        },
+        "a7": {
+          "aimara": "Asiru",
+          "espanol": "Serpiente",
+          "quechua": "Mach'aqway"
+        },
+        "a8": {
+          "aimara": "K'usillu",
+          "espanol": "Mono",
+          "quechua": "K'usillu"
+        },
+        "a9": {
+          "aimara": "Allpaqa",
+          "espanol": "Alpaca",
+          "quechua": "Allpaqa"
+        },
+        "a10": {
+          "aimara": "Tari",
+          "espanol": "Vicuña",
+          "quechua": "Wik'uña"
+        },
+        "a11": {
+          "aimara": "Qawra",
+          "espanol": "Llama",
+          "quechua": "Llama"
+        },
+        "a12": {
+          "aimara": "Uwija",
+          "espanol": "Oveja",
+          "quechua": "Uwija"
+        },
+        "a13": {
+          "aimara": "Achaku",
+          "espanol": "Ratón",
+          "quechua": "Ukucha"
+        },
+        "a14": {
+          "aimara": "Kawallu",
+          "espanol": "Caballo",
+          "quechua": "Kawallu"
+        },
+        "a15": {
+          "aimara": "Chiwchi",
+          "espanol": "Gallina",
+          "quechua": "Wallpa"
+        },
+        "a16": {
+          "aimara": "Jamach'i",
+          "espanol": "Pájaro",
+          "quechua": "Pisqu"
+        },
+        "a17": {
+          "aimara": "Pilpintu",
+          "espanol": "Mariposa",
+          "quechua": "Pillpintu"
+        },
+        "a18": {
+          "aimara": "Khuchi",
+          "espanol": "Cerdo",
+          "quechua": "Khuchi"
+        },
+        "a19": {
+          "aimara": "Patu",
+          "espanol": "Pato",
+          "quechua": "Patu"
+        },
+        "a20": {
+          "aimara": "Wank'u",
+          "espanol": "Conejo",
+          "quechua": "Qowi"
+        }
+      }
+    },
+    "colores": {
+      "items": {
+        "c1": {
+          "aimara": "Puka",
+          "espanol": "Rojo",
+          "quechua": "Puka"
+        },
+        "c2": {
+          "aimara": "Q'illu",
+          "espanol": "Amarillo",
+          "quechua": "Q'illu"
+        },
+        "c3": {
+          "aimara": "Kulli",
+          "espanol": "Morado",
+          "quechua": "Kulli"
+        },
+        "c4": {
+          "aimara": "Yuraq",
+          "espanol": "Blanco",
+          "quechua": "Yuraq"
+        },
+        "c5": {
+          "aimara": "Yana",
+          "espanol": "Negro",
+          "quechua": "Yana"
+        },
+        "c6": {
+          "aimara": "Larama",
+          "espanol": "Azul",
+          "quechua": "Anqas"
+        },
+        "c7": {
+          "aimara": "Ch'uxña",
+          "espanol": "Verde",
+          "quechua": "Q'omer"
+        },
+        "c8": {
+          "aimara": "Ch'ila",
+          "espanol": "Gris",
+          "quechua": "Oqe"
+        },
+        "c9": {
+          "aimara": "Churi",
+          "espanol": "Naranja",
+          "quechua": "Churi"
+        },
+        "c10": {
+          "aimara": "Janq'u anqas",
+          "espanol": "Celeste",
+          "quechua": "K'ara anqas"
+        },
+        "c11": {
+          "aimara": "Ch'umpi",
+          "espanol": "Marrón",
+          "quechua": "Ch'umpi"
+        },
+        "c12": {
+          "aimara": "Panti",
+          "espanol": "Rosado",
+          "quechua": "Panti"
+        },
+        "c13": {
+          "aimara": "Qollqe niraq",
+          "espanol": "Plateado",
+          "quechua": "Qullqi niraq"
+        },
+        "c14": {
+          "aimara": "Qori niraq",
+          "espanol": "Dorado",
+          "quechua": "Quri niraq"
+        },
+        "c15": {
+          "aimara": "Ch'uxña anqas",
+          "espanol": "Turquesa",
+          "quechua": "K'ara q'omer"
+        },
+        "c16": {
+          "aimara": "Oqe q'illu",
+          "espanol": "Beige",
+          "quechua": "Oqe q'illu"
+        },
+        "c17": {
+          "aimara": "Kulli yana",
+          "espanol": "Violeta",
+          "quechua": "Kulli yana"
+        },
+        "c18": {
+          "aimara": "Puka yana",
+          "espanol": "Vino",
+          "quechua": "Puka yana"
+        },
+        "c19": {
+          "aimara": "Ch'uxña q'ellu",
+          "espanol": "Oliva",
+          "quechua": "Q'omer q'ello"
+        },
+        "c20": {
+          "aimara": "Q'ellu ch'umpi",
+          "espanol": "Ocre",
+          "quechua": "Q'ello ch'umpi"
+        }
+      }
+    },
+    "cuerpoHumano": {
+      "items": {
+        "ch1": {
+          "aimara": "Amaya",
+          "espanol": "Cabeza",
+          "quechua": "Uma"
+        },
+        "ch2": {
+          "aimara": "Mak'i",
+          "espanol": "Mano",
+          "quechua": "Mak'i"
+        },
+        "ch3": {
+          "aimara": "Chaki",
+          "espanol": "Pie",
+          "quechua": "Chaki"
+        },
+        "ch4": {
+          "aimara": "Nina",
+          "espanol": "Ojo",
+          "quechua": "Nina"
+        },
+        "ch5": {
+          "aimara": "Laka",
+          "espanol": "Boca",
+          "quechua": "Simi"
+        },
+        "ch6": {
+          "aimara": "Jinchu",
+          "espanol": "Oreja",
+          "quechua": "Rinri"
+        },
+        "ch7": {
+          "aimara": "Nasa",
+          "espanol": "Nariz",
+          "quechua": "Senqa"
+        },
+        "ch8": {
+          "aimara": "Laka ch'aka",
+          "espanol": "Diente",
+          "quechua": "Kiru"
+        },
+        "ch9": {
+          "aimara": "Kunka",
+          "espanol": "Cuello",
+          "quechua": "Kunka"
+        },
+        "ch10": {
+          "aimara": "Qhasqu",
+          "espanol": "Pecho",
+          "quechua": "Qhasqu"
+        },
+        "ch11": {
+          "aimara": "Ampara",
+          "espanol": "Brazo",
+          "quechua": "Rikra"
+        },
+        "ch12": {
+          "aimara": "Chara",
+          "espanol": "Pierna",
+          "quechua": "Chanka"
+        },
+        "ch13": {
+          "aimara": "Jik'hni",
+          "espanol": "Espalda",
+          "quechua": "Wasa"
+        },
+        "ch14": {
+          "aimara": "Chuyma",
+          "espanol": "Corazón",
+          "quechua": "Sonqo"
+        },
+        "ch15": {
+          "aimara": "Ñik'uta",
+          "espanol": "Cabello",
+          "quechua": "Chukcha"
+        },
+        "ch16": {
+          "aimara": "Sillu",
+          "espanol": "Uña",
+          "quechua": "Sillu"
+        },
+        "ch17": {
+          "aimara": "Wila",
+          "espanol": "Sangre",
+          "quechua": "Yawar"
+        },
+        "ch18": {
+          "aimara": "Ch'aka",
+          "espanol": "Hueso",
+          "quechua": "Tullu"
+        },
+        "ch19": {
+          "aimara": "Laxra",
+          "espanol": "Lengua",
+          "quechua": "Qallu"
+        },
+        "ch20": {
+          "aimara": "Uyanaka",
+          "espanol": "Cara",
+          "quechua": "Uya"
+        }
+      }
+    },
+    "numeros": {
+      "items": {
+        "n1": {
+          "aimara": "Maya",
+          "espanol": "Uno",
+          "quechua": "Huk"
+        },
+        "n2": {
+          "aimara": "Payi",
+          "espanol": "Dos",
+          "quechua": "Iskay"
+        },
+        "n3": {
+          "aimara": "Kimsa",
+          "espanol": "Tres",
+          "quechua": "Kimsa"
+        },
+        "n4": {
+          "aimara": "Pusi",
+          "espanol": "Cuatro",
+          "quechua": "Tawa"
+        },
+        "n5": {
+          "aimara": "Phisqa",
+          "espanol": "Cinco",
+          "quechua": "Pichqa"
+        },
+        "n6": {
+          "aimara": "Soqta",
+          "espanol": "Seis",
+          "quechua": "Suqta"
+        },
+        "n7": {
+          "aimara": "Paqallqo",
+          "espanol": "Siete",
+          "quechua": "Qanchis"
+        },
+        "n8": {
+          "aimara": "Quimsaqallqo",
+          "espanol": "Ocho",
+          "quechua": "Pusaq"
+        },
+        "n9": {
+          "aimara": "Llatunka",
+          "espanol": "Nueve",
+          "quechua": "Isqun"
+        },
+        "n10": {
+          "aimara": "Tunka",
+          "espanol": "Diez",
+          "quechua": "Chunka"
+        },
+        "n11": {
+          "aimara": "Tunka mayani",
+          "espanol": "Once",
+          "quechua": "Chunka hukniyuq"
+        },
+        "n12": {
+          "aimara": "Tunka payani",
+          "espanol": "Doce",
+          "quechua": "Chunka iskayniyuq"
+        },
+        "n13": {
+          "aimara": "Tunka kimsani",
+          "espanol": "Trece",
+          "quechua": "Chunka kimsayuq"
+        },
+        "n14": {
+          "aimara": "Tunka pusini",
+          "espanol": "Catorce",
+          "quechua": "Chunka tawayuq"
+        },
+        "n15": {
+          "aimara": "Tunka phisqani",
+          "espanol": "Quince",
+          "quechua": "Chunka pichqayuq"
+        },
+        "n16": {
+          "aimara": "Pata tunka",
+          "espanol": "Veinte",
+          "quechua": "Iskay chunka"
+        },
+        "n17": {
+          "aimara": "Kimsa tunka",
+          "espanol": "Treinta",
+          "quechua": "Kimsa chunka"
+        },
+        "n18": {
+          "aimara": "Pusi tunka",
+          "espanol": "Cuarenta",
+          "quechua": "Tawa chunka"
+        },
+        "n19": {
+          "aimara": "Phisqa tunka",
+          "espanol": "Cincuenta",
+          "quechua": "Pichqa chunka"
+        },
+        "n20": {
+          "aimara": "Pataka",
+          "espanol": "Cien",
+          "quechua": "Pachak"
+        }
+      }
+    },
+    "saludos": {
+      "items": {
+        "s1": {
+          "aimara": "Kamisaki",
+          "espanol": "Hola",
+          "quechua": "Allinllachu"
+        },
+        "s2": {
+          "aimara": "Jallalla",
+          "espanol": "Bienvenido",
+          "quechua": "Napaykuy"
+        },
+        "s3": {
+          "aimara": "Jikisiñkama",
+          "espanol": "Hasta luego",
+          "quechua": "Tupananchiskama"
+        },
+        "s4": {
+          "aimara": "Yuspagara",
+          "espanol": "Gracias",
+          "quechua": "Añay"
+        },
+        "s5": {
+          "aimara": "Sumaq p'unchay",
+          "espanol": "Buenos días",
+          "quechua": "Allin p'unchay"
+        },
+        "s6": {
+          "aimara": "Jaylli p'unchay",
+          "espanol": "Buenas tardes",
+          "quechua": "Allin suka"
+        },
+        "s7": {
+          "aimara": "Sumaq tuta",
+          "espanol": "Buenas noches",
+          "quechua": "Allin tuta"
+        },
+        "s8": {
+          "aimara": "Kamisaki",
+          "espanol": "¿Cómo estás?",
+          "quechua": "Allillanchu kashanki"
+        },
+        "s9": {
+          "aimara": "Waliki",
+          "espanol": "Estoy bien",
+          "quechua": "Allinllan kashani"
+        },
+        "s10": {
+          "aimara": "Sarjañani",
+          "espanol": "Adiós",
+          "quechua": "Ripusaqña"
+        },
+        "s11": {
+          "aimara": "Munasmi",
+          "espanol": "Te quiero",
+          "quechua": "Munayki"
+        },
+        "s12": {
+          "aimara": "Mirpasiña",
+          "espanol": "Por favor",
+          "quechua": "Allichu"
+        },
+        "s13": {
+          "aimara": "Kusisqa",
+          "espanol": "Mucho gusto",
+          "quechua": "Kusikuywan"
+        },
+        "s14": {
+          "aimara": "Kunasa sutima",
+          "espanol": "¿Cuál es tu nombre?",
+          "quechua": "Imataq sutiyki"
+        },
+        "s15": {
+          "aimara": "Sutiya jaqa",
+          "espanol": "Mi nombre es...",
+          "quechua": "Sutiyqa..."
+        },
+        "s16": {
+          "aimara": "Janiwa kunasa",
+          "espanol": "De nada",
+          "quechua": "Iñacha"
+        },
+        "s17": {
+          "aimara": "Qharurkama",
+          "espanol": "Hasta mañana",
+          "quechua": "Paqarinman"
+        },
+        "s18": {
+          "aimara": "Pampachawa",
+          "espanol": "Disculpe",
+          "quechua": "Pampachayway"
+        },
+        "s19": {
+          "aimara": "Jisa",
+          "espanol": "Sí",
+          "quechua": "Arí"
+        },
+        "s20": {
+          "aimara": "Janiwa",
+          "espanol": "No",
+          "quechua": "Mana"
+        }
+      }
+    },
+    "alimentos": {
+      "items": {
+        "al1": {
+          "aimara": "Uma",
+          "espanol": "Agua",
+          "quechua": "Yaku"
+        },
+        "al2": {
+          "aimara": "Chuchuqa",
+          "espanol": "Maíz",
+          "quechua": "Sara"
+        },
+        "al3": {
+          "aimara": "Ch'oqe",
+          "espanol": "Papa",
+          "quechua": "Papa"
+        },
+        "al4": {
+          "aimara": "Chicha",
+          "espanol": "Carne",
+          "quechua": "Aycha"
+        },
+        "al5": {
+          "aimara": "Millk'i",
+          "espanol": "Leche",
+          "quechua": "Leche"
+        },
+        "al6": {
+          "aimara": "T'ant'a",
+          "espanol": "Pan",
+          "quechua": "T'ant'a"
+        },
+        "al7": {
+          "aimara": "K'awnaka",
+          "espanol": "Huevo",
+          "quechua": "Runtu"
+        },
+        "al8": {
+          "aimara": "Jayu",
+          "espanol": "Sal",
+          "quechua": "Kachi"
+        },
+        "al9": {
+          "aimara": "Wayk'a",
+          "espanol": "Ají",
+          "quechua": "Uchu"
+        },
+        "al10": {
+          "aimara": "Kisu",
+          "espanol": "Queso",
+          "quechua": "Kisu"
+        },
+        "al11": {
+          "aimara": "Puquta",
+          "espanol": "Plátano",
+          "quechua": "Puquta"
+        },
+        "al12": {
+          "aimara": "Mansana",
+          "espanol": "Manzana",
+          "quechua": "Mansana"
+        },
+        "al13": {
+          "aimara": "Laranja",
+          "espanol": "Naranja",
+          "quechua": "Laranja"
+        },
+        "al14": {
+          "aimara": "Apichu",
+          "espanol": "Camote",
+          "quechua": "Apichu"
+        },
+        "al15": {
+          "aimara": "Jupha",
+          "espanol": "Quinua",
+          "quechua": "Kinwa"
+        },
+        "al16": {
+          "aimara": "Achu",
+          "espanol": "Fruta",
+          "quechua": "Ruru"
+        },
+        "al17": {
+          "aimara": "Challwa aycha",
+          "espanol": "Pescado",
+          "quechua": "Challwa aycha"
+        },
+        "al18": {
+          "aimara": "Aqha",
+          "espanol": "Chicha",
+          "quechua": "Aqha"
+        },
+        "al19": {
+          "aimara": "Jupi",
+          "espanol": "Sopa",
+          "quechua": "Lawa"
+        },
+        "al20": {
+          "aimara": "Jaku",
+          "espanol": "Harina",
+          "quechua": "Haku"
+        }
+      }
+    },
+    "naturaleza": {
+      "items": {
+        "nat1": {
+          "aimara": "Lupi",
+          "espanol": "Sol",
+          "quechua": "Inti"
+        },
+        "nat2": {
+          "aimara": "Phaxsi",
+          "espanol": "Luna",
+          "quechua": "Killa"
+        },
+        "nat3": {
+          "aimara": "Warawara",
+          "espanol": "Estrella",
+          "quechua": "Qoyllur"
+        },
+        "nat4": {
+          "aimara": "Uraq",
+          "espanol": "Tierra",
+          "quechua": "Allpa"
+        },
+        "nat5": {
+          "aimara": "Nina",
+          "espanol": "Fuego",
+          "quechua": "Nina"
+        },
+        "nat6": {
+          "aimara": "Thaya",
+          "espanol": "Viento",
+          "quechua": "Wayra"
+        },
+        "nat7": {
+          "aimara": "Jallu",
+          "espanol": "Lluvia",
+          "quechua": "Para"
+        },
+        "nat8": {
+          "aimara": "Jawira",
+          "espanol": "Río",
+          "quechua": "Mayu"
+        },
+        "nat9": {
+          "aimara": "Qullu",
+          "espanol": "Cerdo / Cerro",
+          "quechua": "Orqo"
+        },
+        "nat10": {
+          "aimara": "Panqara",
+          "espanol": "Flor",
+          "quechua": "T'ika"
+        },
+        "nat11": {
+          "aimara": "Quka",
+          "espanol": "Árbol",
+          "quechua": "Sach'a"
+        },
+        "nat12": {
+          "aimara": "Qala",
+          "espanol": "Piedra",
+          "quechua": "Rumi"
+        },
+        "nat13": {
+          "aimara": "Alaxpacha",
+          "espanol": "Cielo",
+          "quechua": "Hanaq pacha"
+        },
+        "nat14": {
+          "aimara": "Qinaya",
+          "espanol": "Nube",
+          "quechua": "Phuyu"
+        },
+        "nat15": {
+          "aimara": "Quta",
+          "espanol": "Mar",
+          "quechua": "Qucha"
+        },
+        "nat16": {
+          "aimara": "Khunu",
+          "espanol": "Hielo",
+          "quechua": "Rit'i"
+        },
+        "nat17": {
+          "aimara": "Pampa",
+          "espanol": "Campo",
+          "quechua": "Pampa"
+        },
+        "nat18": {
+          "aimara": "Sach'asach'a",
+          "espanol": "Bosque",
+          "quechua": "Sach'asach'a"
+        },
+        "nat19": {
+          "aimara": "Q'ixu",
+          "espanol": "Trueno",
+          "quechua": "Lliphiq"
+        },
+        "nat20": {
+          "aimara": "Khunu",
+          "espanol": "Nieve",
+          "quechua": "Rit'i phuyu"
+        }
+      }
+    },
+    "hogar": {
+      "items": {
+        "h1": {
+          "aimara": "Uta",
+          "espanol": "Casa",
+          "quechua": "Wasi"
+        },
+        "h2": {
+          "aimara": "Puku",
+          "espanol": "Puerta",
+          "quechua": "Punku"
+        },
+        "h3": {
+          "aimara": "T'uqu",
+          "espanol": "Ventana",
+          "quechua": "T'uqu punku"
+        },
+        "h4": {
+          "aimara": "Mesa",
+          "espanol": "Mesa",
+          "quechua": "Mesa"
+        },
+        "h5": {
+          "aimara": "Silla",
+          "espanol": "Silla",
+          "quechua": "Tiyana"
+        },
+        "h6": {
+          "aimara": "Ikiña",
+          "espanol": "Cama",
+          "quechua": "Kawitu"
+        },
+        "h7": {
+          "aimara": "Phayaña",
+          "espanol": "Cocina",
+          "quechua": "Qonchu"
+        },
+        "h8": {
+          "aimara": "Chuwa",
+          "espanol": "Plato",
+          "quechua": "P'uku"
+        },
+        "h9": {
+          "aimara": "Qiru",
+          "espanol": "Vaso",
+          "quechua": "Qiru"
+        },
+        "h10": {
+          "aimara": "Phuku",
+          "espanol": "Olla",
+          "quechua": "Manka"
+        },
+        "h11": {
+          "aimara": "Wislla",
+          "espanol": "Cuchara",
+          "quechua": "Wislla"
+        },
+        "h12": {
+          "aimara": "T'uxra",
+          "espanol": "Cuchillo",
+          "quechua": "Kuchuna"
+        },
+        "h13": {
+          "aimara": "Llijlla",
+          "espanol": "Manta",
+          "quechua": "Lliklla"
+        },
+        "h14": {
+          "aimara": "Japun",
+          "espanol": "Jabón",
+          "quechua": "Taqsa"
+        },
+        "h15": {
+          "aimara": "Pichana",
+          "espanol": "Escoba",
+          "quechua": "Pichana"
+        },
+        "h16": {
+          "aimara": "Qhana",
+          "espanol": "Luz",
+          "quechua": "K'anchay"
+        },
+        "h17": {
+          "aimara": "Lirphu",
+          "espanol": "Espejo",
+          "quechua": "Rirpu"
+        },
+        "h18": {
+          "aimara": "Isku",
+          "espanol": "Ropa",
+          "quechua": "P'acha"
+        },
+        "h19": {
+          "aimara": "K'ajyiri uma",
+          "espanol": "Agua caliente",
+          "quechua": "Q'oñi yaku"
+        },
+        "h20": {
+          "aimara": "Llawi",
+          "espanol": "Llave",
+          "quechua": "Llawi"
+        }
+      }
+    },
+    "profesiones": {
+      "items": {
+        "p1": {
+          "aimara": "Yatiqaña uta",
+          "espanol": "Escuela",
+          "quechua": "Yachay wasi"
+        },
+        "p2": {
+          "aimara": "Marka",
+          "espanol": "Pueblo",
+          "quechua": "Llaqta"
+        },
+        "p3": {
+          "aimara": "Yatichiri",
+          "espanol": "Profesor",
+          "quechua": "Yachachiq"
+        },
+        "p4": {
+          "aimara": "Yatiqiri",
+          "espanol": "Estudiante",
+          "quechua": "Yachaqichiq"
+        },
+        "p5": {
+          "aimara": "Qulliri",
+          "espanol": "Médico",
+          "quechua": "Hampiymayuq"
+        },
+        "p6": {
+          "aimara": "Yapuchiri",
+          "espanol": "Agricultor",
+          "quechua": "Chakra ruwaq"
+        },
+        "p7": {
+          "aimara": "Carpintero",
+          "espanol": "Carpintero",
+          "quechua": "Llaqllaq"
+        },
+        "p8": {
+          "aimara": "Policía",
+          "espanol": "Policía",
+          "quechua": "Llaqta qhawapakuq"
+        },
+        "p9": {
+          "aimara": "Wariri",
+          "espanol": "Cantante",
+          "quechua": "Takiyuq"
+        },
+        "p10": {
+          "aimara": "Utachiri",
+          "espanol": "Constructor",
+          "quechua": "Wasi ruwaq"
+        },
+        "p11": {
+          "aimara": "Iglesia",
+          "espanol": "Templo",
+          "quechua": "Waka wasi"
+        },
+        "p12": {
+          "aimara": "Qhatu",
+          "espanol": "Mercado",
+          "quechua": "Qhatu"
+        },
+        "p13": {
+          "aimara": "Qullasiña uta",
+          "espanol": "Hospital",
+          "quechua": "Hampi wasi"
+        },
+        "p14": {
+          "aimara": "Thaki",
+          "espanol": "Camino",
+          "quechua": "Ñan"
+        },
+        "p15": {
+          "aimara": "Jach'a marka",
+          "espanol": "Ciudad",
+          "quechua": "Hatun llaqta"
+        },
+        "p16": {
+          "aimara": "Challwa katuri",
+          "espanol": "Pescador",
+          "quechua": "Challwa katuri"
+        },
+        "p17": {
+          "aimara": "Awatiri",
+          "espanol": "Pastor",
+          "quechua": "Micha"
+        },
+        "p18": {
+          "aimara": "Phayiri",
+          "espanol": "Cocinero",
+          "quechua": "Yanakuq"
+        },
+        "p19": {
+          "aimara": "Sawuri",
+          "espanol": "Tejedor",
+          "quechua": "Awayuq"
+        },
+        "p20": {
+          "aimara": "Juez",
+          "espanol": "Juez",
+          "quechua": "Taripaq"
+        }
+      }
+    },
+    "ropa": {
+      "items": {
+        "r1": {
+          "aimara": "T'arha",
+          "espanol": "Sombrero",
+          "quechua": "Akllu"
+        },
+        "r2": {
+          "aimara": "Camisa",
+          "espanol": "Camisa",
+          "quechua": "Camisa"
+        },
+        "r3": {
+          "aimara": "Pantalón",
+          "espanol": "Pantalón",
+          "quechua": "Pantalón"
+        },
+        "r4": {
+          "aimara": "Zapatu",
+          "espanol": "Zapato",
+          "quechua": "Llañqi"
+        },
+        "r5": {
+          "aimara": "Urkhu",
+          "espanol": "Falda",
+          "quechua": "Aksu"
+        },
+        "r6": {
+          "aimara": "Punchu",
+          "espanol": "Poncho",
+          "quechua": "Punchu"
+        },
+        "r7": {
+          "aimara": "Wiskhu",
+          "espanol": "Sandalias",
+          "quechua": "Ojota"
+        },
+        "r8": {
+          "aimara": "Wak'a",
+          "espanol": "Faja",
+          "quechua": "Chumpi"
+        },
+        "r9": {
+          "aimara": "Almilla",
+          "espanol": "Chaqueta",
+          "quechua": "Unku"
+        },
+        "r10": {
+          "aimara": "Llik'i",
+          "espanol": "Medias",
+          "quechua": "Calcetas"
+        },
+        "r11": {
+          "aimara": "Ch'uspa",
+          "espanol": "Bolso",
+          "quechua": "Ch'uspa"
+        },
+        "r12": {
+          "aimara": "T'awra",
+          "espanol": "Lana",
+          "quechua": "Millma"
+        },
+        "r13": {
+          "aimara": "Wallqa",
+          "espanol": "Collar",
+          "quechua": "Wallqa"
+        },
+        "r14": {
+          "aimara": "Ch'araka",
+          "espanol": "Pendientes",
+          "quechua": "Tupu"
+        },
+        "r15": {
+          "aimara": "Isku",
+          "espanol": "Vestido",
+          "quechua": "P'acha unku"
+        },
+        "r16": {
+          "aimara": "Chalina",
+          "espanol": "Bufanda",
+          "quechua": "Chalina"
+        },
+        "r17": {
+          "aimara": "Wak'a",
+          "espanol": "Cinturón",
+          "quechua": "Chumpi"
+        },
+        "r18": {
+          "aimara": "Ampar p'acha",
+          "espanol": "Guantes",
+          "quechua": "Maki p'acha"
+        },
+        "r19": {
+          "aimara": "Ch'ullu",
+          "espanol": "Gorro",
+          "quechua": "Ch'ulu"
+        },
+        "r20": {
+          "aimara": "Llijlla",
+          "espanol": "Manta",
+          "quechua": "Lliklla"
+        }
+      }
+    }
+  },
+  "wordle": {
+    "w1": {
+      "aimara": "Anu",
+      "espanol": "Perro",
+      "id": "w1",
+      "quechua": "Allqu"
+    },
+    "w2": {
+      "aimara": "Misi",
+      "espanol": "Gato",
+      "id": "w2",
+      "quechua": "Misi"
+    },
+    "w3": {
+      "aimara": "Waka",
+      "espanol": "Vaca",
+      "id": "w3",
+      "quechua": "Waka"
+    },
+    "w4": {
+      "aimara": "Kuntur",
+      "espanol": "Cóndor",
+      "id": "w4",
+      "quechua": "Kuntur"
+    },
+    "w5": {
+      "aimara": "Atuq",
+      "espanol": "Zorro",
+      "id": "w5",
+      "quechua": "Atuq"
+    },
+    "w6": {
+      "aimara": "Puka",
+      "espanol": "Rojo",
+      "id": "w6",
+      "quechua": "Puka"
+    },
+    "w7": {
+      "aimara": "Yuraq",
+      "espanol": "Blanco",
+      "id": "w7",
+      "quechua": "Yuraq"
+    },
+    "w8": {
+      "aimara": "Yana",
+      "espanol": "Negro",
+      "id": "w8",
+      "quechua": "Yana"
+    },
+    "w9": {
+      "aimara": "Uma",
+      "espanol": "Cabeza",
+      "id": "w9",
+      "quechua": "Uma"
+    },
+    "w10": {
+      "aimara": "Simi",
+      "espanol": "Boca",
+      "id": "w10",
+      "quechua": "Simi"
+    },
+    "w11": {
+      "aimara": "Mak'i",
+      "espanol": "Mano",
+      "id": "w11",
+      "quechua": "Mak'i"
+    },
+    "w12": {
+      "aimara": "Chaki",
+      "espanol": "Pie",
+      "id": "w12",
+      "quechua": "Chaki"
+    },
+    "w13": {
+      "aimara": "Challwa",
+      "espanol": "Pez",
+      "id": "w13",
+      "quechua": "Challwa"
+    },
+    "w14": {
+      "aimara": "K'usillu",
+      "espanol": "Mono",
+      "id": "w14",
+      "quechua": "K'usillu"
+    },
+    "w15": {
+      "aimara": "Maya",
+      "espanol": "Uno",
+      "id": "w15",
+      "quechua": "Huk"
+    },
+    "w16": {
+      "aimara": "Payi",
+      "espanol": "Dos",
+      "id": "w16",
+      "quechua": "Iskay"
+    },
+    "w17": {
+      "aimara": "Kimsa",
+      "espanol": "Tres",
+      "id": "w17",
+      "quechua": "Kimsa"
+    },
+    "w18": {
+      "aimara": "Tunka",
+      "espanol": "Diez",
+      "id": "w18",
+      "quechua": "Chunka"
+    },
+    "w19": {
+      "aimara": "Kamisaki",
+      "espanol": "Hola",
+      "id": "w19",
+      "quechua": "Allinllachu"
+    },
+    "w20": {
+      "aimara": "Yuspagara",
+      "espanol": "Gracias",
+      "id": "w20",
+      "quechua": "Añay"
+    }
+  }
+}

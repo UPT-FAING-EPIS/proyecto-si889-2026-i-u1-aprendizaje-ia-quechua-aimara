@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.Games
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Quiz
+import androidx.compose.material.icons.filled.School
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -44,6 +45,7 @@ fun HomeScreen(
     
     val tabs = listOf(
         TabItem("Temas", Icons.Default.MenuBook),
+        TabItem("Guía", Icons.Default.School),
         TabItem("Chat", Icons.Default.Chat),
         TabItem("Prácticas", Icons.Default.Quiz),
         TabItem("Wordle", Icons.Default.Games)
@@ -85,9 +87,10 @@ fun HomeScreen(
         ) {
             when (selectedTab) {
                 0 -> TemasScreen(onTemaClick = onTemaClick)
-                1 -> ChatScreen()
-                2 -> PracticeCategoryScreen(onCategorySelected = onPracticeCategorySelected)
-                3 -> WordleScreen()
+                1 -> StudyGuideScreen(selectedLanguage = selectedLanguage)
+                2 -> ChatScreen()
+                3 -> PracticeCategoryScreen(onCategorySelected = onPracticeCategorySelected)
+                4 -> WordleScreen()
             }
         }
     }
