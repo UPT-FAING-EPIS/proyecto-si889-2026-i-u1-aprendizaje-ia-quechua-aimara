@@ -5,11 +5,11 @@ Proyecto de desarrollo de software para el autoaprendizaje de las lenguas origin
 ## 📚 Curso
 Patrones de Software
 
-## 👨‍🏫 Docente
-Mag. Ing. Patrick Cuadros Quiroga
+## 👨‍🏫 Docente  
+Mag. Ing. Patrick Cuadros Quiroga 
 
 ## 👥 Integrantes
-- Serrano Ibañez, Nestor Juice Yomar (2022075474)
+- Serrano Ibañez, Nestor Juice Yomar (2022075474 )
 - Mamani Estaña, Junior (2022075474)
 - Concha Llaca, Gerardo Alejandro (2017057849)
 
